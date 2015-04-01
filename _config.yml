@@ -24,6 +24,9 @@ markdown: redcarpet
 #   extensions: ['fenced_code_blocks', 'smart']
 
 highlighter: false
+permalink: /blog/:title/
+# /:categories
+# /:year
 
 prose:
   rooturl: 'app'
@@ -38,8 +41,8 @@ prose:
     - app/_plugins
     - app/_bower_components
     - app/_scss
-    - app/css
-    - app/js
+    - app/resources/css
+    - app/resources/js
     - app/fonts
   metadata:
     _posts:
