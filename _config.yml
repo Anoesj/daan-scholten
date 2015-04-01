@@ -23,13 +23,13 @@ show_drafts: true
 markdown: redcarpet
 #   extensions: ['fenced_code_blocks', 'smart']
 
-pygments: false
+highlighter: false
 
 prose:
   rooturl: 'app'
   relativeLinks: 'links.jsonp'
   siteurl: 'http://www.daanscholten.nl/'
-  media: 'app/img'
+  media: 'app/resources/img'
   ignore:
     - index.md
     - _config.yml

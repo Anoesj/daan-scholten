@@ -28,6 +28,7 @@ Om een nieuwe blogpost aan te maken:
 
 _Italic_
 
+[Blog](/Blog "Blog")
 [Google](http://www.google.com "Google")
 
 - lijst item 1
