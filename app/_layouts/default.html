@@ -31,25 +31,26 @@
     <!--[if lt IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div class="main-wrapper">
+      <header>
+        <a href="/" title="Home">
+          <img src="/resources/img/logo.svg" alt="Daan Scholten" title="Home">
+        </a>
+      </header>
 
-    <header>
-      <a href="/" title="Home">
-        <img src="/resources/img/logo.svg" alt="Daan Scholten" title="Home">
-      </a>
-    </header>
+      <nav>
+        <ul>
+          <li><a href='/over-mij' {% if cleanCurrent == 'over-mij' %}class='active'{% endif %}>Over mij</a></li>
+          <li><a href='/blog' {% if cleanCurrent == 'blog' %}class='active'{% endif %}>Blog</a></li>
+          <li><a href='/portfolio' {% if cleanCurrent == 'portfolio' %}class='active'{% endif %}>Portfolio</a></li>
+          <li><a href='/studio' {% if cleanCurrent == 'studio' %}class='active'{% endif %}>Studio</a></li>
+          <li><a href='/live' {% if cleanCurrent == 'live' %}class='active'{% endif %}>Live</a></li>
+          <li><a href='/contact' {% if cleanCurrent == 'contact' %}class='active'{% endif %}>Contact</a></li>
+        </ul>
+      </nav>
 
-    <nav>
-      <ul>
-        <li><a href='/over-mij' {% if cleanCurrent == 'over-mij' %}class='active'{% endif %}>Over mij</a></li>
-        <li><a href='/blog' {% if cleanCurrent == 'blog' %}class='active'{% endif %}>Blog</a></li>
-        <li><a href='/portfolio' {% if cleanCurrent == 'portfolio' %}class='active'{% endif %}>Portfolio</a></li>
-        <li><a href='/studio' {% if cleanCurrent == 'studio' %}class='active'{% endif %}>Studio</a></li>
-        <li><a href='/live' {% if cleanCurrent == 'live' %}class='active'{% endif %}>Live</a></li>
-        <li><a href='/contact' {% if cleanCurrent == 'contact' %}class='active'{% endif %}>Contact</a></li>
-      </ul>
-    </nav>
-
-    {{ content }}
+      {{ content }}
+    </div>
 
     {% include scripts.html %}
     {% include googleanalytics.html %}

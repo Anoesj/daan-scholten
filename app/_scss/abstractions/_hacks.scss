@@ -1,0 +1,11 @@
+@mixin moz-hack {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+@mixin chrome-hack {
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @content;
+  }
+}

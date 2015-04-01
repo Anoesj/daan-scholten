@@ -27,16 +27,5 @@ h3 {
 }
 
 a {
-  &:link,
-  &:visited {
-    color: $light-blue;
-    text-decoration: none;
-    transition: color $speed-fast $ease-out 0s;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: $dark-blue;
-  }
+  @include link;
 }

@@ -1,22 +1,84 @@
-// COLORS
+//-------------------//
+//   COLORS          //
+//-------------------//
+
 $white: #fff;
 $black: #333;
 $dark-blue: #394165;
 $light-blue: #698cdd;
 $light-grey: #cbcbcb;
 
-// FONTS
-$default-font-stack: 'Iowan Old Style', serif;
+$default-link-color: $light-blue;
+$default-link-hover-color: $dark-blue;
 
-// TRANSITIONS & ANIMATIONS
+$selection-bg: lighten($light-blue, 30%);
+
+
+//-------------------//
+//   TYPOGRAPHY      //
+//-------------------//
+
+$fw-light: 100;
+$fw-normal: 300;
+$fw-bold: 600;
+
+$secondary-fw-light: 100;
+$secondary-fw-normal: 300;
+$secondary-fw-bold: 600;
+
+$default-font-stack: "Iowan Old Style", serif;
+$secondary-font-stack: "Kies een font man", sans-serif;
+
+
+//-------------------//
+//   GRID SETUP      //
+//-------------------//
+
+$default-page-width: 1200px;
+$default-page-grid: 12;
+
+// SYNTAX:
+// $breakpoint:     width to break at, width to snap to, amount of cols from this breakpoint to the next
+$mobile:            320px, 100%, 3;                     // smartphones, iPhone, portrait 480x320 phones
+$tablet:            641px, 640px, 6;                    // portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones
+$laptop:            941px, 940px, $default-page-grid;   // tablet, landscape iPad, lo-res laptops ands desktops
+$desktop:           1025px, 1024px;                     // big landscape tablets, laptops, and desktops
+
+$e-reader:          481px, 100%;                        // portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide.
+$hi-res:            1281px, 1280px;                     // hi-res laptops and desktops
+
+// add orientation for tablets and phones, pixel density for hi-res small screens etc.
+
+$breakpoints: $mobile,
+              $tablet,
+              $laptop,
+              $desktop;
+
+$limited-width-elements: '.main-wrapper';
+
+
+//-------------------//
+//   MISCELLANEOUS   //
+//-------------------//
+
 $speed-slow: .7s;
 $speed-medium: .3s;
 $speed-fast: .15s;
+$speed-forms: $speed-medium;
+
 $ease-in: ease-in;
 $ease-out: ease-out;
 $ease-in-out: cubic-bezier(.56, .12, .33, .91);
 
-// BREAKPOINTS
-$bp-large: 1200px;
-$bp-medium: 800px;
-$bp-small: 500px;
+$base-border-radius: 4px;
+$form-border-radius: $base-border-radius;
+$checkbox-border-radius: 20%;
+
+$show-shortcut-tips: true;
+
+
+//-------------------//
+//   FONT AWESOME    //
+//-------------------//
+
+// $fa-font-path: "../font-awesome";

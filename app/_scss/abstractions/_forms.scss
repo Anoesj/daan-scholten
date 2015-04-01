@@ -1,0 +1,21 @@
+@mixin forms($radius: $form-border-radius, $box-shadow: null) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: box-shadow        $speed-forms $ease-out, 
+              border            $speed-forms $ease-out,
+              background-color  $speed-forms $ease-out,
+              color             $speed-forms $ease-out;
+  border-radius: #{$radius};
+
+  &:focus {
+    outline: none;
+    -moz-outline: none;
+    -webkit-outline: none;
+    -moz-user-focus: none;
+
+    @if ($box-shadow) {
+      box-shadow: #{$box-shadow};
+    }
+  }
+}

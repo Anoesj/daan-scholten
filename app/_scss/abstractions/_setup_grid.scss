@@ -1,0 +1,159 @@
+// to add CSS for certain breakpoints, use one of these syntaxex:
+// 
+// USING bp({number}):
+// @include breakpoint(bp(3)) {
+//  body {
+//    background-color: black;
+//  }
+// }
+
+// OR USING bp($breakpoint-name):
+// @include breakpoint(bp($tablet)) {
+//  body {
+//    background-color: black;
+//  }
+// }
+
+@function bp($slice) {
+  @if (type-of($slice) == 'number') {
+    @return nth($breakpoints, $slice);
+  }
+
+  @else if (type-of($slice) == 'list') {
+    @return nth($slice, 1);
+  }
+}
+
+@mixin viewport() {
+  // @each $prefix in -moz-, -ms-, -o-, -webkit-, '' {
+  //     @#{$prefix}viewport {
+  //         @content;
+  //     }
+  // }
+  // BROKEN
+
+  @viewport {
+    @content;
+  }
+
+  @-moz-viewport {
+    @content;
+  }
+
+  @-ms-viewport {
+    @content;
+  }
+
+  @-webkit-viewport {
+    @content;
+  }
+
+  @-o-viewport {
+    @content;
+  }
+}
+
+@mixin setup-grid (
+    $page-width:              $default-page-width,
+    $page-grid:               $default-page-grid,
+    $responsive:              $breakpoints,
+    $limited-width-elements:  $limited-width-elements,
+    $transitions:             false
+  ) {
+
+  $grids:   $page-grid;
+  $gutters: .2;
+
+  html, body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  html.lt-ie9 {
+    width: $page-width;
+  }
+
+  // if the page should be responsive, which is the default setting, iterate through breakpoints and set up a responsive grid
+  @if $responsive != false {
+    html {
+      overflow-y: auto;
+    }
+
+    @each $breakpoint in $breakpoints {
+      $break-at:  nth($breakpoint, 1);
+      $width:     nth($breakpoint, 2);
+
+      @if length($breakpoint) == 3 {
+        $cols: nth($breakpoint, 3);
+        $grids: add-grid($cols at $break-at);
+      }
+
+      @each $element in $limited-width-elements {
+        #{$element} {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      @include breakpoint($break-at) {
+        @each $element in $limited-width-elements {
+          #{$element} {
+            @if unit($width) != '%' {
+              width: $width;
+              transition: width $speed-fast 0s $ease-out;
+            }
+
+            @else {
+              width: $width;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // if the page is not supposed to be responsive, set every element specified in the $limited-width-elements array to the $page-width specified
+  // set these values in rem with a fallback in px
+  @else {
+    body {
+      min-width: $page-width;
+      
+      @each $element in $limited-width-elements {
+        #{$element} {
+          width: $page-width;
+        }
+      }
+    }
+  }
+}
+
+@mixin add-background-grid {
+  html.grid-enabled {
+    @each $element in $limited-width-elements {
+      #{$element} {
+        @include background-grid;
+        background-clip: content-box;
+      }
+    }
+  }
+
+  @if $show-shortcut-tips == true {
+    html.show-tips {
+      body {
+        position: relative;
+
+        &:before {
+          content: "Toggle grid: ⌘+; or CTRL+;";
+          display: inline-block;
+          z-index: 30;
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          color: $black;
+          opacity: .3;
+        }
+      }
+    }
+  }
+}

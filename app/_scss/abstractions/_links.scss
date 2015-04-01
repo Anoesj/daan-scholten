@@ -1,0 +1,30 @@
+@mixin link($normal_color: $default-link-color, $hover_color: $default-link-hover-color, $simple: true) {
+  @include link-normal($normal_color, $simple);
+  @include link-hover($hover_color, $simple);
+}
+
+@mixin link-normal($color: $default-link-color, $simple: true) {
+  transition: color $speed-fast $ease-out;
+  color: $color;
+  @if $simple {
+    text-decoration: none;
+  }
+
+  &:link,
+  &:visited {
+    color: $color;
+    @if $simple {
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin link-hover($color: $default-link-hover-color, $simple: true) {
+  &:hover,
+  &:focus {
+    color: $color;
+    @if $simple {
+      text-decoration: none;
+    }
+  }
+}
