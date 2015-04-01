@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "info Anoesj"
-date:   2015-04-01 13:00:00
+title: info Anoesj
+date: 2015-04-01 13:00:00
 categories: techinfo
 ---
 

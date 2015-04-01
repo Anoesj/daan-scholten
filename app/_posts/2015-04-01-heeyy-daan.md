@@ -1,7 +1,7 @@
 ---
 layout: post
 title: heeyy Daan
-date: {}
+date: 2015-04-01 14:00:00
 categories: "chris-möhlenkamp"
 published: true
 ---
@@ -9,21 +9,25 @@ published: true
 #Voor Daan:
 
 Om een nieuwe post aan te maken:
--Voeg een bestandje toe in de '_posts' map.
--Benoem dit bestand volgens dit format: 'jjjj-mm-dd-naam-van-de-post.md'.
--Check de bron van dit bestand om een voorbeeld te zien.
+
+- Voeg een bestandje toe in de '_posts' map.
+- Benoem dit bestand volgens dit format: 'jjjj-mm-dd-naam-van-de-post.md'.
+- Check de bron van dit bestand om een voorbeeld te zien.
 
 
-#Opmaak (check bron):
-#Kopje H1
-##Kopje H2
-###Kopje H3
+# Opmaak (check bron):
+# Kopje H1
+## Kopje H2
+### Kopje H3
 
->quote
+> Dit
+> is
+> een
+> blockquote
 
 _Italic_
 
-[Google](google.com "Google")
+[Google](http://www.google.com "Google")
 
 - lijst item 1
 - lijst item 2
@@ -33,5 +37,5 @@ _Italic_
 2. item
 3. item
 
-
-
+Voeg een enter toe door twee spaties achter een zin  
+te plakken
