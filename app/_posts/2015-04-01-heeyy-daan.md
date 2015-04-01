@@ -1,9 +1,11 @@
 ---
 layout: post
-title:  "heeyy Daan"
-date:   2015-04-01 11:59:02
-categories: chris-möhlenkamp
+title: heeyy Daan
+date: {}
+categories: "chris-möhlenkamp"
+published: true
 ---
+
 #Voor Daan:
 
 Om een nieuwe post aan te maken:
@@ -11,14 +13,25 @@ Om een nieuwe post aan te maken:
 -Benoem dit bestand volgens dit format: 'jjjj-mm-dd-naam-van-de-post.md'.
 -Check de bron van dit bestand om een voorbeeld te zien.
 
+
 #Opmaak (check bron):
 #Kopje H1
 ##Kopje H2
 ###Kopje H3
+
 >quote
 
-<!-- ~~Strikethrough~~
+_Italic_
 
-Super^(script)
+[Google](google.com "Google")
 
-list_item(text, 'ul') -->
+- lijst item 1
+- lijst item 2
+- lijst item 3
+
+1. item
+2. item
+3. item
+
+
+
