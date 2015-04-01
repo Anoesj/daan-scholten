@@ -8,8 +8,9 @@ published: true
 
 #Voor Daan:
 
-Om een nieuwe post aan te maken:
+Om een nieuwe blogpost aan te maken:
 
+- Ga naar http://www.prose.io/
 - Voeg een bestandje toe in de '_posts' map.
 - Benoem dit bestand volgens dit format: 'jjjj-mm-dd-naam-van-de-post.md'.
 - Check de bron van dit bestand om een voorbeeld te zien.

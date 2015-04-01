@@ -27,6 +27,7 @@ pygments: false
 
 prose:
   rooturl: 'app'
+  relativeLinks: 'links.jsonp'
   siteurl: 'http://www.daanscholten.nl/'
   media: 'app/img'
   ignore:
@@ -38,6 +39,7 @@ prose:
     - app/_bower_components
     - app/_scss
     - app/css
+    - app/js
     - app/fonts
   metadata:
     _posts:
