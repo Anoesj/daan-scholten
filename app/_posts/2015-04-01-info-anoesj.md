@@ -1,11 +1,10 @@
 ---
 layout: post
-title: info Anoesj
+title: Info Anoesj
 date: 2015-04-01 13:00:00
-categories: techinfo
+categories: info
 ---
 
-Voor Anoesj:
 Jekyll also offers powerful support for code snippets:
 
 {% highlight ruby %}

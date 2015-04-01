@@ -1,0 +1,31 @@
+callback([
+  {
+    "text": "Over mij",
+    "href": "/over-mij/"
+  },
+
+  {
+    "text": "Blog",
+    "href": "/blog/"
+  },
+
+  {
+    "text": "Portfolio",
+    "href": "/portfolio/"
+  },
+
+  {
+    "text": "Studio",
+    "href": "/studio/"
+  },
+
+  {
+    "text": "Live",
+    "href": "/live/"
+  },
+
+  {
+    "text": "Contact",
+    "href": "/contact/"
+  }
+])

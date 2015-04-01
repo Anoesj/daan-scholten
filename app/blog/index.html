@@ -1,0 +1,83 @@
+---
+layout: default
+title: Blog - Daan Scholten
+---
+
+<section class="blog latest-posts">
+  {% for post in site.posts limit:3 %}
+    <article class="post">
+      <header>
+        <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
+        
+        <div class="posted-on">  
+          Geplaatst op:
+          {% assign ymd = post.date | date: "%Y-%m-%d" %}
+          <time datetime="{{ ymd }}">
+            {% assign m = post.date | date: "%-m" %}
+            {{ post.date | date: "%-d" }}
+            {% case m %}
+              {% when '1' %}januari
+              {% when '2' %}februari
+              {% when '3' %}maart
+              {% when '4' %}april
+              {% when '5' %}mei
+              {% when '6' %}juni
+              {% when '7' %}juli
+              {% when '8' %}augustus
+              {% when '9' %}september
+              {% when '10' %}oktober
+              {% when '11' %}november
+              {% when '12' %}december
+            {% endcase %}
+            {{ post.date | date: "%Y" }}
+          </time>
+        </div>
+
+        <div class="tags">Tags: {{ post.categories }}</div>
+      </header>
+      
+      <section>{{ post.content }}</section>
+    </article>
+  {% endfor %}
+</section>
+
+{% if site.posts.size > 3 %}
+  <section class="blog older-posts">
+    <h3>Oudere blogs</h3>
+    {% for post in site.posts offset:3 %}
+      <article class="post">
+        <header>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </header>
+        
+        <section>{{ post.content | strip_html | truncatewords: 50 }}</section>
+        
+        <footer>
+          Geplaatst op:
+          {% assign ymd = post.date | date: "%Y-%m-%d" %}
+          <time datetime="{{ ymd }}">
+            {% assign m = post.date | date: "%-m" %}
+            {{ post.date | date: "%-d" }}
+            {% case m %}
+              {% when '1' %}januari
+              {% when '2' %}februari
+              {% when '3' %}maart
+              {% when '4' %}april
+              {% when '5' %}mei
+              {% when '6' %}juni
+              {% when '7' %}juli
+              {% when '8' %}augustus
+              {% when '9' %}september
+              {% when '10' %}oktober
+              {% when '11' %}november
+              {% when '12' %}december
+            {% endcase %}
+            {{ post.date | date: "%Y" }}
+          </time>
+
+          <div class="tags">Tags: {{ post.categories }}</div>
+        </footer>
+      </article>
+    {% endfor %}
+  </section>
+{% endif %}

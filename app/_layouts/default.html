@@ -9,26 +9,49 @@
 
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-    <!-- build:css({app,.tmp}) /resources/css/main.css -->
+    <!-- build:css({app,.tmp}) /css/main.css -->
     <link rel="stylesheet" href="/_bower_components/normalize-css/normalize.css">
     <link rel="stylesheet" href="/resources/css/main.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <!-- endbuild -->
 
-    <!-- build:js(app) /resources/js/head-scripts.js -->
+    <!-- build:js(app) /js/head-scripts.js -->
     <!-- Replace with a custom modernizer build for production -->
     <script src="/_bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-
   </head>
-  <body>
+
+  {% assign current = page.url | downcase | split: '/' %}
+  {% if current[1] == 'index.html' %}
+    {% assign cleanCurrent = 'home' %}
+  {% else %}
+    {% assign cleanCurrent = current[1] %}
+  {% endif %}
+  <body class="{{ cleanCurrent }}">
     <!--[if lt IE 8]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
+    <header>
+      <a href="/" title="Home">
+        <img src="/resources/img/logo.svg" alt="Daan Scholten" title="Home">
+      </a>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href='/over-mij' {% if cleanCurrent == 'over-mij' %}class='active'{% endif %}>Over mij</a></li>
+        <li><a href='/blog' {% if cleanCurrent == 'blog' %}class='active'{% endif %}>Blog</a></li>
+        <li><a href='/portfolio' {% if cleanCurrent == 'portfolio' %}class='active'{% endif %}>Portfolio</a></li>
+        <li><a href='/studio' {% if cleanCurrent == 'studio' %}class='active'{% endif %}>Studio</a></li>
+        <li><a href='/live' {% if cleanCurrent == 'live' %}class='active'{% endif %}>Live</a></li>
+        <li><a href='/contact' {% if cleanCurrent == 'contact' %}class='active'{% endif %}>Contact</a></li>
+      </ul>
+    </nav>
 
     {{ content }}
 
     {% include scripts.html %}
     {% include googleanalytics.html %}
-
   </body>
 </html>

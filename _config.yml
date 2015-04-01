@@ -15,6 +15,9 @@ exclude: ['img', 'css', 'js', 'fonts',
 
 include: ['.htaccess']
 
+sass:
+  sass_dir: app/_scss
+
 # _config.build.yml sets future and show_drafts to false on `grunt build`
 future: true
 show_drafts: true
@@ -27,6 +30,9 @@ highlighter: false
 permalink: /blog/:title/
 # /:categories
 # /:year
+
+collections:
+  - projects
 
 prose:
   rooturl: 'app'

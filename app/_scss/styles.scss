@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+// @import "breakpoint";
+// @import "singularitygs";
+// @import "toolkit";
+
+@import "variables/variables";
+@import "base/typography";
+
+// @import "variables/*";
+// @import "base/*";
+
+// @import "layouts/grid";
+// @import "layouts/layout";
+// @import "layouts/footer";
+// @import "layouts/page-full";
+// @import "layouts/case-full";
+// @import "layouts/casesoverview";
+// @import "layouts/about";
+// @import "layouts/page-body";
+// @import "layouts/contact";
+
+// @import "components/*";
+
+#__bs_notify__ {
+  left: 0px;
+  right: auto !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 5px;
+  display: none !important;
+}

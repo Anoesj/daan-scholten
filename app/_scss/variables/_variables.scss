@@ -1,0 +1,22 @@
+// COLORS
+$white: #fff;
+$black: #333;
+$dark-blue: #394165;
+$light-blue: #698cdd;
+$light-grey: #cbcbcb;
+
+// FONTS
+$default-font-stack: 'Iowan Old Style', serif;
+
+// TRANSITIONS & ANIMATIONS
+$speed-slow: .7s;
+$speed-medium: .3s;
+$speed-fast: .15s;
+$ease-in: ease-in;
+$ease-out: ease-out;
+$ease-in-out: cubic-bezier(.56, .12, .33, .91);
+
+// BREAKPOINTS
+$bp-large: 1200px;
+$bp-medium: 800px;
+$bp-small: 500px;
