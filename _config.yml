@@ -26,14 +26,19 @@ markdown: redcarpet
 pygments: false
 
 prose:
-  rooturl: 'app/_posts'
+  rooturl: 'app/'
   siteurl: 'http://www.daanscholten.nl/'
   media: 'app/img'
   ignore:
     - index.md
     - _config.yml
-    - /_layouts
-    - /_includes
+    - app/_layouts
+    - app/_includes
+    - app/_plugins
+    - app/_bower_components
+    - app/_scss
+    - app/css
+    - app/fonts
   metadata:
     _posts:
       - name: "layout"
