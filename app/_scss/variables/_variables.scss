@@ -35,7 +35,7 @@ $secondary-font-stack: "Kies een font man", sans-serif;
 //-------------------//
 
 $default-page-width: 1200px;
-$default-page-grid: 12;
+$default-page-grid: 0 1 1 1 1 1 1 1 1 1 1 1 1 0;
 
 // SYNTAX:
 // $breakpoint:     width to break at, width to snap to, amount of cols from this breakpoint to the next
@@ -54,7 +54,8 @@ $breakpoints: $mobile,
               $laptop,
               $desktop;
 
-$limited-width-elements: '.main-wrapper';
+$limited-width-elements:  '.main-wrapper',
+                          '.grid';
 
 
 //-------------------//

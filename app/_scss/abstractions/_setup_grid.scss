@@ -14,8 +14,6 @@
 //  }
 // }
 
-
-
 @function bp($slice) {
   @if (type-of($slice) == 'number') {
     @return nth($breakpoints, $slice);
@@ -131,31 +129,39 @@
 }
 
 @mixin add-background-grid {
-  html.grid-enabled {
-    @each $element in $limited-width-elements {
-      #{$element} {
-        @include background-grid;
-        background-clip: content-box;
-      }
+  @each $element in $limited-width-elements {
+    #{$element} {
+      @include sgs-change('debug', true);
+      @include background-grid($color: rgba($light-blue, .3));
+      background-clip: content-box;
     }
   }
 
-  @if $show-shortcut-tips == true {
-    html.show-tips {
-      body {
-        position: relative;
+  // html.grid-enabled {
+  //   @each $element in $limited-width-elements {
+  //     #{$element} {
+  //       @include background-grid;
+  //       background-clip: content-box;
+  //     }
+  //   }
+  // }
 
-        &:before {
-          content: "Toggle grid: ⌘+; or CTRL+;";
-          display: inline-block;
-          z-index: 30;
-          position: absolute;
-          top: 20px;
-          left: 20px;
-          color: $black;
-          opacity: .3;
-        }
-      }
-    }
-  }
+  // @if $show-shortcut-tips == true {
+  //   html.show-tips {
+  //     body {
+  //       position: relative;
+
+  //       &:before {
+  //         content: "Toggle grid: ⌘+; or CTRL+;";
+  //         display: inline-block;
+  //         z-index: 30;
+  //         position: absolute;
+  //         top: 20px;
+  //         left: 20px;
+  //         color: $black;
+  //         opacity: .3;
+  //       }
+  //     }
+  //   }
+  // }
 }

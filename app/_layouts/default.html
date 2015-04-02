@@ -31,14 +31,17 @@
     <!--[if lt IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="main-wrapper">
-      <header>
-        <a href="/" title="Home">
+
+    <header class="header-wrapper">
+      <div class="grid">
+        <a href="/" title="Home" class="logo">
           <img src="/resources/img/logo.svg" alt="Daan Scholten" title="Home">
         </a>
-      </header>
+      </div>
+    </header>
 
-      <nav>
+    <nav class="menu-wrapper">
+      <div class="grid">
         <ul>
           <li><a href='/over-mij' {% if cleanCurrent == 'over-mij' %}class='active'{% endif %}>Over mij</a></li>
           <li><a href='/blog' {% if cleanCurrent == 'blog' %}class='active'{% endif %}>Blog</a></li>
@@ -47,8 +50,10 @@
           <li><a href='/live' {% if cleanCurrent == 'live' %}class='active'{% endif %}>Live</a></li>
           <li><a href='/contact' {% if cleanCurrent == 'contact' %}class='active'{% endif %}>Contact</a></li>
         </ul>
-      </nav>
+      </div>
+    </nav>
 
+    <div class="main-wrapper">
       {{ content }}
     </div>
 

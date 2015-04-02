@@ -6,3 +6,56 @@ body {
   // @include background-image-retina('/resources/img/snow', png, 500px, 500px);
   // @include background-image-retina('/resources/img/brushed_alu', png, 400px, 400px);
 }
+
+.header-wrapper {
+  .logo {
+    display: inline-block;
+    margin: 40px 0;
+  }
+}
+
+.menu-wrapper {
+  background-color: $dark-blue;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    li {
+      list-style: none;
+      flex-grow: 1;
+      width: auto;
+      // margin: 0 1px 0 0;
+
+      // &:last-child {
+      //   margin-right: 0;
+      // }
+
+      a {
+        display: block;
+        padding: 5px 0;
+        border-radius: 1px;
+        text-align: center;
+        color: $white !important;
+        background-color: rgba($light-blue, 0);
+        box-shadow: none;
+        transition: all $speed-fast $ease-out 0s;
+        text-shadow: none;
+
+        $shadow-color: $dark-blue;
+        $shadow-opacity: 0.2;
+
+        &:hover {
+          text-shadow: 0 0 2px rgba($dark-blue, .1);
+          background-color: rgba($light-blue, 1);
+          box-shadow: 0 2px 2px -1px rgba($shadow-color, $shadow-opacity),
+                      0 -2px 2px -1px rgba($shadow-color, $shadow-opacity);
+        }
+      }
+    }
+  }
+}
