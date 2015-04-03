@@ -35,7 +35,16 @@ module.exports = function (grunt) {
           '!<%= yeoman.app %>/_bower_components/**/*'
         ],
         tasks: ['jekyll:server']
-      }
+      },
+      scripts: {
+        files: [
+          '<%= yeoman.app %>/**/*.js'
+        ],
+        tasks: ['jekyll:server'],
+        options: {
+          spawn: false,
+        },
+      },
     },
     browserSync: {
       server: {

@@ -3,11 +3,11 @@ layout: default
 title: Blog - Daan Scholten
 ---
 
-<section class="blog latest-posts">
+<section class="latest-posts">
   {% for post in site.posts limit:3 %}
     <article class="post">
       <header>
-        <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
+        <a href="{{ post.url }}" class="internal-link"><h2>{{ post.title }}</h2></a>
         
         <div class="posted-on">  
           Geplaatst op:
@@ -42,12 +42,12 @@ title: Blog - Daan Scholten
 </section>
 
 {% if site.posts.size > 3 %}
-  <section class="blog older-posts">
+  <section class="older-posts">
     <h3>Oudere blogs</h3>
     {% for post in site.posts offset:3 %}
       <article class="post">
         <header>
-          <a href="{{ post.url }}">{{ post.title }}</a>
+          <a href="{{ post.url }}" class="internal-link">{{ post.title }}</a>
         </header>
         
         <section>{{ post.content | strip_html | truncatewords: 50 }}</section>

@@ -1,7 +1,8 @@
 @include add-breakpoint('mobile', (320px, 100%, 3, 3));
-@include add-breakpoint('tablet', (641px, 640px, 6, 6));
-@include add-breakpoint('laptop', ($default-page-width, 940px, 12, 12));
-// @include add-breakpoint('hi-res', (1281px, 1280px, 12, 12));
+@include add-breakpoint('tablet', (641px, 100%, 6, 6));
+@include add-breakpoint('laptop', (1000px, $default-page-width, 12, 12));
+@include add-breakpoint('hi-res', (1320px, 1280px, 12, 12));
+@include show-breakpoint-names(true);
 
 @include setup-grid($transitions: true);
 @include add-background-grid;
@@ -10,6 +11,16 @@ body {
   @include background-image-retina('/resources/img/white_wall_hash', png, 500px, 500px);
   // @include background-image-retina('/resources/img/snow', png, 500px, 500px);
   // @include background-image-retina('/resources/img/brushed_alu', png, 400px, 400px);
+  .main-wrapper {
+    transition: opacity .3s $ease-out 0s;
+    opacity: 1;
+  }
+
+  &.fade-out-content {
+    .main-wrapper {
+      opacity: 0;
+    }
+  }
 }
 
 .header-wrapper {
