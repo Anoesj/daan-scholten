@@ -1,3 +1,8 @@
+@include add-breakpoint('mobile', (320px, 100%, 3, 3));
+@include add-breakpoint('tablet', (641px, 640px, 6, 6));
+@include add-breakpoint('laptop', ($default-page-width, 940px, 12, 12));
+// @include add-breakpoint('hi-res', (1281px, 1280px, 12, 12));
+
 @include setup-grid($transitions: true);
 @include add-background-grid;
 
@@ -11,11 +16,27 @@ body {
   .logo {
     display: inline-block;
     margin: 40px 0;
+    
+    img {
+      width: 200px;
+      height: auto;
+    }
   }
 }
 
 .menu-wrapper {
   background-color: $dark-blue;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 2px;
+    background-color: $light-blue;
+  }
 
   ul {
     margin: 0;
@@ -29,31 +50,26 @@ body {
       list-style: none;
       flex-grow: 1;
       width: auto;
-      // margin: 0 1px 0 0;
-
-      // &:last-child {
-      //   margin-right: 0;
-      // }
 
       a {
         display: block;
         padding: 5px 0;
-        border-radius: 1px;
+        border-radius: 2px 2px 0 0;
         text-align: center;
         color: $white !important;
         background-color: rgba($light-blue, 0);
         box-shadow: none;
         transition: all $speed-fast $ease-out 0s;
         text-shadow: none;
+        font-size: 18px;
 
         $shadow-color: $dark-blue;
         $shadow-opacity: 0.2;
 
+        &.active,
         &:hover {
           text-shadow: 0 0 2px rgba($dark-blue, .1);
           background-color: rgba($light-blue, 1);
-          box-shadow: 0 2px 2px -1px rgba($shadow-color, $shadow-opacity),
-                      0 -2px 2px -1px rgba($shadow-color, $shadow-opacity);
         }
       }
     }

@@ -34,27 +34,33 @@
 
     <header class="header-wrapper">
       <div class="grid">
-        <a href="/" title="Home" class="logo">
-          <img src="/resources/img/logo.svg" alt="Daan Scholten" title="Home">
-        </a>
+        <div class="full-width">
+          <a href="/" title="Home" class="logo internal-link">
+            <img src="/resources/img/logo.svg" alt="Daan Scholten" title="Home">
+          </a>
+        </div>
       </div>
     </header>
 
     <nav class="menu-wrapper">
       <div class="grid">
-        <ul>
-          <li><a href='/over-mij' {% if cleanCurrent == 'over-mij' %}class='active'{% endif %}>Over mij</a></li>
-          <li><a href='/blog' {% if cleanCurrent == 'blog' %}class='active'{% endif %}>Blog</a></li>
-          <li><a href='/portfolio' {% if cleanCurrent == 'portfolio' %}class='active'{% endif %}>Portfolio</a></li>
-          <li><a href='/studio' {% if cleanCurrent == 'studio' %}class='active'{% endif %}>Studio</a></li>
-          <li><a href='/live' {% if cleanCurrent == 'live' %}class='active'{% endif %}>Live</a></li>
-          <li><a href='/contact' {% if cleanCurrent == 'contact' %}class='active'{% endif %}>Contact</a></li>
-        </ul>
+        <div class="full-width">
+          <ul>
+            <li><a href='/over-mij' {% if cleanCurrent == 'over-mij' %}class='active internal-link'{% else %}class="internal-link"{% endif %}>Over mij</a></li>
+            <li><a href='/blog' {% if cleanCurrent == 'blog' %}class='active internal-link'{% else %}class="internal-link"{% endif %}>Blog</a></li>
+            <li><a href='/portfolio' {% if cleanCurrent == 'portfolio' %}class='active internal-link'{% else %}class="internal-link"{% endif %}>Portfolio</a></li>
+            <li><a href='/studio' {% if cleanCurrent == 'studio' %}class='active internal-link'{% else %}class="internal-link"{% endif %}>Studio</a></li>
+            <li><a href='/live' {% if cleanCurrent == 'live' %}class='active internal-link'{% else %}class="internal-link"{% endif %}>Live</a></li>
+            <li><a href='/contact' {% if cleanCurrent == 'contact' %}class='active internal-link'{% else %}class="internal-link"{% endif %}>Contact</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
 
-    <div class="main-wrapper">
-      {{ content }}
+    <div class="main-wrapper grid">
+      <div class="full-width">
+        {{ content }}
+      </div>
     </div>
 
     {% include scripts.html %}

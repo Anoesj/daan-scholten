@@ -34,28 +34,25 @@ $secondary-font-stack: "Kies een font man", sans-serif;
 //   GRID SETUP      //
 //-------------------//
 
-$default-page-width: 1200px;
-$default-page-grid: 0 1 1 1 1 1 1 1 1 1 1 1 1 0;
+$default-page-width: 941px;
 
-// SYNTAX:
-// $breakpoint:     width to break at, width to snap to, amount of cols from this breakpoint to the next
-$mobile:            320px, 100%, 3;                     // smartphones, iPhone, portrait 480x320 phones
-$tablet:            641px, 640px, 6;                    // portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones
-$laptop:            941px, 940px, $default-page-grid;   // tablet, landscape iPad, lo-res laptops ands desktops
-$desktop:           1025px, 1024px;                     // big landscape tablets, laptops, and desktops
+// Syntax: $bp:     break at, snap to, grid, cols amount   // mediums
+// $mobile:            320px, 100%, 3, 3;                     // smartphones, iPhone, portrait 480x320 phones
+// $tablet:            641px, 640px, 6, 6;                    // portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones
+// $laptop:            $default-page-width, 940px, 12, 12;    // tablet, landscape iPad, lo-res laptops ands desktops
+// $hi-res:            1281px, 1280px, 12, 12;                // hi-res laptops and desktops
 
-$e-reader:          481px, 100%;                        // portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide.
-$hi-res:            1281px, 1280px;                     // hi-res laptops and desktops
+// // $desktop:           1025px, 1024px;                     // big landscape tablets, laptops, and desktops
+// // $e-reader:          481px, 100%;                        // portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide.
 
-// add orientation for tablets and phones, pixel density for hi-res small screens etc.
+// // add orientation for tablets and phones, pixel density for hi-res small screens etc.
 
-$breakpoints: $mobile,
-              $tablet,
-              $laptop,
-              $desktop;
+// $breakpoints: $mobile,
+//               $tablet,
+//               $laptop,
+//               $hi-res;
 
-$limited-width-elements:  '.main-wrapper',
-                          '.grid';
+$limited-width-elements: '.grid';
 
 
 //-------------------//
