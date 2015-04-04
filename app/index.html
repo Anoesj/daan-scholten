@@ -7,7 +7,7 @@ title: Daan Scholten - Producer - Sound Engineer
   <h3>Projecten</h3>
   {% for project in site.projects %}
     <article class="project">
-      <a href="/blog" class="internal-link">{{ project.title }}</a>
+      <a href="{% if project.target != null %}{{ project.target }}{% else %}/blog{% endif %}" class="internal-link">{{ project.title }}</a>
     </article>
   {% endfor %}
 </section>
@@ -17,7 +17,7 @@ title: Daan Scholten - Producer - Sound Engineer
 </main>
 
 <section class="latest-posts">
-  <h3>Laatste blogs</h3>
+  <a href="/blog" class="internal-link"><h3>Laatste blogs</h3></a>
   {% for post in site.posts limit:3 %}
     <article class="post">
       <header>

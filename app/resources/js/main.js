@@ -19,6 +19,7 @@
       e.preventDefault()
       var $that = $(this),
           targetLink = $(this).attr('href'),
+          targetLinkCategory,
           currentPage = window.location.pathname
       
 
@@ -26,9 +27,12 @@
         currentPage = currentPage.slice(0, currentPage.length - 1)
       }
 
+      targetLinkCategory = '/' + targetLink.split('/')[1]
+
       if (!alreadyClicked && currentPage != targetLink) {
-        $('.menu-wrapper a.active').removeClass('active')
-        $(this).addClass('active')
+        var $menu = $('.menu-wrapper')
+        $menu.find('a[href="' + targetLinkCategory + '"]').addClass('active')
+        $menu.find('a[href!="' + targetLinkCategory + '"]').removeClass('active')
 
         if ($(window).scrollTop() != 0) {
           goTo($that.attr('href'), 300)

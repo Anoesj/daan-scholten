@@ -8,6 +8,7 @@
 
 @import "abstractions/forms";
 @import "abstractions/hacks";
+@import "abstractions/linear_gradient";
 @import "abstractions/links";
 @import "abstractions/placeholders";
 @import "abstractions/retina_images";
@@ -18,18 +19,6 @@
 
 @import "layout/global";
 @import "layout/home";
-
-// @import "layouts/grid";
-// @import "layouts/layout";
-// @import "layouts/footer";
-// @import "layouts/page-full";
-// @import "layouts/case-full";
-// @import "layouts/casesoverview";
-// @import "layouts/about";
-// @import "layouts/page-body";
-// @import "layouts/contact";
-
-// @import "components/*";
 
 #__bs_notify__ {
   left: 0px;

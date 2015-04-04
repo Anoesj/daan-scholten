@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="/css/styles.css">
     <!-- endbuild -->
 
+    <!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient {
+          filter: none;
+        }
+      </style>
+    <![endif]-->
+
     <!-- build:js(app) /js/head-scripts.js -->
     <!-- Replace with a custom modernizer build for production -->
     <script src="/_bower_components/modernizr/modernizr.js"></script>
@@ -46,12 +54,41 @@
       <div class="grid">
         <div class="full-width">
           <ul>
-            <li><a href='/over-mij' {% if cleanCurrent == 'over-mij' %}class='active internal-link'{% else %}class="internal-link"{% endif %}>Over mij</a></li>
-            <li><a href='/blog' {% if cleanCurrent == 'blog' %}class='active internal-link'{% else %}class="internal-link"{% endif %}>Blog</a></li>
-            <li><a href='/portfolio' {% if cleanCurrent == 'portfolio' %}class='active internal-link'{% else %}class="internal-link"{% endif %}>Portfolio</a></li>
-            <li><a href='/studio' {% if cleanCurrent == 'studio' %}class='active internal-link'{% else %}class="internal-link"{% endif %}>Studio</a></li>
-            <li><a href='/live' {% if cleanCurrent == 'live' %}class='active internal-link'{% else %}class="internal-link"{% endif %}>Live</a></li>
-            <li><a href='/contact' {% if cleanCurrent == 'contact' %}class='active internal-link'{% else %}class="internal-link"{% endif %}>Contact</a></li>
+            <li>
+              <a href="/over-mij" {% if cleanCurrent == 'over-mij' %}class="active internal-link"{% else %}class="internal-link"{% endif %}>
+                <span class="text">Over mij</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="/blog" {% if cleanCurrent == 'blog' %}class="active internal-link"{% else %}class="internal-link"{% endif %}>
+                <span class="text">Blog</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="/portfolio" {% if cleanCurrent == 'portfolio' %}class="active internal-link"{% else %}class="internal-link"{% endif %}>
+                <span class="text">Portfolio</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="/studio" {% if cleanCurrent == 'studio' %}class="active internal-link"{% else %}class="internal-link"{% endif %}>
+                <span class="text">Studio</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/live" {% if cleanCurrent == 'live' %}class="active internal-link"{% else %}class="internal-link"{% endif %}>
+                <span class="text">Live</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="/contact" {% if cleanCurrent == 'contact' %}class="active internal-link"{% else %}class="internal-link"{% endif %}>
+                <span class="text">Contact</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
