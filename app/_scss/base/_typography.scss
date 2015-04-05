@@ -51,7 +51,8 @@ blockquote {
 }
 
 p {
-  & + ul {
+  & + ul,
+  & + ol {
     margin-top: -$default-font-size;
   }
 }
