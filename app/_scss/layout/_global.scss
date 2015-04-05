@@ -16,6 +16,7 @@ body {
     transition: opacity .3s $ease-out 0s;
     opacity: 1;
     padding-top: 60px;
+    padding-bottom: 60px;
   }
 
   &.fade-out-content {
@@ -43,4 +44,10 @@ body {
   padding: 20px;
   border-radius: $base-border-radius;
   background-color: rgba($light-blue, .2);
+
+  .sidebar-title {
+    line-height: 24px;
+    @include line(2px);
+    margin-bottom: 0;
+  }
 }

@@ -17,8 +17,13 @@
       })
     }
 
+    /* Open external links in new tabs */
+    $(document.links).filter(function() {
+      return this.hostname != window.location.hostname
+    }).attr('target', '_blank')
+
     /* Handle internal link clicks */
-    $(document).on('click touch', '.internal-link', function(e) {
+    $(document).on('click touch', 'a[target!=_blank]', function(e) {
       e.preventDefault()
       var $that = $(this),
           targetLink = $(this).attr('href'),
@@ -47,9 +52,9 @@
       }
     })
 
-    // Blog post click handler
-    $('.blog .older-posts .post').one('click touch', function(e) {
-      $(this).find('header .internal-link').click()
+    /* Blog post click handler */
+    $('.blog .older-posts .post, .home .latest-posts .post').one('click touch', function(e) {
+      $(this).find('header a[target!=_blank]').click()
     })
 
     /* Turn on/off grid with CTRL+; or CMD+; */
@@ -75,4 +80,10 @@
     )
   }
 
+
 }(window.jQuery, window, document))
+
+/* AddThis stuff */
+function addthisReady() {
+  jQuery('body').addClass('addthis-ready')
+}

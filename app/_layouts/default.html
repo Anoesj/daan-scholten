@@ -36,17 +36,9 @@
     {% assign cleanCurrent = current[1] %}
   {% endif %}
 
-
-
-
-  <!-- FINISH THIS!!! -->
   {% if cleanCurrent == 'blog' and current[2] != null and current[2] != 'index.html' %}
-    {% assign cleanCurrent = cleanCurrent' full' %}
+    {% capture cleanCurrent %}{{ cleanCurrent }} blog-item{% endcapture %}
   {% endif %}
-  
-
-
-
 
   <body class="{{ cleanCurrent }} fade-out-content">
     <!--[if lt IE 8]>
@@ -56,7 +48,7 @@
     <header class="header-wrapper">
       <div class="grid">
         <div class="full-width">
-          <a href="/" title="Home" class="logo internal-link">
+          <a href="/" title="Home" class="logo">
             <img src="/resources/img/logo.svg" alt="Daan Scholten" title="Home">
           </a>
         </div>
@@ -68,37 +60,37 @@
         <div class="full-width">
           <ul>
             <li>
-              <a href="/over-mij" {% if cleanCurrent == 'over-mij' %}class="active internal-link"{% else %}class="internal-link"{% endif %}>
+              <a href="/over-mij" {% if cleanCurrent == 'over-mij' %}class="active"{% endif %}>
                 <span class="text">Over mij</span>
               </a>
             </li>
 
             <li>
-              <a href="/blog" {% if cleanCurrent == 'blog' %}class="active internal-link"{% else %}class="internal-link"{% endif %}>
+              <a href="/blog" {% if cleanCurrent contains 'blog' %}class="active"{% endif %}>
                 <span class="text">Blog</span>
               </a>
             </li>
 
             <li>
-              <a href="/portfolio" {% if cleanCurrent == 'portfolio' %}class="active internal-link"{% else %}class="internal-link"{% endif %}>
+              <a href="/portfolio" {% if cleanCurrent == 'portfolio' %}class="active"{% endif %}>
                 <span class="text">Portfolio</span>
               </a>
             </li>
 
             <li>
-              <a href="/studio" {% if cleanCurrent == 'studio' %}class="active internal-link"{% else %}class="internal-link"{% endif %}>
+              <a href="/studio" {% if cleanCurrent == 'studio' %}class="active"{% endif %}>
                 <span class="text">Studio</span>
               </a>
             </li>
             
             <li>
-              <a href="/live" {% if cleanCurrent == 'live' %}class="active internal-link"{% else %}class="internal-link"{% endif %}>
+              <a href="/live" {% if cleanCurrent == 'live' %}class="active"{% endif %}>
                 <span class="text">Live</span>
               </a>
             </li>
 
             <li>
-              <a href="/contact" {% if cleanCurrent == 'contact' %}class="active internal-link"{% else %}class="internal-link"{% endif %}>
+              <a href="/contact" {% if cleanCurrent == 'contact' %}class="active"{% endif %}>
                 <span class="text">Contact</span>
               </a>
             </li>

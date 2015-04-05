@@ -1,0 +1,27 @@
+$share-button-size: 40px;
+.share {
+  a {
+    display: block;
+    float: right;
+    margin-bottom: 4px;
+    opacity: .6;
+    transition: opacity $speed-fast $ease-out 0s;
+
+    &:after {
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    span {
+      width: $share-button-size;
+      height: $share-button-size;
+      line-height: $share-button-size;
+      background-size: $share-button-size $share-button-size !important;
+      background-size: contain !important;
+    }
+  }
+}

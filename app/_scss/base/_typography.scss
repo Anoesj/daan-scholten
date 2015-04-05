@@ -29,10 +29,6 @@ h3 {
   }
 }
 
-a {
-  @include link;
-}
-
 blockquote {
   margin: 1.8em 3em;
   
@@ -57,5 +53,50 @@ blockquote {
 p {
   & + ul {
     margin-top: -$default-font-size;
+  }
+}
+
+@font-face {
+  font-family: "customicons";
+  src: url(../fonts/customicons.eot);
+  src: url(../fonts/customicons.eot?#iefix) format("embedded-opentype"),
+       url(../fonts/customicons.woff) format("woff"),
+       url(../fonts/customicons.ttf) format("truetype"),
+       url(../fonts/customicons.svg#customicons) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "customicons";
+    src: url(../fonts/customicons.svg#customicons) format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &, &[target=_blank]:after {
+    transition: color $speed-fast $ease-out;
+  }
+
+  &:link,
+  &:visited,
+  &[target=_blank]:after {
+    color: $light-blue;
+  }
+
+  &:hover,
+  &:focus {
+    &, &[target=_blank]:after {
+      color: $dark-blue;
+    }
+  }
+
+  &[target=_blank]:after {
+    @include customicon("f");
   }
 }

@@ -15,8 +15,27 @@
         padding-top: 0 !important;
       }
 
-      header a h2 {
-        margin: 0;
+      &:last-child {
+        padding-bottom: 0 !important;
+      }
+
+      header a {
+        h2:after {
+          @include customicon("e");
+          display: inline;
+          opacity: 0;
+          transition: opacity $speed-fast $ease-out 0s;
+          font-size: 50%;
+          top: -1px;
+        }
+
+        &:hover h2:after {
+          opacity: 1;
+        }
+
+        h2 {
+          margin: 0;
+        }
       }
 
       section > *:last-child {
@@ -24,43 +43,46 @@
       }
     }
   }
+}
 
-  .older-posts {
-    @include isolation-span(4, 9, 'right');
-    @include default-font-settings;
+.home .latest-posts,
+.blog .older-posts {
+  @include isolation-span(4, 9, 'right');
+  @include default-font-settings;
 
-    .post {
+  .post {
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity $speed-fast $ease-out 0s;
+
+    &:hover,
+    &:focus {
       opacity: .7;
-      cursor: pointer;
-      transition: opacity $speed-fast $ease-out 0s;
+    }
 
-      &:hover {
-        opacity: 1;
-      }
+    &:not(:last-child) {
+      padding: 20px 0 !important;
+      @include line(2px);
+    }
 
-      &:not(:last-child) {
-        padding: 20px 0 !important;
-        @include line(2px);
-      }
+    &:first-child {
+      padding-top: 0 !important;
+    }
 
-      &:first-child {
-        padding-top: 0 !important;
-      }
+    &:last-child {
+      padding-top: 20px;
+    }
 
-      &:last-child {
-        padding-top: 20px;
-      }
-
-      header a {
-        font-weight: $fw-bold;
-        font-size: 20px;
-        line-height: 30px;
-        @include link($dark-blue, $dark-blue);
-      }
+    header a {
+      font-weight: $fw-bold;
+      font-size: 20px;
+      line-height: 30px;
+      @include link($dark-blue, $dark-blue);
     }
   }
 
   .tags {
-    margin-top: 10px;
+    margin-top: 4px;
+    margin-bottom: 10px;
   }
 }

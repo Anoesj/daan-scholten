@@ -3,5 +3,43 @@ layout: default
 ---
 <h1>{{ page.title }}</h1>
 <article class="post">
-{{ content }}
+  <header>
+    <div class="tags">
+      {% assign ymd = page.date | date: "%Y-%m-%d" %}
+      <time datetime="{{ ymd }}" class="tag tag-grey">
+        {% assign m = page.date | date: "%-m" %}
+        {{ page.date | date: "%-d" }}
+        {% case m %}
+          {% when '1' %}januari
+          {% when '2' %}februari
+          {% when '3' %}maart
+          {% when '4' %}april
+          {% when '5' %}mei
+          {% when '6' %}juni
+          {% when '7' %}juli
+          {% when '8' %}augustus
+          {% when '9' %}september
+          {% when '10' %}oktober
+          {% when '11' %}november
+          {% when '12' %}december
+        {% endcase %}
+        {{ page.date | date: "%Y" }}
+      </time>
+
+      {% for tag in page.categories %}
+        <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  </header>
+  
+  <section>{{ content }}</section>
 </article>
+
+<aside class="share addthis">
+  <a class="addthis_button_facebook"></a>
+  <a class="addthis_button_twitter"></a>
+  <a class="addthis_button_whatsapp"></a>
+  <a class="addthis_button_google_plusone_share"></a>
+  <a class="addthis_button_pinterest_share"></a>
+  <a class="addthis_button_linkedin"></a>
+</aside>

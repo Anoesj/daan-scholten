@@ -1,0 +1,22 @@
+.blog-item {
+  .main-wrapper {
+    > h1 {
+      @include isolation-span(10, 1, 'both');
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .post {
+    @include isolation-span(10, 1, 'left');
+    @include no-margins;
+  }
+
+  .share {
+    @include isolation-span(1, 12, 'right'); 
+  }
+  
+  .addthis {
+    transition-delay: 2s;
+  }
+}

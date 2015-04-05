@@ -1,0 +1,10 @@
+.addthis {
+  opacity: 0;
+  transition: opacity $speed-medium $ease-out 0s;
+}
+
+.addthis-ready {
+  .addthis {
+    opacity: 1;
+  }
+}

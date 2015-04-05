@@ -48,7 +48,8 @@
         }
 
         &.active,
-        &:hover {
+        &:hover,
+        &:focus {
           &:before {
             background-color: rgba($light-blue, 1);
           }
