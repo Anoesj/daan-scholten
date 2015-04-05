@@ -1,0 +1,66 @@
+.blog {
+  .latest-posts {
+    @include isolation-span(8, 1, 'left');
+    @include no-margins;
+
+    .post {
+      $post-padding: 40px;
+      padding: $post-padding 0 !important;
+
+      &:not(:last-child) {
+        @include line(2px);
+      }
+
+      &:first-child {
+        padding-top: 0 !important;
+      }
+
+      header a h2 {
+        margin: 0;
+      }
+
+      section > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .older-posts {
+    @include isolation-span(4, 9, 'right');
+    @include default-font-settings;
+
+    .post {
+      opacity: .7;
+      cursor: pointer;
+      transition: opacity $speed-fast $ease-out 0s;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:not(:last-child) {
+        padding: 20px 0 !important;
+        @include line(2px);
+      }
+
+      &:first-child {
+        padding-top: 0 !important;
+      }
+
+      &:last-child {
+        padding-top: 20px;
+      }
+
+      header a {
+        font-weight: $fw-bold;
+        font-size: 20px;
+        line-height: 30px;
+        @include link($dark-blue, $dark-blue);
+      }
+    }
+  }
+
+  .tags {
+    margin-top: 10px;
+  }
+}

@@ -54,7 +54,6 @@ $show-breakpoint-names: false !default;
   $keys: map_keys($breakpoints);
   @each $key in $keys {
     $breakpoint: map_get($breakpoints, $key);
-
     $break-at:  break-width($breakpoint);
     $width:     snap-width($breakpoint);
     $grid:      get-grid($breakpoint);
@@ -88,10 +87,6 @@ $show-breakpoint-names: false !default;
         }
       }
 
-      .full-width {
-        @include grid-span($cols, 1);
-      }
-
       @each $element in $limited-width-elements {
         #{$element} {
           width: $width;
@@ -100,6 +95,10 @@ $show-breakpoint-names: false !default;
             transition: width $speed-fast 0s $ease-out;
           }
         }
+      }
+
+      .full-width {
+        @include isolation-span($cols, 1, 'both', $from: 'right');
       }
     }
   }
@@ -110,7 +109,6 @@ $show-breakpoint-names: false !default;
   html.grid-enabled {
     @each $element in $limited-width-elements {
       #{$element} {
-        @include sgs-change('debug', true);
         @include background-grid($color: rgba($light-blue, .3));
         background-clip: content-box;
       }

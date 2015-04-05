@@ -2,17 +2,15 @@
 layout: default
 title: Blog - Daan Scholten
 ---
-
+<!-- <h1 class="full-width">Blog</h1> -->
 <section class="latest-posts">
   {% for post in site.posts limit:3 %}
     <article class="post">
       <header>
         <a href="{{ post.url }}" class="internal-link"><h2>{{ post.title }}</h2></a>
-        
-        <div class="posted-on">  
-          Geplaatst op:
+        <div class="tags">
           {% assign ymd = post.date | date: "%Y-%m-%d" %}
-          <time datetime="{{ ymd }}">
+          <time datetime="{{ ymd }}" class="tag tag-grey">
             {% assign m = post.date | date: "%-m" %}
             {{ post.date | date: "%-d" }}
             {% case m %}
@@ -31,9 +29,11 @@ title: Blog - Daan Scholten
             {% endcase %}
             {{ post.date | date: "%Y" }}
           </time>
-        </div>
 
-        <div class="tags">Tags: {{ post.categories }}</div>
+          {% for tag in post.categories %}
+            <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
       </header>
       
       <section>{{ post.content }}</section>
@@ -42,40 +42,43 @@ title: Blog - Daan Scholten
 </section>
 
 {% if site.posts.size > 3 %}
-  <section class="older-posts">
-    <h3>Oudere blogs</h3>
+  <section class="older-posts sidebar">
+    <!-- <h2>Oudere blogs</h2> -->
     {% for post in site.posts offset:3 %}
       <article class="post">
         <header>
           <a href="{{ post.url }}" class="internal-link">{{ post.title }}</a>
         </header>
         
-        <section>{{ post.content | strip_html | truncatewords: 50 }}</section>
+        <section>{{ post.content | strip_html | truncatewords: 20 }}</section>
         
         <footer>
-          Geplaatst op:
-          {% assign ymd = post.date | date: "%Y-%m-%d" %}
-          <time datetime="{{ ymd }}">
-            {% assign m = post.date | date: "%-m" %}
-            {{ post.date | date: "%-d" }}
-            {% case m %}
-              {% when '1' %}januari
-              {% when '2' %}februari
-              {% when '3' %}maart
-              {% when '4' %}april
-              {% when '5' %}mei
-              {% when '6' %}juni
-              {% when '7' %}juli
-              {% when '8' %}augustus
-              {% when '9' %}september
-              {% when '10' %}oktober
-              {% when '11' %}november
-              {% when '12' %}december
-            {% endcase %}
-            {{ post.date | date: "%Y" }}
-          </time>
+          <div class="tags">
+            {% assign ymd = post.date | date: "%Y-%m-%d" %}
+            <time datetime="{{ ymd }}" class="tag tag-grey">
+              {% assign m = post.date | date: "%-m" %}
+              {{ post.date | date: "%-d" }}
+              {% case m %}
+                {% when '1' %}januari
+                {% when '2' %}februari
+                {% when '3' %}maart
+                {% when '4' %}april
+                {% when '5' %}mei
+                {% when '6' %}juni
+                {% when '7' %}juli
+                {% when '8' %}augustus
+                {% when '9' %}september
+                {% when '10' %}oktober
+                {% when '11' %}november
+                {% when '12' %}december
+              {% endcase %}
+              {{ post.date | date: "%Y" }}
+            </time>
 
-          <div class="tags">Tags: {{ post.categories }}</div>
+            {% for tag in post.categories %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
         </footer>
       </article>
     {% endfor %}

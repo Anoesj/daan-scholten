@@ -5,7 +5,10 @@
   var alreadyClicked = false
   
   $(function() {
-    $('body').removeClass('fade-out-content')
+    /* Fade in content */
+    setTimeout(function() {
+      $('body').removeClass('fade-out-content')
+    }, 40)
 
     /* SVG to PNG if browser does not support it */
     if (!Modernizr.svg) {
@@ -44,6 +47,12 @@
       }
     })
 
+    // Blog post click handler
+    $('.blog .older-posts .post').one('click touch', function(e) {
+      $(this).find('header .internal-link').click()
+    })
+
+    /* Turn on/off grid with CTRL+; or CMD+; */
     $(document).bind('keydown', 'ctrl+; meta+; ', function() {
       $('html').toggleClass('grid-enabled')
     })

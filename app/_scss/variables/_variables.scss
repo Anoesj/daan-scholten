@@ -3,6 +3,7 @@
 //-------------------//
 
 $white: #fff;
+$grey: #aaa;
 $black: #333;
 $dark-blue: #394165;
 $light-blue: #698cdd;
@@ -20,7 +21,7 @@ $selection-bg: lighten($light-blue, 30%);
 
 $fw-light: 100;
 $fw-normal: 300;
-$fw-bold: 600;
+$fw-bold: bold;
 
 $secondary-fw-light: 100;
 $secondary-fw-normal: 300;
@@ -28,6 +29,9 @@ $secondary-fw-bold: 600;
 
 $default-font-stack: "Iowan Old Style", serif;
 $secondary-font-stack: "Kies een font man", sans-serif;
+
+$default-font-size: 16px;
+$default-line-height: 1.5em;
 
 
 //-------------------//

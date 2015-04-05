@@ -35,6 +35,19 @@
   {% else %}
     {% assign cleanCurrent = current[1] %}
   {% endif %}
+
+
+
+
+  <!-- FINISH THIS!!! -->
+  {% if cleanCurrent == 'blog' and current[2] != null and current[2] != 'index.html' %}
+    {% assign cleanCurrent = cleanCurrent' full' %}
+  {% endif %}
+  
+
+
+
+
   <body class="{{ cleanCurrent }} fade-out-content">
     <!--[if lt IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -95,9 +108,7 @@
     </nav>
 
     <div class="main-wrapper grid">
-      <div class="full-width">
-        {{ content }}
-      </div>
+      {{ content }}
     </div>
 
     {% include scripts.html %}
