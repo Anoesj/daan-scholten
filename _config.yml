@@ -51,6 +51,8 @@ prose:
     - app/resources/js
     - app/fonts
   metadata:
+    "app/_posts":
+      - date: CURRENT_DATETIME
     app/_posts:
       - name: "layout"
         field:
