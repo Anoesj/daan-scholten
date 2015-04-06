@@ -75,20 +75,18 @@ prose:
           placeholder: "Selecteer tags"
           alterable: true
           options:
-            - name: "Studio"
-              value: "Studio"
-            - name: "Live"
-              value: "Live"
+            - name: "studio"
+              value: "studio"
+            - name: "live"
+              value: "live"
             - name: "EP"
               value: "EP"
-            - name: "Album"
-              value: "Album"
-            - name: "Whatever"
-              value: "Whatever"
+            - name: "album"
+              value: "album"
       - name: "published"
         field:
           element: "checkbox"
-          label: "Nu publiceren:"
+          label: "Nu publiceren?"
           value: true
     _posts/static:
       - name: "layout"
