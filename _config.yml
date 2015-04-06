@@ -51,11 +51,11 @@ prose:
     - app/resources/js
     - app/fonts
   metadata:
-    _posts:
+    app/_posts:
       - name: "layout"
         field:
           element: "hidden"
-          value: "blog"
+          value: "post"
       - name: "title"
         field:
           element: "text"
@@ -78,6 +78,7 @@ prose:
         field:
           element: "checkbox"
           label: "Nu publiceren?"
+          value: true
     _posts/static:
       - name: "layout"
         field:
