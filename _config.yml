@@ -36,7 +36,7 @@ collections:
 
 prose:
   rooturl: 'app'
-  relativeLinks: 'links.jsonp'
+  relativeLinks: 'https://raw.githubusercontent.com/Anoesj/daan-scholten/master/links.jsonp'
   siteurl: 'http://www.daanscholten.nl/'
   media: 'app/resources/img'
   ignore:
@@ -60,7 +60,11 @@ prose:
         field:
           element: "text"
           label: "title"
-      - date: CURRENT_DATETIME
+      - name: "date"
+        field:
+          element: "text"
+          label: "Datum: YYYY-MM-DD HH:MM"
+          value: CURRENT_DATETIME
       - name: "categories"
         field:
           element: "multiselect"
