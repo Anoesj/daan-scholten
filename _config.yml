@@ -51,8 +51,6 @@ prose:
     - app/resources/js
     - app/fonts
   metadata:
-    "app/_posts":
-      - date: CURRENT_DATETIME
     app/_posts:
       - name: "layout"
         field:
@@ -69,8 +67,6 @@ prose:
           element: "text"
           label: "Datum:"
           placeholder: "yyyy-mm-dd uu:mm"
-          value: CURRENT_DATETIME
-      - "date": "CURRENT_DATETIME"
       - name: "categories"
         field:
           element: "multiselect"
@@ -93,6 +89,9 @@ prose:
           element: "checkbox"
           label: "Nu publiceren:"
           value: true
+    "app/_posts": |
+      layout: post
+      date: CURRENT_DATETIME
     _posts/static:
       - name: "layout"
         field:
