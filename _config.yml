@@ -60,15 +60,12 @@ prose:
         field:
           element: "text"
           label: "title"
-      - name: "date"
-        field:
-          element: "text"
-          label: "date"
-          value: CURRENT_DATETIME
+      - date: CURRENT_DATETIME
       - name: "categories"
         field:
           element: "multiselect"
-          label: "Voeg tags toe"
+          label: "Categorieën"
+          placeholder: "Selecteer één of meerdere categorieën"
           options:
             - name: "Apples"
               value: "apples"
