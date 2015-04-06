@@ -68,6 +68,7 @@ prose:
           label: "Datum:"
           placeholder: "yyyy-mm-dd uu:mm"
           value: CURRENT_DATETIME
+      - "date": "CURRENT_DATETIME"
       - name: "categories"
         field:
           element: "multiselect"
