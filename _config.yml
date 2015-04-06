@@ -59,26 +59,36 @@ prose:
       - name: "title"
         field:
           element: "text"
-          label: "title"
+          label: "Titel:"
+          placeholder: "Titel"
+          value: "Titel"
       - name: "date"
         field:
           element: "text"
-          label: "Datum: YYYY-MM-DD HH:MM"
+          label: "Datum:"
+          placeholder: "yyyy-mm-dd uu:mm"
           value: CURRENT_DATETIME
       - name: "categories"
         field:
           element: "multiselect"
-          label: "Categorieën"
-          placeholder: "Selecteer één of meerdere categorieën"
+          label: "Tags:"
+          placeholder: "Optioneel: selecteer tags"
+          alterable: true
           options:
-            - name: "Apples"
-              value: "apples"
-            - name: "Bananas"
-              value: "bananas"
+            - name: "Studio"
+              value: "Studio"
+            - name: "Live"
+              value: "Live"
+            - name: "EP"
+              value: "EP"
+            - name: "Album"
+              value: "Album"
+            - name: "Whatever"
+              value: "Whatever"
       - name: "published"
         field:
           element: "checkbox"
-          label: "Nu publiceren?"
+          label: "Nu publiceren:"
           value: true
     _posts/static:
       - name: "layout"
