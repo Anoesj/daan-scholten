@@ -56,16 +56,28 @@ prose:
         field:
           element: "hidden"
           value: "blog"
-      - name: "tags"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
+      - name: "date"
+        field:
+          element: "text"
+          label: "date"
+          value: CURRENT_DATETIME
+      - name: "categories"
         field:
           element: "multiselect"
-          label: "Add Tags"
-          placeholder: "Choose Tags"
+          label: "Voeg tags toe"
           options:
             - name: "Apples"
               value: "apples"
             - name: "Bananas"
               value: "bananas"
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Nu publiceren?"
     _posts/static:
       - name: "layout"
         field:
