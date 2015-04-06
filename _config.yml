@@ -90,8 +90,39 @@ prose:
           label: "Nu publiceren:"
           value: true
     "app/_posts": |
-      layout: post
       date: CURRENT_DATETIME
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "title"
+        field:
+          element: "text"
+          label: "Titel:"
+          placeholder: "Titel"
+          value: "Titel"
+      - name: "categories"
+        field:
+          element: "multiselect"
+          label: "Tags:"
+          placeholder: "Selecteer tags"
+          alterable: true
+          options:
+            - name: "Studio"
+              value: "Studio"
+            - name: "Live"
+              value: "Live"
+            - name: "EP"
+              value: "EP"
+            - name: "Album"
+              value: "Album"
+            - name: "Whatever"
+              value: "Whatever"
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Nu publiceren:"
+          value: true
     _posts/static:
       - name: "layout"
         field:
