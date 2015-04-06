@@ -36,7 +36,7 @@ collections:
 
 prose:
   rooturl: 'app'
-  relativeLinks: 'https://raw.githubusercontent.com/Anoesj/daan-scholten/master/links.jsonp'
+  relativeLinks: 'http://anoesjsadraee.com/Prose-relative-links/daan-scholten.jsonp'
   siteurl: 'http://www.daanscholten.nl/'
   media: 'app/resources/img'
   ignore:
