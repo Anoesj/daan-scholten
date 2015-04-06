@@ -72,7 +72,7 @@ prose:
         field:
           element: "multiselect"
           label: "Tags:"
-          placeholder: "Optioneel: selecteer tags"
+          placeholder: "Selecteer tags"
           alterable: true
           options:
             - name: "Studio"
