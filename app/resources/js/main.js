@@ -11,6 +11,9 @@ if (!$.cookie('daanscholtennlaccess')) {
     window.close()
   }
 }
+else {  
+  $('body').css('display', 'block')
+}
 
 (function($, window, document) {
 
