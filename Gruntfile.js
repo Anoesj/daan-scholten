@@ -23,11 +23,11 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: ['<%= yeoman.app %>/_scss/**/*.{scss,sass}'],
-        tasks: ['sass:server', 'autoprefixer:dist']
+        tasks: ['sass:server', 'autoprefixer:server']
       },
       autoprefixer: {
         files: ['<%= yeoman.app %>/css/**/*.css', '<%= yeoman.app %>/resources/**/*.css'],
-        tasks: ['copy:stageCss', 'autoprefixer:dist']
+        tasks: ['copy:stageCss', 'autoprefixer:server']
       },
       jekyll: {
         files: [
@@ -150,10 +150,20 @@ module.exports = function (grunt) {
         browsers: ['last 2 versions', 'ie 8', 'ie 9']
       },
       dist: {
-        expand: true,
-        cwd: '.tmp',
-        src: '**/{css,concat}/*.css',
-        dest: '.tmp'
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>/css',
+          src: '**/*.css',
+          dest: '<%= yeoman.dist %>/css'
+        }]
+      },
+      server: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/css',
+          src: '**/*.css',
+          dest: '.tmp/css'
+        }]
       }
     },
     jekyll: {
@@ -363,7 +373,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
-      'autoprefixer:dist',
+      'autoprefixer:server',
       'browserSync:server',
       'watch'
     ]);
@@ -385,7 +395,7 @@ module.exports = function (grunt) {
     'clean:server',
     'jekyll:check',
     'sass:server',
-    'jshint:all',
+    // 'jshint:all',
     'csslint:check'
     // 'scsslint'
   ]);
