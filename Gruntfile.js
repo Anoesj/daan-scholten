@@ -20,12 +20,6 @@ module.exports = function (grunt) {
       app: 'app',
       dist: 'dist'
     },
-    'gh-pages': {
-      options: {
-        base: 'dist'
-      },
-      src: ['**']
-    },
     watch: {
       sass: {
         files: ['<%= yeoman.app %>/_scss/**/*.{scss,sass}'],
@@ -344,6 +338,14 @@ module.exports = function (grunt) {
         'sass:dist',
         'copy:dist'
       ]
+    },
+
+    'gh-pages': {
+      options: {
+        base: 'dist',
+        message: 'Auto-generated commit'
+      },
+      src: ['**']
     }
   });
 
