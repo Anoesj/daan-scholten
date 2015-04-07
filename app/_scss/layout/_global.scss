@@ -15,7 +15,7 @@ body {
   .main-wrapper {
     transition: opacity .3s $ease-out 0s;
     opacity: 1;
-    padding-top: 60px;
+    padding-top: 40px;
     padding-bottom: 60px;
   }
 
@@ -29,10 +29,10 @@ body {
 .header-wrapper {
   .logo {
     display: inline-block;
-    margin: 40px 0;
+    margin: 20px 0;
     
     img {
-      width: 200px;
+      width: 220px;
       height: auto;
       display: inline-block;
     }

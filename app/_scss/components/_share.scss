@@ -1,8 +1,18 @@
 $share-button-size: 40px;
 .share {
+  strong {
+    display: block;
+    float: right;
+    clear: both;
+    font-size: 13px;
+    line-height: 13px;
+    margin-bottom: 4px;
+  }
+
   a {
     display: block;
     float: right;
+    clear: both;
     margin-bottom: 4px;
     opacity: .6;
     transition: opacity $speed-fast $ease-out 0s;
