@@ -15,6 +15,11 @@ else {
   $('body').css('display', 'block')
 }
 
+var isSafari = /constructor/i.test(window.HTMLElement);
+if (isSafari) {
+  $('body').addClass('is-safari')
+}
+
 (function($, window, document) {
   var alreadyClicked = false
 
