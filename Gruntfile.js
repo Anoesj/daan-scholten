@@ -20,6 +20,12 @@ module.exports = function (grunt) {
       app: 'app',
       dist: 'dist'
     },
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
+    },
     watch: {
       sass: {
         files: ['<%= yeoman.app %>/_scss/**/*.{scss,sass}'],
@@ -340,6 +346,8 @@ module.exports = function (grunt) {
       ]
     }
   });
+
+  grunt.loadNpmTasks('grunt-gh-pages');
 
   // Define Tasks
   grunt.registerTask('serve', function (target) {
