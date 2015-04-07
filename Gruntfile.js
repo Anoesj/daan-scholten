@@ -152,7 +152,7 @@ module.exports = function (grunt) {
       dist: {
         expand: true,
         cwd: '.tmp',
-        src: '**/{css,concat,resources}/*.css',
+        src: '**/{css,concat}/*.css',
         dest: '.tmp'
       }
     },
