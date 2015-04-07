@@ -16,7 +16,6 @@ else {
 }
 
 (function($, window, document) {
-
   var alreadyClicked = false
 
   $(function() {
@@ -94,8 +93,6 @@ else {
       }
     )
   }
-
-
 }(window.jQuery, window, document))
 
 /* AddThis stuff */
