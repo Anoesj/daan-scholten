@@ -1,0 +1,5 @@
+prose:
+  rooturl: ''
+  siteurl: 'http://www.daanscholten.nl/'
+  ignore:
+    - *
