@@ -346,10 +346,22 @@ module.exports = function (grunt) {
         message: 'Auto-generated commit'
       },
       src: ['**']
+    },
+
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Auto-generated commit',
+        branch: 'gh-pages',
+        remote: 'git@github.com:DaanScholten/gh-page.git'
+      }
     }
   });
 
-  grunt.loadNpmTasks('grunt-gh-pages');
+  // grunt.loadNpmTasks('grunt-gh-pages');
+  grunt.loadNpmTasks('grunt-build-control');
 
   // Define Tasks
   grunt.registerTask('serve', function (target) {
