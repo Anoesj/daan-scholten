@@ -290,18 +290,6 @@ module.exports = function (grunt) {
         }]
       }
     },
-    buildcontrol: {
-      dist: {
-        options: {
-          dir: 'dist',
-          commit: true,
-          push: true,
-          message: 'Auto-generated commit',
-          branch: 'gh-pages',
-          remote: 'git@github.com:DaanScholten/daanscholten.github.io.git'
-        }
-      }
-    },
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -341,13 +329,24 @@ module.exports = function (grunt) {
         'copy:dist'
       ]
     },
-
-    'gh-pages': {
-      options: {
-        base: 'dist',
-        message: 'Auto-generated commit'
-      },
-      src: ['**']
+    // 'gh-pages': {
+    //   options: {
+    //     base: 'dist',
+    //     message: 'Auto-generated commit'
+    //   },
+    //   src: ['**']
+    // },
+    buildcontrol: {
+      dist: {
+        options: {
+          dir: 'dist',
+          commit: true,
+          push: true,
+          message: 'Auto-generated commit',
+          branch: 'gh-pages',
+          remote: 'git@github.com:DaanScholten/DaanScholten.github.io.git'
+        }
+      }
     }
   });
 
