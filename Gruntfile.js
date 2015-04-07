@@ -26,7 +26,7 @@ module.exports = function (grunt) {
         tasks: ['sass:server', 'autoprefixer:dist']
       },
       autoprefixer: {
-        files: ['<%= yeoman.app %>/css/**/*.css'],
+        files: ['<%= yeoman.app %>/css/**/*.css', '<%= yeoman.app %>/resources/**/*.css'],
         tasks: ['copy:stageCss', 'autoprefixer:dist']
       },
       jekyll: {
@@ -147,12 +147,12 @@ module.exports = function (grunt) {
     },
     autoprefixer: {
       options: {
-        browsers: ['last 2 versions']
+        browsers: ['last 2 versions', 'ie 8', 'ie 9']
       },
       dist: {
         expand: true,
         cwd: '.tmp',
-        src: '**/{css,concat}/*.css',
+        src: '**/{css,concat,resources}/*.css',
         dest: '.tmp'
       }
     },
