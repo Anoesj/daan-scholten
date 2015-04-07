@@ -298,7 +298,7 @@ module.exports = function (grunt) {
           push: true,
           message: 'Auto-generated commit',
           branch: 'gh-pages',
-          remote: 'git@github.com:DaanScholten/gh-page.git'
+          remote: 'git@github.com:DaanScholten/daanscholten.github.io.git'
         }
       }
     },
