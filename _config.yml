@@ -109,7 +109,7 @@ prose:
         field:
           element: "text"
           label: "Doellink:"
-          placeholder: "bijv. '/blog/chris-ep/'"
+          placeholder: "/blog/voorbeeld-linkje/"
       - name: "published"
         field:
           element: "checkbox"
