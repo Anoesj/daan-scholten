@@ -5,6 +5,16 @@
 <!-- endbuild -->
 <!-- build:dist:remove -->
 <script src="/_bower_components/jquery.hotkeys/index.js"></script>
+<script type="text/javascript">
+  (function($, window, document) {
+    $(function() {
+      /* Turn on/off grid with CTRL+; or CMD+; */
+      $(document).bind('keydown', 'ctrl+; meta+; ', function() {
+        $('html').toggleClass('grid-enabled')
+      })
+    })
+  }(window.jQuery, window, document))
+</script>
 <!-- endbuild -->
 <!-- build:js(app) /resources/js/script.js -->
 <script src="/resources/js/plugins.js"></script>

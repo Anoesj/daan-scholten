@@ -69,12 +69,7 @@ else {
     /* Blog post click handler */
     $('.blog .older-posts .post, .home .latest-posts .post').one('click touch', function(e) {
       $(this).find('header a[target!=_blank]').click()
-    })
-
-    /* Turn on/off grid with CTRL+; or CMD+; */
-    $(document).bind('keydown', 'ctrl+; meta+; ', function() {
-      $('html').toggleClass('grid-enabled')
-    })
+    })    
   })
 
   function goTo(url, duration) {
