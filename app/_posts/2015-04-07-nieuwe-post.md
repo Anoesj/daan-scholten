@@ -9,4 +9,4 @@ categories:
 
 ## Hoi ik ben Daan
 
-[Blog](/blog/ "Ga naar mijn blog vriend")
+[Ga naar mijn blog vriend](/blog/  "Ga naar mijn blog vriend")
