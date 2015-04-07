@@ -110,6 +110,14 @@ module.exports = function (grunt) {
           ]
         }]
       },
+      afterdist: {
+        files: [{
+          dot: true,
+          src: [
+            '<%= yeoman.dist %>/resources/{css,js}/*.*'
+          ]
+        }]
+      },
       server: [
         '.tmp',
         '.jekyll'
@@ -281,10 +289,7 @@ module.exports = function (grunt) {
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>/css',
-          src: [
-            '**/*.css',
-            '!<%= yeoman.app %>/resources/css/*.css'
-          ],
+          src: '**/*.css',
           dest: '.tmp/css'
         }]
       }
@@ -404,7 +409,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'clean',
+    'clean:dist',
     // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
     'concurrent:dist',
@@ -417,7 +422,8 @@ module.exports = function (grunt) {
     // 'svgmin',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'clean:afterdist'
   ]);
 
   grunt.registerTask('deploy', [
