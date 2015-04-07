@@ -7,6 +7,4 @@ categories:
   - live
 ---
 
-## Hoi ik ben Daan
-
 [Ga naar mijn blog vriend](/blog/  "Ga naar mijn blog vriend")
