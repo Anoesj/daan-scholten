@@ -88,6 +88,33 @@ prose:
           element: "checkbox"
           label: "Nu publiceren?"
           value: true
+    app/_projects:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "project"
+      - name: "title"
+        field:
+          element: "text"
+          label: "Titel:"
+          placeholder: "Titel"
+          value: "Titel"
+      - name: "date"
+        field:
+          element: "text"
+          label: "Datum:"
+          placeholder: "yyyy-mm-dd uu:mm"
+          value: "2015-01-01 13:00"
+      - name: "target"
+        field:
+          element: "text"
+          label: "Doellink:"
+          placeholder: "bijv. '/blog/chris-ep/'"
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Nu publiceren?"
+          value: true
     _posts/static:
       - name: "layout"
         field:
