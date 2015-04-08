@@ -1,0 +1,19 @@
+<article class="post">
+  <header>
+    <a href="{{ url }}">{{ title }}</a>
+  </header>
+  
+  <footer>
+    <div class="tags">
+      <time datetime="{{ ymd }}" class="tag tag-grey">
+        {{ date }}
+      </time>
+
+      <!-- {% for tag in post.categories %}
+        <span class="tag">{{ tag }}</span>
+      {% endfor %} -->
+    </div>
+  </footer>
+
+  <section>{{ preview }}</section>
+</article>

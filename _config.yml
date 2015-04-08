@@ -32,8 +32,13 @@ permalink: /blog/:title/
 # /:year
 
 collections:
-  - projects
-  - clients
+  projects:
+    output: false
+  clients:
+    output: false
+  pages:
+    output: true
+    permalink: /:path/
 
 prose:
   rooturl: 'app'
@@ -139,11 +144,11 @@ prose:
           element: "checkbox"
           label: "Nu publiceren?"
           value: true
-    app/_static:
+    app/_pages:
       - name: "layout"
         field:
           element: "hidden"
-          value: "static"
+          value: "page"
       - name: "title"
         field:
           element: "text"

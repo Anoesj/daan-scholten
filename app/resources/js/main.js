@@ -1,5 +1,9 @@
 'use strict';
 
+window.ds = {}
+var twigTemplates = {}
+
+// TEMPORARY ACCESS BULLSHIT
 $('body').css('display', 'none')
 if (!$.cookie('daanscholtennlaccess')) {
   var getAccess = prompt("Deze site is onder constructie en is afgesloten voor publiek.", "")
@@ -15,13 +19,77 @@ else {
   $('body').css('display', 'block')
 }
 
+/* Safari only JavaScript hack */
 var isSafari = /constructor/i.test(window.HTMLElement);
 if (isSafari) {
   $('body').addClass('is-safari')
 }
 
 (function($, window, document) {
-  var alreadyClicked = false
+  window.ds.goTo = function(e, targetLinkCategory, url, duration) {
+    if (e.metaKey || e.ctrlKey) {
+      window.open(url, '_blank')
+      if ("activeElement" in document) document.activeElement.blur()
+    }
+
+    else {
+      var $menu = $('.menu-wrapper')
+      $menu.find('a[href="' + targetLinkCategory + '"]').addClass('active')
+      $menu.find('a[href!="' + targetLinkCategory + '"]').removeClass('active')
+
+      $('html, body').velocity(
+        "scroll", { 
+          duration: duration,
+          easing: 'easeOutSine',
+          complete: function() {
+            $('body').addClass('fade-out-content')
+
+            $('.main-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
+              menuItemHasBeenClicked = true
+              window.location.href = url
+            })
+          }
+        }
+      )
+    }
+  }
+
+  window.ds.renderResults = function (template, type, data) {
+    if (!twigTemplates[template]) {
+      twigTemplates[template] = true
+      twig.twig({
+        id: template,
+        href: '/' + type + '/' + template + '.html',
+        async: false
+      })
+    }
+
+    return twig.twig({ ref: template }).render(data)
+  }
+
+  window.ds.searchOnGitHub = function(term) {
+    var path = 'blog/'
+    $.getJSON('https://api.github.com/search/code?q=' + escape(term) + '+in%3Afile+repo%3ADaanScholten%2FDaanScholten.github.io+extension%3Ahtml+path%3A/' + path, function(data) {
+      var items = []
+      var matchingItems = []
+
+      $.each(data.items, function(key, val) {
+        if (val.path != path + 'index.html') {
+          items.push('/' + val.path)
+        }
+      })
+      
+      $.each(items, function(key, val) {
+        matchingItems.push(_.where(window.ds.allPosts, { "file": val }))
+      })
+
+      $.each(matchingItems[0], function(key, val) {
+        console.log(window.ds.renderResults('blog_post', 'templates', val))
+      })
+    })
+  }
+
+  var menuItemHasBeenClicked = false
 
   $(function() {
     /* Fade in content */
@@ -56,17 +124,13 @@ if (isSafari) {
 
       targetLinkCategory = '/' + targetLink.split('/')[1]
 
-      if (!alreadyClicked && currentPage != targetLink) {
-        var $menu = $('.menu-wrapper')
-        $menu.find('a[href="' + targetLinkCategory + '"]').addClass('active')
-        $menu.find('a[href!="' + targetLinkCategory + '"]').removeClass('active')
-
+      if (!menuItemHasBeenClicked && currentPage != targetLink) {
         if ($(window).scrollTop() != 0) {
-          goTo($that.attr('href'), 300)
+          window.ds.goTo(e, targetLinkCategory, $that.attr('href'), 300)
         }
 
         else {
-          goTo($that.attr('href'), 0)
+          window.ds.goTo(e, targetLinkCategory, $that.attr('href'), 0)
         }
       }
     })
@@ -77,22 +141,6 @@ if (isSafari) {
     })    
   })
 
-  function goTo(url, duration) {
-    $('html, body').velocity(
-      "scroll", { 
-        duration: duration,
-        easing: 'easeOutSine',
-        complete: function() {
-          $('body').addClass('fade-out-content')
-
-          $('.main-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
-            alreadyClicked = true
-            window.location.href = url
-          })
-        }
-      }
-    )
-  }
 }(window.jQuery, window, document))
 
 /* AddThis stuff */
