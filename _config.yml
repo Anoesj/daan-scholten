@@ -33,6 +33,7 @@ permalink: /blog/:title/
 
 collections:
   - projects
+  - clients
 
 prose:
   rooturl: 'app'
@@ -47,15 +48,11 @@ prose:
     - app/_plugins
     - app/_bower_components
     - app/_scss
+    - app/blog
     - app/resources
     - app/fonts
     - app/*.*
-    # - app/.htaccess
     - app/CNAME
-    # - app/index.html
-    # - app/humans.txt
-    # - app/robots.txt
-    # - app/crossdomain.xml
   metadata:
     app/_posts:
       - name: "layout"
@@ -116,6 +113,27 @@ prose:
           element: "text"
           label: "Doellink:"
           placeholder: "/blog/voorbeeld-linkje/"
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Nu publiceren?"
+          value: true
+    app/_clients:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "client"
+      - name: "title"
+        field:
+          element: "text"
+          label: "Klantnaam:"
+          placeholder: "Klantnaam"
+          value: "Klantnaam"
+      - name: "target"
+        field:
+          element: "text"
+          label: "Doellink:"
+          placeholder: "http://www.metropool.nl/"
       - name: "published"
         field:
           element: "checkbox"
