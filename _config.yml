@@ -47,9 +47,15 @@ prose:
     - app/_plugins
     - app/_bower_components
     - app/_scss
-    - app/resources/css
-    - app/resources/js
+    - app/resources
     - app/fonts
+    - app/*.*
+    # - app/.htaccess
+    - app/CNAME
+    # - app/index.html
+    # - app/humans.txt
+    # - app/robots.txt
+    # - app/crossdomain.xml
   metadata:
     app/_posts:
       - name: "layout"
