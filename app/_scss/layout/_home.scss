@@ -1,6 +1,6 @@
 .home {
   .projects {
-    @include isolation-span(2, 1, 'left');
+    @include isolation-span(3, 1, 'left');
   }
 
   .latest-posts {
