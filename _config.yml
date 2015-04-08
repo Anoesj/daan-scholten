@@ -115,13 +115,19 @@ prose:
           element: "checkbox"
           label: "Nu publiceren?"
           value: true
-    _posts/static:
+    app/_static:
       - name: "layout"
         field:
           element: "hidden"
-          value: "page"
-      - name: "permalink"
+          value: "static"
+      - name: "title"
         field:
           element: "text"
-          label: "Permalink"
-          value: ""
+          label: "Titel:"
+          placeholder: "Titel"
+          value: "Titel"
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Nu publiceren?"
+          value: true
