@@ -7,8 +7,7 @@
     "jquery.cookie": "~1.4.1",
     "modernizr": "~2.8.3",
     "velocity": "~1.2.2",
-    "underscore": "~1.8.3",
-    "twig.js": "~0.8.2"
+    "underscore": "~1.8.3"
   },
   "resolutions": {
     "jquery": "~1.11.1"

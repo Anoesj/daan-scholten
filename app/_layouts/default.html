@@ -60,6 +60,12 @@
         <div class="full-width">
           <ul>
             <li>
+              <a href="/" {% if cleanCurrent == 'home' %}class="active"{% endif %}>
+                <span class="text">Home</span>
+              </a>
+            </li>
+
+            <li>
               <a href="/over-mij" {% if cleanCurrent == 'over-mij' %}class="active"{% endif %}>
                 <span class="text">Over mij</span>
               </a>

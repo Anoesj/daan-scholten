@@ -54,19 +54,6 @@ if (isSafari) {
     }
   }
 
-  window.ds.renderResults = function (template, type, data) {
-    if (!twigTemplates[template]) {
-      twigTemplates[template] = true
-      twig.twig({
-        id: template,
-        href: '/' + type + '/' + template + '.html',
-        async: false
-      })
-    }
-
-    return twig.twig({ ref: template }).render(data)
-  }
-
   window.ds.searchOnGitHub = function(term) {
     var path = 'blog/'
     $.getJSON('https://api.github.com/search/code?q=' + escape(term) + '+in%3Afile+repo%3ADaanScholten%2FDaanScholten.github.io+extension%3Ahtml+path%3A/' + path, function(data) {
@@ -78,14 +65,13 @@ if (isSafari) {
           items.push('/' + val.path)
         }
       })
-      
-      $.each(items, function(key, val) {
-        matchingItems.push(_.where(window.ds.allPosts, { "file": val }))
-      })
 
-      $.each(matchingItems[0], function(key, val) {
-        console.log(window.ds.renderResults('blog_post', 'templates', val))
-      })
+      console.log(items)
+
+      // IDEE: Laat Grunt previews bouwen van alle posts
+      // Zet die bestandjes in mapje previews/
+      // Preview voor /blog/ik-moet-poepen/index.html komt op /previews/ik-moet-poepen/index.html
+      // Haal de HTML van de previews die getoond moeten worden op uit die bestandjes
     })
   }
 
