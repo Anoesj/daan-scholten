@@ -56,6 +56,7 @@ if (isSafari) {
     
     $(window).on('resize', refreshMenuPosition)
     $(window).on('scroll', stickyMenuState)
+    stickyMenuState()
 
     /* Open external links in new tabs */
     $(document.links).filter(function() {
