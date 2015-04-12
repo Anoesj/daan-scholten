@@ -1,18 +1,55 @@
+var validation
 $(function() {
 
   $form = $('.contact-form')
-  $form.validate({
+  validation = $form.validate({
     debug: true,
+    rules: {
+      name: {
+        required: true
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      tel: {
+        required: true
+      },
+      message: {
+        required: true
+      }
+    },
+    messages: {
+      name: {
+        required: ""
+      },
+      email: {
+        required: "",
+        email: ""
+      },
+      tel: {
+        required: ""
+      },
+      message: {
+        required: ""
+      }
+    },
+    errorClass: "invalid",
+    validClass: "valid",
+    focusInvalid: true,
+    onfocusout: function(element) {
+      this.element(element)
+    },
     submitHandler: function(form) {
       sendContactForm()
     }
   })
 
   function sendContactForm() {
-    var $name = $('input[name="name"]', $form),
-        $email = $('input[name="e-mail"]', $form),
-        $tel = $('input[name="tel"]', $form),
-        $message = $('input[name="message"]', $form)
+    var $name = $('[name="name"]', $form),
+        $email = $('[name="email"]', $form),
+        $tel = $('[name="tel"]', $form),
+        $message = $('[name="message"]', $form)
 
     $.ajax({
       type: 'POST',
@@ -29,8 +66,8 @@ $(function() {
           'text': 'Naam: ' + $name.val() + '\nE-mail: ' + $email.val() + '\nTel: ' + $tel.val() + '\n\nBericht:\n' + $message.val(),
           'to': [
             {
-              'email': 'anoesjsadraee@gmail.com',
-              'name': 'Anoesj Sadraee',
+              'email': 'info@daanscholten.nl',
+              'name': 'Daan Scholten',
               'type': 'to'
             }
           ]

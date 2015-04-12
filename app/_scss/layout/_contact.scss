@@ -5,20 +5,52 @@ body.contact {
 
       .contact-form {
         input, textarea, button {
-          border: none;
-          padding: 10px 15px;
           border-radius: $base-border-radius;
+          border: none;
+
+          &:focus {
+            outline: none;
+          }
         }
 
         input, textarea {
           width: 100%;
           margin: .3em 0;
+          padding: 10px 15px;
+          background-color: $white;
+          transition: background-color $speed-fast $ease-out 0s;
         }
 
         button {
+          float: right;
+          padding: 6px 15px;
+          border: none;
           background-color: $light-blue;
           color: $white;
-          float: right;
+          transition: background-color $speed-fast $ease-out 0s;
+
+          &:hover {
+            background-color: $dark-blue;
+          }
+        }
+
+        *:not(label).invalid {
+          background-color: #FFEAEA;
+        }
+
+        label.invalid {
+          @include flaticon($flaticon-alert);
+          position: absolute;
+          transform: translate(-36px, 16px);
+        }
+
+        .valid {
+          background-color: $white;
+        }
+
+        .contact-form-status {
+          line-height: 42px;
+          float: left;
         }
       }
     }

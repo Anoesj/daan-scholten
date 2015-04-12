@@ -14,12 +14,15 @@
         font-size: 20px;
 font-style: normal;
 margin-left: 20px;
-}.flaticon-email5:before {
+}.flaticon-alert9:before {
 	content: "\e000";
 }
-.flaticon-pin56:before {
+.flaticon-email5:before {
 	content: "\e001";
 }
-.flaticon-telephone5:before {
+.flaticon-pin56:before {
 	content: "\e002";
+}
+.flaticon-telephone5:before {
+	content: "\e003";
 }

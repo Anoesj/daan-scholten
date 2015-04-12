@@ -8,7 +8,7 @@ hide_title: true
 <form class="contact-form">
   <fieldset>
     <input name="name" type="text" placeholder="Je naam" required>
-    <input name="e-mail" type="email" placeholder="Je e-mailadres" required>
+    <input name="email" type="email" placeholder="Je e-mailadres" required>
     <input name="tel" type="tel" placeholder="Je telefoonnummer" required>
     <textarea name="message" placeholder="Je bericht" cols="6" rows="6" required></textarea>
     <div class="contact-form-status"></div>

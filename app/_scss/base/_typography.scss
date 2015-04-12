@@ -101,3 +101,41 @@ a {
     @include customicon("f");
   }
 }
+
+// flaticon
+$flaticon-prefix: '../fonts/flaticon/';
+@font-face {
+  font-family: "Flaticon";
+  src: url("#{$flaticon-prefix}flaticon.eot");
+  src: url("#{$flaticon-prefix}flaticon.eot#iefix") format("embedded-opentype"),
+  url("#{$flaticon-prefix}flaticon.woff") format("woff"),
+  url("#{$flaticon-prefix}flaticon.ttf") format("truetype"),
+  url("#{$flaticon-prefix}flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="flaticon-"]:before,
+[class^="flaticon-"]:after,
+[class*=" flaticon-"]:before,
+[class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-size: 20px;
+  font-style: normal;
+  margin-left: 20px;
+}
+
+.flaticon-alert9:before { content: $flaticon-alert; }
+.flaticon-email5:before { content: $flaticon-email; }
+.flaticon-pin56:before { content: $flaticon-pin; }
+.flaticon-telephone5:before { content: $flaticon-telephone; }
+
+@mixin flaticon($icon) {
+  &:after {
+    content: $icon;
+    font-family: Flaticon;
+    font-size: 20px;
+    font-style: normal;
+    // margin-left: 20px;
+  }
+}

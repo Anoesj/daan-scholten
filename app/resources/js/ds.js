@@ -52,6 +52,6 @@ var ds = window.ds;
   }
 
   ds.contactFormPrintResult = function(formObj, text, type) {
-    // $('')
+    $('.contact-form-status', formObj).text(text)
   }
 }(window.jQuery, window, document))
