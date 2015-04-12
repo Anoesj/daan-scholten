@@ -1,3 +1,8 @@
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 body.contact {
   .main-wrapper {
     > .page-body {
@@ -46,8 +51,12 @@ body.contact {
         label.invalid {
           @include flaticon($flaticon-alert);
           position: absolute;
+          width: 24px;
           transform: translate(-36px, 16px);
           color: $dark-blue;
+          animation: fadeIn ease-in 1;
+          animation-fill-mode: forwards;
+          animation-duration: $speed-fast;
         }
 
         .valid {
