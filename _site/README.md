@@ -1,2 +1,0 @@
-# daan-scholten
-Daan Scholten

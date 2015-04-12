@@ -34,7 +34,7 @@ module Jekyll
         title = post.title.downcase.delete("’!.").tr(' ', '-')
 
         # Start building the path
-        path = "_site/"
+        path = ".jekyll/"
 
         # Add categories to path if they exist
         # if (post.data['categories'].class == String)
@@ -44,18 +44,18 @@ module Jekyll
         # end
 
         # Add the sanitized post title to complete the path
-        path << "/blog/#{title}"
+        path << "blog/#{title}"
 
         # Create the directories from the path
         FileUtils.mkpath(path) unless File.exists?(path)
+
+        # Notify when generating the JSON files
+        puts "Generating #{path}/raw.json"
 
         # Create the JSON file and inject the data
         f = File.new("#{path}/raw.json", "w+")
         f.puts JSON.generate(hash)
       end
-
     end
-
   end
-
 end

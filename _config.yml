@@ -39,9 +39,6 @@ collections:
   pages:
     output: true
     permalink: /:path/
-  posts:
-    output: true
-    permalink: /blog/:title/
 
 prose:
   rooturl: 'app'
@@ -99,6 +96,12 @@ prose:
           element: "checkbox"
           label: "Nu publiceren?"
           value: true
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Wijzig permalink:"
+          placeholder: "/blog/hoi-ik-ben-daan/"
+          value: ""
     app/_projects:
       - name: "layout"
         field:
