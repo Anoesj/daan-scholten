@@ -1,6 +1,6 @@
 'use strict';
 
-window.ds = {}
+var ds = window.ds
 var twigTemplates = {}
 
 // TEMPORARY ACCESS BULLSHIT
@@ -18,63 +18,15 @@ if (!$.cookie('daanscholtennlaccess')) {
 else {  
   $('body').css('display', 'block')
 }
+// END OF TEMPORARY ACCESS BULLSHIT
 
 /* Safari only JavaScript hack */
-var isSafari = /constructor/i.test(window.HTMLElement);
+var isSafari = /constructor/i.test(window.HTMLElement)
 if (isSafari) {
   $('body').addClass('is-safari')
 }
 
 (function($, window, document) {
-  window.ds.goTo = function(e, targetLinkCategory, url, duration) {
-    if (e.metaKey || e.ctrlKey) {
-      window.open(url, '_blank')
-      if ("activeElement" in document) document.activeElement.blur()
-    }
-
-    else {
-      var $menu = $('.menu-wrapper')
-      $menu.find('a[href="' + targetLinkCategory + '"]').addClass('active')
-      $menu.find('a[href!="' + targetLinkCategory + '"]').removeClass('active')
-
-      $('html, body').velocity(
-        "scroll", { 
-          duration: duration,
-          easing: 'easeOutSine',
-          complete: function() {
-            $('body').addClass('fade-out-content')
-
-            $('.main-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
-              menuItemHasBeenClicked = true
-              window.location.href = url
-            })
-          }
-        }
-      )
-    }
-  }
-
-  window.ds.searchOnGitHub = function(term) {
-    var path = 'blog/'
-    $.getJSON('https://api.github.com/search/code?q=' + escape(term) + '+in%3Afile+repo%3ADaanScholten%2FDaanScholten.github.io+extension%3Ahtml+path%3A/' + path, function(data) {
-      var items = []
-      var matchingItems = []
-
-      $.each(data.items, function(key, val) {
-        if (val.path != path + 'index.html') {
-          items.push('/' + val.path)
-        }
-      })
-
-      console.log(items)
-
-      // IDEE: Laat Grunt previews bouwen van alle posts
-      // Zet die bestandjes in mapje previews/
-      // Preview voor /blog/ik-moet-poepen/index.html komt op /previews/ik-moet-poepen/index.html
-      // Haal de HTML van de previews die getoond moeten worden op uit die bestandjes
-    })
-  }
-
   var menuItemHasBeenClicked = false
 
   $(function() {
@@ -101,8 +53,12 @@ if (isSafari) {
       var $that = $(this),
           targetLink = $(this).attr('href'),
           targetLinkCategory,
-          currentPage = window.location.pathname
+          currentPage = window.location.pathname,
+          isAddThisLink = false
       
+      if ($that.attr('class') && $that.attr('class').indexOf('addthis') > -1) {
+        isAddThisLink = true
+      }
 
       if (currentPage != '/' && currentPage.slice(-1) == '/') {
         currentPage = currentPage.slice(0, currentPage.length - 1)
@@ -110,14 +66,8 @@ if (isSafari) {
 
       targetLinkCategory = '/' + targetLink.split('/')[1]
 
-      if (!menuItemHasBeenClicked && currentPage != targetLink) {
-        if ($(window).scrollTop() != 0) {
-          window.ds.goTo(e, targetLinkCategory, $that.attr('href'), 300)
-        }
-
-        else {
-          window.ds.goTo(e, targetLinkCategory, $that.attr('href'), 0)
-        }
+      if (!menuItemHasBeenClicked && currentPage != targetLink && !isAddThisLink) {
+        ($(window).scrollTop() != 0) ? ds.goTo(e, targetLinkCategory, $that.attr('href'), 300) : ds.goTo(e, targetLinkCategory, $that.attr('href'), 0)
       }
     })
 
@@ -133,3 +83,4 @@ if (isSafari) {
 function addthisReady() {
   jQuery('body').addClass('addthis-ready')
 }
+

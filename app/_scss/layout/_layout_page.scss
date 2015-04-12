@@ -1,0 +1,11 @@
+body.layout-page {
+  .main-wrapper {
+    > h1 {
+      @include isolation-span(12, 1, 'both', $from: 'right');
+    }
+
+    > .page-body {
+      @include isolation-span(12, 1, 'both', $from: 'right'); 
+    }
+  }
+}

@@ -2,5 +2,16 @@
 layout: page
 title: "Contact"
 published: true
+hide_title: true
 ---
-Dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis.
+<!-- Icons made by Zurb, Yannick & Freepik www.flaticon.com. Thanks guys! -->
+<form class="contact-form">
+  <fieldset>
+    <input name="name" type="text" placeholder="Je naam" required>
+    <input name="e-mail" type="email" placeholder="Je e-mailadres" required>
+    <input name="tel" type="tel" placeholder="Je telefoonnummer" required>
+    <textarea name="message" placeholder="Je bericht" cols="6" rows="6" required></textarea>
+    <div class="contact-form-status"></div>
+    <button id="contact-form-submit" name="submit">Verstuur bericht</button>
+  </fieldset>
+</form>

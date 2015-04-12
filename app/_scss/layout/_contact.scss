@@ -1,0 +1,26 @@
+body.contact {
+  .main-wrapper {
+    > .page-body {
+      @include isolation-span(8, 1, 'left');
+
+      .contact-form {
+        input, textarea, button {
+          border: none;
+          padding: 10px 15px;
+          border-radius: $base-border-radius;
+        }
+
+        input, textarea {
+          width: 100%;
+          margin: .3em 0;
+        }
+
+        button {
+          background-color: $light-blue;
+          color: $white;
+          float: right;
+        }
+      }
+    }
+  }
+}

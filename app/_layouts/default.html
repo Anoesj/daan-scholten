@@ -40,7 +40,9 @@
     {% capture cleanCurrent %}{{ cleanCurrent }} blog-item{% endcapture %}
   {% endif %}
 
-  <body class="{{ cleanCurrent }} fade-out-content">
+  {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+
+  <body class="{{ cleanCurrent }} fade-out-content {{ layout }}">
     <!--[if lt IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
