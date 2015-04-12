@@ -3,6 +3,11 @@
     @include isolation-span(3, 1, 'left');
   }
 
+  .center-column {
+    @include isolation-span(5, 4, 'none');
+    height: 20px;
+  }
+
   .latest-posts {
     @include isolation-span(4, 9, 'right');
   }

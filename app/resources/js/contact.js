@@ -58,12 +58,12 @@ $(function() {
       data: {
         'key': 'RrgEGMPYlBUZsIWLcsp6yA',
         'message': {
-          'from_email': $email.val(),
-          'from_name': $name.val(),
+          'from_email': 'no-reply@daanscholten.nl',
+          'from_name': 'Contactformulier inzendingen',
           'headers': {
             'Reply-To': $email.val()
           },
-          'subject': 'Website contactformulier inzending',
+          'subject': 'Nieuwe contactformulier inzending',
           'text': 'Naam: ' + $name.val() + '\nE-mail: ' + $email.val() + '\nTel: ' + $tel.val() + '\n\nBericht:\n' + $message.val(),
           'to': [
             {

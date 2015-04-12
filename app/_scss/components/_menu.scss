@@ -63,3 +63,17 @@
     }
   }
 }
+
+body.menu-fixed {
+  .header-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+}

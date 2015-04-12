@@ -61,7 +61,8 @@ body.is-safari {
 
   .sidebar-title {
     line-height: 24px;
-    @include line(2px);
+    @include line(2px, true);
+    padding-bottom: 0.6em;
     margin-top: 0;
     margin-bottom: 0;
   }

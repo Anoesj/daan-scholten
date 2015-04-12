@@ -5,99 +5,101 @@
 
 body.contact {
   .main-wrapper {
-    > .page-body {
+    .contact-form {
       @include isolation-span(8, 1, 'left');
+      fieldset {
+        opacity: 1;
+        max-height: 600px;
+        overflow: hidden;
+        transition: opacity $speed-slow $ease-in-out 0s,
+                    max-height $speed-slow $ease-in-out 0s;
+      }
 
-      .contact-form {
+      input, textarea, button {
+        border-radius: $base-border-radius;
+        border: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      input, textarea {
+        width: 100%;
+        margin: .3em 0;
+        padding: 10px 15px;
+        background-color: $white;
+        transition: opacity $speed-medium $ease-out 0s;
+      }
+
+      button {
+        float: right;
+        padding: 6px 15px;
+        border: none;
+        background-color: $light-blue;
+        color: $white;
+        transition: background-color $speed-fast $ease-out 0s,
+                    opacity $speed-medium $ease-out 0s;
+
+        &:hover {
+          background-color: $dark-blue;
+        }
+      }
+
+      label.invalid {
+        @include flaticon($flaticon-alert);
+        position: absolute;
+        display: inline-block !important;
+        width: 24px;
+        transform: translate(-36px, 16px);
+        color: $dark-blue;
+        animation: fadeIn ease-in 1;
+        animation-fill-mode: forwards;
+        animation-duration: $speed-fast;
+      }
+
+      .valid {
+        background-color: $white;
+      }
+
+      .contact-form-status {
+        line-height: 42px;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity $speed-slow $ease-in-out $speed-slow,
+                    max-height $speed-slow $ease-in-out $speed-slow/2;
+        opacity: 0;
+        @include flaticon($flaticon-mark, 'before');
+        
+        &:before {
+          margin-right: 10px;
+        }
+      }
+
+      *:-webkit-autofill {
+        background: $white !important;
+        -webkit-box-shadow: 0 0 0px 1000px $white inset;
+      }
+
+      &.form-sent {
         fieldset {
-          opacity: 1;
-          max-height: 600px;
-          overflow: hidden;
-          transition: opacity $speed-slow $ease-in-out 0s,
-                      max-height $speed-slow $ease-in-out 0s;
+          max-height: 0;
+          opacity: 0;
         }
 
         input, textarea, button {
-          border-radius: $base-border-radius;
-          border: none;
-
-          &:focus {
-            outline: none;
-          }
-        }
-
-        input, textarea {
-          width: 100%;
-          margin: .3em 0;
-          padding: 10px 15px;
-          background-color: $white;
-          transition: opacity $speed-medium $ease-out 0s;
-        }
-
-        button {
-          float: right;
-          padding: 6px 15px;
-          border: none;
-          background-color: $light-blue;
-          color: $white;
-          transition: background-color $speed-fast $ease-out 0s,
-                      opacity $speed-medium $ease-out 0s;
-
-          &:hover {
-            background-color: $dark-blue;
-          }
-        }
-
-        label.invalid {
-          @include flaticon($flaticon-alert);
-          position: absolute;
-          width: 24px;
-          transform: translate(-36px, 16px);
-          color: $dark-blue;
-          animation: fadeIn ease-in 1;
-          animation-fill-mode: forwards;
-          animation-duration: $speed-fast;
-        }
-
-        .valid {
-          background-color: $white;
+          opacity: 0;
         }
 
         .contact-form-status {
-          line-height: 42px;
-          max-height: 0;
-          overflow: hidden;
-          transition: opacity $speed-slow $ease-in-out $speed-slow,
-                      max-height $speed-slow $ease-in-out $speed-slow/2;
-          opacity: 0;
-          @include flaticon($flaticon-mark, 'before');
-          
-          &:before {
-            margin-right: 10px;
-          }
-        }
-
-        *:-webkit-autofill {
-          background: $white !important;
-          -webkit-box-shadow: 0 0 0px 1000px $white inset;
-        }
-
-        &.form-sent {
-          fieldset {
-            max-height: 0;
-            opacity: 0;
-          }
-
-          input, textarea, button {
-            opacity: 0;
-          }
-
-          .contact-form-status {
-            opacity: 1;
-            max-height: 60px;
-          }
+          opacity: 1;
+          max-height: 60px;
         }
       }
+    }
+
+    .contact-info {
+      @include isolation-span(4, 9, 'right');
     }
   }
 }

@@ -42,13 +42,30 @@ if (isSafari) {
       })
     }
 
+    /* Sticky menu */
+    function refreshMenuPosition() {
+      menuPosition = $('.menu-wrapper').offset().top
+    }
+
+    function stickyMenuState() {
+      (($(window).scrollTop() + 1) > menuPosition) ? $('body').addClass('menu-fixed').removeClass('menu-static') : $('body').addClass('menu-static').removeClass('menu-fixed')
+    }
+
+    var menuPosition
+    refreshMenuPosition()
+    
+    $(window).on('resize', refreshMenuPosition)
+    $(window).on('scroll', stickyMenuState)
+
     /* Open external links in new tabs */
     $(document.links).filter(function() {
-      return this.hostname != window.location.hostname
+      var has_target = _.isString($(this).attr('target'))
+      var is_external = this.hostname != window.location.hostname
+      return is_external && !has_target
     }).attr('target', '_blank')
 
     /* Handle internal link clicks */
-    $(document).on('click touch', 'a[target!=_blank]', function(e) {
+    $(document).on('click touch', 'a[target!=_blank]:not(.no-fade)', function(e) {
       e.preventDefault()
       var $that = $(this),
           targetLink = $(this).attr('href'),

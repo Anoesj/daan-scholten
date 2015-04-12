@@ -24,7 +24,7 @@ h3 {
   line-height: 43px;
   color: $dark-blue;
 
-  & + p {
+  &:not(.sidebar-title) + p {
     margin-top: -24px;
   }
 }

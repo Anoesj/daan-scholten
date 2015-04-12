@@ -8,7 +8,7 @@
       padding: $post-padding 0 !important;
 
       &:not(:last-child) {
-        @include line(2px);
+        @include line(2px, true);
       }
 
       &:first-child {
@@ -62,7 +62,7 @@
 
     &:not(:last-child) {
       padding: 20px 0 !important;
-      @include line(2px);
+      @include line(2px, true);
     }
 
     &:first-child {
