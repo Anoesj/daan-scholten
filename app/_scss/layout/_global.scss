@@ -28,6 +28,33 @@ body {
 
 $logo-height: 148px;
 .header-wrapper {
+  position: relative;
+  background: $white;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('../resources/img/mixing-console2.jpg') center center no-repeat;
+    background-size: cover;
+    opacity: .15;
+    z-index: 1;
+  }
+
+  .grid {
+    position: relative;
+    z-index: 3;
+
+    // enter radial gradient here!
+    &:after {
+      content: '';
+
+    }
+  }
+
   .logo {
     display: inline-block;
     margin: 20px 0;

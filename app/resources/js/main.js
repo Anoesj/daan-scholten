@@ -44,7 +44,7 @@ if (isSafari) {
 
     /* Sticky menu */
     function refreshMenuPosition() {
-      menuPosition = $('.menu-wrapper').offset().top
+      menuPosition = $('.header-wrapper').height()
     }
 
     function stickyMenuState() {
