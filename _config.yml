@@ -58,6 +58,7 @@ prose:
     - app/fonts
     - app/*.*
     - app/CNAME
+    - app/templates
   metadata:
     app/_posts:
       - name: "layout"
