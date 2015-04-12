@@ -3,7 +3,6 @@ $(function() {
 
   $form = $('.contact-form')
   validation = $form.validate({
-    debug: true,
     rules: {
       name: {
         required: true
@@ -50,8 +49,7 @@ $(function() {
         $email = $('[name="email"]', $form),
         $tel = $('[name="tel"]', $form),
         $message = $('[name="message"]', $form),
-        to = 'a.sadraee@student.artez.nl'
-        // to = 'info@daanscholten.nl'
+        to = 'info@daanscholten.nl'
 
     // Submit the e-mail to the website owner
     $.ajax({
