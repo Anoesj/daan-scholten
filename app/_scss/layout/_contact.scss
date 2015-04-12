@@ -47,6 +47,7 @@ body.contact {
           @include flaticon($flaticon-alert);
           position: absolute;
           transform: translate(-36px, 16px);
+          color: $dark-blue;
         }
 
         .valid {
