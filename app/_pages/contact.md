@@ -11,7 +11,7 @@ hide_title: true
     <input name="email" type="email" placeholder="Je e-mailadres" required>
     <input name="tel" type="tel" placeholder="Je telefoonnummer" required>
     <textarea name="message" placeholder="Je bericht" cols="6" rows="6" required></textarea>
-    <div class="contact-form-status"></div>
     <button id="contact-form-submit" name="submit">Verstuur bericht</button>
   </fieldset>
+  <div class="contact-form-status"></div>
 </form>

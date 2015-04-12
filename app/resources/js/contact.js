@@ -50,8 +50,10 @@ $(function() {
         $email = $('[name="email"]', $form),
         $tel = $('[name="tel"]', $form),
         $message = $('[name="message"]', $form),
-        to = 'info@daanscholten.nl'
+        to = 'a.sadraee@student.artez.nl'
+        // to = 'info@daanscholten.nl'
 
+    // Submit the e-mail to the website owner
     $.ajax({
       type: 'POST',
       url: 'https://mandrillapp.com/api/1.0/messages/send.json',
@@ -77,6 +79,7 @@ $(function() {
     })
     
     .done(function(response) {
+      // Send a thank you e-mail
       $.ajax({
         type: 'POST',
         url: 'https://mandrillapp.com/api/1.0/messages/send.json',
@@ -102,10 +105,10 @@ $(function() {
       })
 
       ds.contactFormPrintResult($form, 'Bedankt voor uw bericht!', 'success')
-      $name.val('')
-      $email.val('')
-      $tel.val('')
-      $message.val('')
+      // $name.val('')
+      // $email.val('')
+      // $tel.val('')
+      // $message.val('')
     })
 
     .fail(function(response) {
