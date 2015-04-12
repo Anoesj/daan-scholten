@@ -53,5 +53,6 @@ var ds = window.ds;
 
   ds.contactFormPrintResult = function(formObj, text, type) {
     $('.contact-form-status', formObj).text(text)
+    formObj.addClass('form-sent')
   }
 }(window.jQuery, window, document))

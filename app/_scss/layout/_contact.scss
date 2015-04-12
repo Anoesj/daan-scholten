@@ -18,7 +18,6 @@ body.contact {
           margin: .3em 0;
           padding: 10px 15px;
           background-color: $white;
-          transition: background-color $speed-fast $ease-out 0s;
         }
 
         button {
@@ -34,10 +33,6 @@ body.contact {
           }
         }
 
-        *:not(label).invalid {
-          background-color: #FFEAEA;
-        }
-
         label.invalid {
           @include flaticon($flaticon-alert);
           position: absolute;
@@ -51,6 +46,11 @@ body.contact {
         .contact-form-status {
           line-height: 42px;
           float: left;
+        }
+
+        *:-webkit-autofill {
+          background: $white !important;
+          -webkit-box-shadow: 0 0 0px 1000px $white inset;
         }
       }
     }
