@@ -81,6 +81,30 @@ $(function() {
       $email.val('')
       $tel.val('')
       $message.val('')
+
+      $.ajax({
+        type: 'POST',
+        url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+        data: {
+          'key': 'RrgEGMPYlBUZsIWLcsp6yA',
+          'message': {
+            'from_email': 'info@daanscholten.nl',
+            'from_name': 'Daan Scholten',
+            'headers': {
+              'Reply-To': 'info@daanscholten.nl'
+            },
+            'subject': 'Bedankt voor uw bericht',
+            'text': 'Beste ' + $name.val() + ',\n\nBedankt voor uw reactie via het contactformulier op http://www.daanscholten.nl/.\nUw bericht is in goede orde ontvangen. U krijgt van mij zo snel mogelijk een reactie.\n\nMet vriendelijke groet,\nDaan Scholten' ,
+            'to': [
+              {
+                'email': $email.val(),
+                'name': $name.val(),
+                'type': 'to'
+              }
+            ]
+          }
+        }
+      })
     })
 
     .fail(function(response) {
