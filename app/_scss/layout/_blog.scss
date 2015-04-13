@@ -20,16 +20,30 @@
       }
 
       header a {
-        h2:after {
-          @include customicon("e");
-          display: inline;
-          opacity: 0;
-          transition: opacity $speed-fast $ease-out 0s;
-          font-size: 50%;
-          top: -1px;
+        h2 {
+          $arrow-width: 22px;
+          padding-right: $arrow-width;
+          transform: translateX(-$arrow-width);
+          transition: transform $speed-fast $ease-out 0s;
+
+          &:before {
+            @include customicon("e");
+            display: inline;
+            opacity: 0;
+            transition: opacity $speed-fast $ease-out 0s;
+            font-size: 50%;
+            top: -1px;
+            padding-left: 0;
+            padding-right: 6px;
+            width: $arrow-width;
+          }
+
+          &:hover {
+            transform: translateX(0);
+          }
         }
 
-        &:hover h2:after {
+        &:hover h2:before {
           opacity: 1;
         }
 

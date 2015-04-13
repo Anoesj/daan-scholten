@@ -4,12 +4,11 @@
     > .sidebar {
       @include isolation-span(8, 3, 'both');
       padding: 40px;
-    }
-
-    > h1 {
-      @include isolation-span(10, 1, 'both');
-      margin-top: 0;
-      margin-bottom: 0;
+      
+      > h1 {
+        margin-top: 0;
+        margin-bottom: .3em;
+      }
     }
   }
 }
@@ -20,19 +19,13 @@
   }
 
   .post {
-    padding-right: grid-span(1, 8, 8);
-    
     section {
-      padding-top: 20px;
-      @include no-margins();
+      margin: 2em 0;
     }
   }
   
   .addthis {
-    transition-delay: 2s;
-    position: absolute;
-    top: 60px;
-    right: 0;
+    // transition-delay: 2s;
   }
 }
 

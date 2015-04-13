@@ -9,7 +9,7 @@
 @include add-background-grid;
 
 body {
-  background-color: #f6f6f6;
+  // background-color: #f6f6f6;
   @include background-image-retina('/resources/img/white_wall_hash', png, 500px, 500px);
 
   .main-wrapper {
