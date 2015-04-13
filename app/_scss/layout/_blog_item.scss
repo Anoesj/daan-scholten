@@ -21,13 +21,17 @@
 
   .post {
     padding-right: grid-span(1, 8, 8);
-    @include no-margins;
+    
+    section {
+      padding-top: 20px;
+      @include no-margins();
+    }
   }
   
   .addthis {
     transition-delay: 2s;
     position: absolute;
-    top: 0;
+    top: 60px;
     right: 0;
   }
 }

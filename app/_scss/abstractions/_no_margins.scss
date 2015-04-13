@@ -1,6 +1,8 @@
-@mixin no-margins {
-  > *:first-child {
-    margin-top: 0;
+@mixin no-margins($only-last: false) {
+  @if $only-last == false {
+    > *:first-child {
+      margin-top: 0;
+    }
   }
 
   > *:last-child {
