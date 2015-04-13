@@ -55,4 +55,15 @@ var ds = window.ds;
     $('.contact-form-status', formObj).text(text)
     formObj.addClass('form-sent')
   }
+
+  ds.loadAddThis = function() {
+    $.ajax({
+      url: '//s7.addthis.com/js/300/addthis_widget.js#pubid=daanscholtennl',
+      dataType: 'script',
+      cache: true, // otherwise will get fresh copy every page load
+      success: function() {
+        $('body').addClass('addthis-ready')
+      }
+    })
+  }
 }(window.jQuery, window, document))

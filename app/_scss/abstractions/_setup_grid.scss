@@ -53,11 +53,11 @@ $show-breakpoint-names: false !default;
 
   $keys: map_keys($breakpoints);
   @each $key in $keys {
-    $breakpoint: map_get($breakpoints, $key);
-    $break-at:  break-width($breakpoint);
-    $width:     snap-width($breakpoint);
-    $grid:      get-grid($breakpoint);
-    $cols:      cols-amount($breakpoint);
+    $breakpoint:  map_get($breakpoints, $key);
+    $break-at:    break-width($breakpoint);
+    $width:       snap-width($breakpoint);
+    $grid:        get-grid($breakpoint);
+    $cols:        cols-amount($breakpoint);
 
     @include add-grid($grid at $break-at);
 
@@ -133,12 +133,14 @@ $show-breakpoint-names: false !default;
 //  }
 // }
 
-@function bp($slice) {
-  @if (type-of($slice) == 'number') {
-    @return nth($breakpoints, $slice);
-  }
+@function bp($key) {
+  $breakpoint: map_get($breakpoints, $key);
+  @return break-width($breakpoint);
+  // @if (type-of($slice) == 'number') {
+  //   @return nth($breakpoints, $slice);
+  // }
 
-  @else if (type-of($slice) == 'list') {
-    @return nth($slice, 1);
-  }
+  // @else if (type-of($slice) == 'list') {
+  //   @return nth($slice, 1);
+  // }
 }

@@ -49,9 +49,16 @@
           transition: background-color $speed-fast $ease-out 0s;
         }
 
-        &.active,
         &:hover,
         &:focus {
+          outline: none;
+
+          &:before {
+            background-color: rgba($light-blue, .7);
+          }
+        }
+
+        &.active {
           &:before {
             background-color: rgba($light-blue, 1);
           }

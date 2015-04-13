@@ -35,6 +35,8 @@ if (isSafari) {
       $('body').removeClass('fade-out-content')
     }, 40)
 
+    ds.loadAddThis()
+
     /* SVG to PNG if browser does not support it */
     if (!Modernizr.svg) {
       $('img[src*="svg"]').attr('src', function() {
@@ -96,9 +98,4 @@ if (isSafari) {
   })
 
 }(window.jQuery, window, document))
-
-/* AddThis stuff */
-function addthisReady() {
-  jQuery('body').addClass('addthis-ready')
-}
 

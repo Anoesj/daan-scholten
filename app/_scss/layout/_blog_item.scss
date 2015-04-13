@@ -1,5 +1,10 @@
 .blog-item {
   .main-wrapper {
+    > .sidebar {
+      @include isolation-span(8, 3, 'both');
+      padding: 40px;
+    }
+
     > h1 {
       @include isolation-span(10, 1, 'both');
       margin-top: 0;
@@ -7,16 +12,23 @@
     }
   }
 
+  .post-wrapper {
+    position: relative;
+  }
+
   .post {
-    @include isolation-span(10, 1, 'left');
+    // @debug grid-span(1, 8, 8);
+    padding-right: grid-span(1, 8, 8);
     @include no-margins;
   }
 
-  .share {
-    @include isolation-span(1, 12, 'right'); 
-  }
+  // .share {
+  // }
   
   .addthis {
     transition-delay: 2s;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
