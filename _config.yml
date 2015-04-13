@@ -54,7 +54,9 @@ prose:
     - app/_bower_components
     - app/_scss
     - app/blog
-    - app/resources
+    - app/resources/img
+    - app/resources/js
+    - app/resources/css
     - app/fonts
     - app/*.*
     - app/CNAME

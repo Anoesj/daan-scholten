@@ -1,4 +1,5 @@
-.blog-item {
+.blog-item,
+.blog-all {
   .main-wrapper {
     > .sidebar {
       @include isolation-span(8, 3, 'both');
@@ -11,24 +12,36 @@
       margin-bottom: 0;
     }
   }
+}
 
+.blog-item {
   .post-wrapper {
     position: relative;
   }
 
   .post {
-    // @debug grid-span(1, 8, 8);
     padding-right: grid-span(1, 8, 8);
     @include no-margins;
   }
-
-  // .share {
-  // }
   
   .addthis {
     transition-delay: 2s;
     position: absolute;
     top: 0;
     right: 0;
+  }
+}
+
+.blog-all {
+  .tag + a {
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 26px;
+    font-size: 18px;
+    vertical-align: middle;
+
+    & > * {
+      margin: 0;
+    }
   }
 }

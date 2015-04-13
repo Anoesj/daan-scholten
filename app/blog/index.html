@@ -42,8 +42,8 @@ title: Blog - Daan Scholten
 
 {% if site.posts.size > 3 %}
   <section class="older-posts sidebar">
-    <h3 class="sidebar-title">Oudere blogs</h3>
-    {% for post in site.posts offset:3 %}
+    <a href="/blog/alle"><h3 class="sidebar-title">Oudere blogs</h3></a>
+    {% for post in site.posts offset:3 limit:5 %}
       <article class="post">
         <header>
           <a href="{{ post.url }}">{{ post.title }}</a>

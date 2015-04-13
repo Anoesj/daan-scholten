@@ -30,9 +30,9 @@
       a {
         display: block;
         position: relative;
-        padding: 5px 0;
+        padding: 4px 0;
         color: $white !important;
-        font-size: 18px;
+        font-size: 16px;
         text-align: center;
         transition: all $speed-fast $ease-out 0s;
         @include linear-gradient($dark-blue, #4B5486);
@@ -75,7 +75,7 @@
 
 body.menu-fixed {
   .header-wrapper {
-    margin-bottom: 40px;
+    margin-bottom: 38px;
   }
 
   .menu-wrapper {

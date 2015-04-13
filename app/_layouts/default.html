@@ -37,7 +37,11 @@
   {% endif %}
 
   {% if cleanCurrent == 'blog' and current[2] != null and current[2] != 'index.html' %}
-    {% capture cleanCurrent %}{{ cleanCurrent }} blog-item{% endcapture %}
+    {% if current[2] == 'alle' %}
+      {% capture cleanCurrent %}{{ cleanCurrent }} blog-all{% endcapture %}
+    {% else %}
+      {% capture cleanCurrent %}{{ cleanCurrent }} blog-item{% endcapture %}
+    {% endif %}
   {% endif %}
 
   {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
