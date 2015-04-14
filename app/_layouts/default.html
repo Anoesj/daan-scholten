@@ -61,55 +61,57 @@
       </div>
     </header>
 
-    <nav class="menu-wrapper">
-      <div class="grid">
-        <div class="full-width">
-          <ul>
-            <li>
-              <a href="/" {% if cleanCurrent == 'home' %}class="active"{% endif %}>
-                <span class="text">Home</span>
-              </a>
-            </li>
+    <div class="menu-wrapper-wrapper">
+      <nav class="menu-wrapper">
+        <div class="grid">
+          <div class="full-width">
+            <ul>
+              <li>
+                <a href="/" {% if cleanCurrent == 'home' %}class="active"{% endif %}>
+                  <span class="text">Home</span>
+                </a>
+              </li>
 
-            <li>
-              <a href="/over-mij" {% if cleanCurrent == 'over-mij' %}class="active"{% endif %}>
-                <span class="text">Over mij</span>
-              </a>
-            </li>
+              <li>
+                <a href="/over-mij" {% if cleanCurrent == 'over-mij' %}class="active"{% endif %}>
+                  <span class="text">Over mij</span>
+                </a>
+              </li>
 
-            <li>
-              <a href="/blog" {% if cleanCurrent contains 'blog' %}class="active"{% endif %}>
-                <span class="text">Blog</span>
-              </a>
-            </li>
+              <li>
+                <a href="/blog" {% if cleanCurrent contains 'blog' %}class="active"{% endif %}>
+                  <span class="text">Blog</span>
+                </a>
+              </li>
 
-            <li>
-              <a href="/portfolio" {% if cleanCurrent == 'portfolio' %}class="active"{% endif %}>
-                <span class="text">Portfolio</span>
-              </a>
-            </li>
+              <li>
+                <a href="/portfolio" {% if cleanCurrent == 'portfolio' %}class="active"{% endif %}>
+                  <span class="text">Portfolio</span>
+                </a>
+              </li>
 
-            <li>
-              <a href="/studio" {% if cleanCurrent == 'studio' %}class="active"{% endif %}>
-                <span class="text">Studio</span>
-              </a>
-            </li>
-            
-            <li>
-              <a href="/live" {% if cleanCurrent == 'live' %}class="active"{% endif %}>
-                <span class="text">Live</span>
-              </a>
-            </li>
+              <li>
+                <a href="/studio" {% if cleanCurrent == 'studio' %}class="active"{% endif %}>
+                  <span class="text">Studio</span>
+                </a>
+              </li>
+              
+              <li>
+                <a href="/live" {% if cleanCurrent == 'live' %}class="active"{% endif %}>
+                  <span class="text">Live</span>
+                </a>
+              </li>
 
-            <li>
-              <a href="/contact" {% if cleanCurrent == 'contact' %}class="active"{% endif %}>
-                <span class="text">Contact</span>
-              </a>
-            </li>
-          </ul>
+              <li>
+                <a href="/contact" {% if cleanCurrent == 'contact' %}class="active"{% endif %}>
+                  <span class="text">Contact</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
 
     <div class="main-wrapper grid">
       {{ content }}

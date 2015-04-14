@@ -46,6 +46,7 @@ if (isSafari) {
 
     /* Sticky menu */
     function refreshMenuPosition() {
+      $('.menu-wrapper-wrapper').css('height', $('.menu-wrapper').height())
       menuPosition = $('.header-wrapper').height()
     }
 
@@ -53,10 +54,14 @@ if (isSafari) {
       (($(window).scrollTop() + 1) > menuPosition) ? $('body').addClass('menu-fixed').removeClass('menu-static') : $('body').addClass('menu-static').removeClass('menu-fixed')
     }
 
+    function callRefreshMenuPosition() {
+      window.requestAnimationFrame(refreshMenuPosition)
+    }
+
     var menuPosition
-    refreshMenuPosition()
+    callRefreshMenuPosition()
     
-    $(window).on('resize', refreshMenuPosition)
+    $(window).on('resize', callRefreshMenuPosition)
     $(window).on('scroll', stickyMenuState)
     stickyMenuState()
 
