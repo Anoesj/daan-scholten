@@ -1,5 +1,6 @@
 var validation,
     formSending = false
+
 $(function() {
   $form = $('.contact-form')
   validation = $form.validate({
@@ -40,16 +41,15 @@ $(function() {
       this.element(element)
     },
     submitHandler: function(form) {
-      if (formSending == false) {
-        sendContactForm()
-        formSending = true
+      if (formSending != true) {
         $form.addClass('form-sending')
+        formSending = true
+        sendContactForm()
       }
     }
   })
 
   function sendContactForm() {
-
     var $name = $('[name="name"]', $form),
         $email = $('[name="email"]', $form),
         $tel = $('[name="tel"]', $form),
@@ -81,7 +81,6 @@ $(function() {
         }
       }
     })
-    
     .done(function(response) {
       formSending = false
 
@@ -112,7 +111,6 @@ $(function() {
 
       ds.contactFormPrintResult($form, 'Bedankt voor uw bericht!', 'success')
     })
-
     .fail(function(response) {
       formSending = false
       ds.contactFormPrintResult($form, 'Er heeft zich een fout voorgedaan.', 'fail')
@@ -120,5 +118,4 @@ $(function() {
 
     return false
   }
-
 }(window.jQuery, window, document))
