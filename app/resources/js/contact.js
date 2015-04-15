@@ -1,6 +1,5 @@
 var validation,
     formSending = false
-window.blabla = false
 
 $(function() {
   $form = $('.contact-form')
