@@ -97,10 +97,10 @@ if (isSafari) {
       }
     })
 
-    /* Blog post click handler */
-    $('.blog .older-posts .post, .home .latest-posts .post').one('click touch', function(e) {
-      $(this).find('header a[target!=_blank]').click()
-    })    
+    // /* Blog post click handler */
+    // $('.blog .older-posts .post, .home .latest-posts .post').one('click touch', function(e) {
+    //   $(this).find('header a[target!=_blank]').click()
+    // })    
   })
 
 }(window.jQuery, window, document))

@@ -148,8 +148,12 @@ body.contact {
       @include isolation-span(4, 9, 'right');
       $icons-margin-right: 0px;
 
+      > *:last-child {
+        margin-bottom: 0 !important;
+      }
+
       .sidebar-title {
-        margin-bottom: .75em;  
+        margin-bottom: 20px;  
       }
 
       p {
@@ -167,10 +171,11 @@ body.contact {
 
         &:before {
           display: inline-block;
-          margin: 0 $icons-margin-right 0 0;
-          width: 40px;
-          vertical-align: text-top;
+          margin: -2px $icons-margin-right 0 0;
+          width: 36px;
+          vertical-align: middle;
           color: $dark-blue !important;
+          line-height: 0;
         }
       }
 
@@ -184,15 +189,15 @@ body.contact {
 
       // Icons and correctional stuff
       .contact-email {
-        @include flaticon($flaticon-email, 'before', 28px);
+        @include flaticon($flaticon-email, 'before', 22px);
       }
 
       .contact-phone {
-        @include flaticon($flaticon-telephone, 'before', 26px);
+        @include flaticon($flaticon-telephone, 'before', 20px);
       }
 
       .contact-address-wrapper {
-        @include flaticon($flaticon-pin, 'before', 36px);
+        @include flaticon($flaticon-pin, 'before', 28px);
 
         &:before {
           transform: translateX(-5px);
@@ -204,7 +209,7 @@ body.contact {
       }
 
       .contact-kvk {
-        @include flaticon($flaticon-kvk, 'before', 28px);
+        @include flaticon($flaticon-kvk, 'before', 22px);
 
         &:before {
           transform: translateX(2px);
