@@ -17,7 +17,7 @@ body.contact {
         opacity: 1;
         max-height: 600px;
         overflow: hidden;
-        transition: all $speed-slow $ease-out 0s;
+        transition: all $speed-slow $ease-in-out 0s;
       }
 
       input, textarea, button {
@@ -78,8 +78,8 @@ body.contact {
         line-height: 42px;
         max-height: 0;
         overflow: hidden;
-        transition: opacity $speed-slow $ease-out $speed-slow,
-                    max-height $speed-slow $ease-out $speed-slow*0.4;
+        transition: opacity $speed-slow $ease-in-out $speed-slow,
+                    max-height $speed-slow $ease-in-out $speed-slow*0.4;
         opacity: 0;
         @include flaticon($flaticon-mark, 'before');
         
