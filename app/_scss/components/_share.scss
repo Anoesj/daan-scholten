@@ -34,3 +34,11 @@ $share-button-size: 40px;
     }
   }
 }
+
+html.no-touch {
+  .share {
+    a[title="WhatsApp"] {
+      display: none;
+    }
+  }
+}
