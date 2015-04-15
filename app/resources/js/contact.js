@@ -54,8 +54,7 @@ $(function() {
         $email = $('[name="email"]', $form),
         $tel = $('[name="tel"]', $form),
         $message = $('[name="message"]', $form),
-        // to = 'info@daanscholten.nl'
-        to = 'anoesjsadraee@gmail.com'
+        to = 'info@daanscholten.nl'
 
     $form.removeClass('form-error')
 
