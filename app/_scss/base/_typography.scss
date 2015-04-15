@@ -30,13 +30,20 @@ h3 {
 }
 
 blockquote {
-  margin: 1.8em 3em;
-  
+  margin: 0;
+  border-radius: $base-border-radius;
+  background-color: lighten($light-blue, 30%);
+  border: 1px solid lighten($light-blue, 10%);
+  padding: 20px;
+  width: 100%;
+
   p {
     font-style: italic;
-    color: $grey;
+    color: $dark-blue;
     font-size: 24px;
     line-height: 32px;
+    margin: 0;
+    text-align: center;
 
     &:before {
       content: "“";
