@@ -74,23 +74,27 @@ body.contact {
         background-color: $white;
       }
 
+      *:-webkit-autofill {
+        background: $white !important;
+        -webkit-box-shadow: 0 0 0px 1000px $white inset;
+      }
+
       .contact-form-status {
         line-height: 42px;
         max-height: 0;
         overflow: hidden;
-        transition: opacity $speed-slow $ease-in-out $speed-slow,
-                    max-height $speed-slow $ease-in-out $speed-slow*0.4;
+        transition: opacity $speed-slow $ease-in-out 0s,
+                    max-height $speed-slow $ease-in-out 0s,
+                    transform $speed-slow $ease-in-out 0s;
         opacity: 0;
-        @include flaticon($flaticon-mark, 'before');
+        // only on error, remove on success
+        position: absolute;
+        transform: translateY(-100%);
+        @include flaticon($flaticon-error, 'before');
         
         &:before {
           margin-right: 10px;
         }
-      }
-
-      *:-webkit-autofill {
-        background: $white !important;
-        -webkit-box-shadow: 0 0 0px 1000px $white inset;
       }
 
       &.form-sending {
@@ -101,12 +105,17 @@ body.contact {
 
       &.form-sent {
         fieldset {
-          max-height: 0;
           opacity: 0;
+          max-height: 0px;
         }
 
-        input, textarea, button {
-          opacity: 0;
+        .contact-form-status {
+          position: static;
+          transition: opacity $speed-slow $ease-in-out $speed-slow,
+                      max-height $speed-slow $ease-in-out $speed-slow*0.4,
+                      transform $speed-slow $ease-in-out $speed-slow*0.4;
+          transform: translateY(0);
+          @include flaticon($flaticon-mark, 'before');
         }
 
         .contact-form-status {
@@ -116,6 +125,13 @@ body.contact {
 
         .loader {
           opacity: 0 !important;
+        }
+      }
+
+      &.form-error {
+        .contact-form-status {
+          opacity: 1;
+          max-height: 60px;
         }
       }
     }

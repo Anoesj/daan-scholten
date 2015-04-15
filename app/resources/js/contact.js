@@ -1,5 +1,6 @@
 var validation,
     formSending = false
+window.blabla = false
 
 $(function() {
   $form = $('.contact-form')
@@ -57,6 +58,8 @@ $(function() {
         // to = 'info@daanscholten.nl'
         to = 'anoesjsadraee@gmail.com'
 
+    $form.removeClass('form-error')
+
     // Submit the e-mail to the website owner
     $.ajax({
       type: 'POST',
@@ -84,34 +87,43 @@ $(function() {
     .done(function(response) {
       formSending = false
 
-      // Send a thank you e-mail
-      $.ajax({
-        type: 'POST',
-        url: 'https://mandrillapp.com/api/1.0/messages/send.json',
-        data: {
-          'key': 'RrgEGMPYlBUZsIWLcsp6yA',
-          'message': {
-            'from_email': to,
-            'from_name': 'Daan Scholten',
-            'headers': {
-              'Reply-To': to
-            },
-            'subject': 'Bedankt voor uw bericht',
-            'text': 'Beste ' + $name.val() + ',\n\nBedankt voor uw reactie via het contactformulier op http://www.daanscholten.nl/.\nUw bericht is in goede orde ontvangen. U krijgt van mij zo snel mogelijk een reactie.\n\nMet vriendelijke groet,\nDaan Scholten' ,
-            'to': [
-              {
-                'email': $email.val(),
-                'name': $name.val(),
-                'type': 'to'
-              }
-            ]
+      if (response[0].status == 'sent') {
+        // Success: send thank you e-mail and show on screen
+        $.ajax({
+          type: 'POST',
+          url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+          data: {
+            'key': 'RrgEGMPYlBUZsIWLcsp6yA',
+            'message': {
+              'from_email': to,
+              'from_name': 'Daan Scholten',
+              'headers': {
+                'Reply-To': to
+              },
+              'subject': 'Bedankt voor uw bericht',
+              'text': 'Beste ' + $name.val() + ',\n\nBedankt voor uw reactie via het contactformulier op http://www.daanscholten.nl/.\nUw bericht is in goede orde ontvangen. U krijgt van mij zo snel mogelijk een reactie.\n\nMet vriendelijke groet,\nDaan Scholten' ,
+              'to': [
+                {
+                  'email': $email.val(),
+                  'name': $name.val(),
+                  'type': 'to'
+                }
+              ]
+            }
           }
-        }
-      })
+        })
+      
+        ds.contactFormPrintResult($form, 'Bedankt voor uw bericht!', 'success')
+      }
 
-      ds.contactFormPrintResult($form, 'Bedankt voor uw bericht!', 'success')
+      else {
+        // Fail: show on screen
+        formSending = false
+        ds.contactFormPrintResult($form, 'Er heeft zich een fout voorgedaan.', 'fail')
+      }
     })
     .fail(function(response) {
+      // Fail: show on screen
       formSending = false
       ds.contactFormPrintResult($form, 'Er heeft zich een fout voorgedaan.', 'fail')
     })

@@ -53,7 +53,14 @@ var ds = window.ds;
 
   ds.contactFormPrintResult = function(formObj, text, type) {
     $('.contact-form-status', formObj).text(text)
-    formObj.removeClass('sent').addClass('form-sent')
+    
+    if (type == 'success') {
+      formObj.removeClass('form-sending').removeClass('form-error').addClass('form-sent')
+    }
+
+    else {
+      formObj.removeClass('form-sending').addClass('form-error')
+    }
   }
 
   ds.loadAddThis = function() {
