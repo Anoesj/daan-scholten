@@ -1,11 +1,15 @@
 body.layout-page {
   .main-wrapper {
     > h1 {
-      @include isolation-span(12, 1, 'both', $from: 'right');
+      // @include isolation-span(12, 1, 'both', $from: 'right');
+      @include isolation-span(8, 3, 'both');
+      // padding: 40px;
     }
 
     > .page-body {
-      @include isolation-span(12, 1, 'both', $from: 'right'); 
+      // @include isolation-span(12, 1, 'both', $from: 'right'); 
+      @include isolation-span(8, 3, 'both');
+      padding: 40px;
     }
   }
 }

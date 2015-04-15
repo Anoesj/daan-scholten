@@ -130,12 +130,11 @@ $flaticon-prefix: '../fonts/flaticon/';
 .flaticon-pin56:before { content: $flaticon-pin; }
 .flaticon-telephone5:before { content: $flaticon-telephone; }
 
-@mixin flaticon($icon, $pseudo: 'after') {
+@mixin flaticon($icon, $pseudo: 'after', $font-size: 20px) {
   &:#{$pseudo} {
     content: $icon;
-    font-family: Flaticon;
-    font-size: 20px;
+    font-family: 'Flaticon';
+    font-size: #{$font-size};
     font-style: normal;
-    // margin-left: 20px;
   }
 }
