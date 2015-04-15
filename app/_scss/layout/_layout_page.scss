@@ -1,15 +1,45 @@
 body.layout-page {
   .main-wrapper {
     > h1 {
-      // @include isolation-span(12, 1, 'both', $from: 'right');
+      margin-top: 0;
       @include isolation-span(8, 3, 'both');
-      // padding: 40px;
     }
 
     > .page-body {
-      // @include isolation-span(12, 1, 'both', $from: 'right'); 
       @include isolation-span(8, 3, 'both');
-      padding: 40px;
+      
+      .sidebar {
+        padding: 40px;
+      }
+    }
+  }
+}
+
+.image-wrapper {
+  margin: 2em -40px;
+  @include clearfix;
+  
+  .image {
+    display: block;
+    margin: 0;
+    border-radius: $base-border-radius;
+    background-color: lighten($light-blue, 30%);
+    position: relative;
+    overflow: hidden;
+    @include grid-span(5, 1, $grid: 8);
+    margin-left: grid-span(1, 1, $grid: 8) * -1;
+    border: 1px solid lighten($light-blue, 22%);
+    box-shadow: 0 0 8px rgba($light-blue, .05);
+
+    img {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid lighten($light-blue, 22%);
+    }
+
+    figcaption {
+      padding: 20px;
+      font-style: italic;
     }
   }
 }

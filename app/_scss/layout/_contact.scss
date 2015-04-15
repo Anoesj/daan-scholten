@@ -20,6 +20,14 @@ body.contact {
         transition: all $speed-slow $ease-in-out 0s;
       }
 
+      input:first-child {
+        margin-top: 0;
+
+        & + label {
+          margin-top: -.3em;
+        }
+      }
+
       input, textarea, button {
         border-radius: $base-border-radius;
 
@@ -151,14 +159,11 @@ body.contact {
       // General styling
       .contact-email,
       .contact-phone,
-      .contact-address-wrapper {
+      .contact-address-wrapper,
+      .contact-kvk {
         display: block;
         color: $dark-blue;
         margin-bottom: .6em;
-
-        &:hover {
-          color: $light-blue;
-        }
 
         &:before {
           display: inline-block;
@@ -166,6 +171,14 @@ body.contact {
           width: 40px;
           vertical-align: text-top;
           color: $dark-blue !important;
+        }
+      }
+
+      .contact-email,
+      .contact-phone,
+      .contact-address-wrapper {
+        &:hover {
+          color: $light-blue;
         }
       }
 
@@ -182,11 +195,19 @@ body.contact {
         @include flaticon($flaticon-pin, 'before', 36px);
 
         &:before {
-          transform: translateX(-4px);
+          transform: translateX(-5px);
         }
 
         &:after {
           content: none;
+        }
+      }
+
+      .contact-kvk {
+        @include flaticon($flaticon-kvk, 'before', 28px);
+
+        &:before {
+          transform: translateX(2px);
         }
       }
 
