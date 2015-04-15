@@ -95,12 +95,7 @@ if (isSafari) {
       if (!menuItemHasBeenClicked && currentPage != targetLink && !isAddThisLink) {
         ($(window).scrollTop() != 0) ? ds.goTo(e, targetLinkCategory, $that.attr('href'), 300) : ds.goTo(e, targetLinkCategory, $that.attr('href'), 0)
       }
-    })
-
-    // /* Blog post click handler */
-    // $('.blog .older-posts .post, .home .latest-posts .post').one('click touch', function(e) {
-    //   $(this).find('header a[target!=_blank]').click()
-    // })    
+    })   
   })
 
 }(window.jQuery, window, document))

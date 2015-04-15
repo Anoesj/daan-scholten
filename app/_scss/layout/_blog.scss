@@ -76,7 +76,7 @@
     }
 
     &:not(:first-child):not(:last-child) {
-      @include line(2px, true);
+      @include line(1px, true);
     }
   }
 
