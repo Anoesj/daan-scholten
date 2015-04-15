@@ -27,8 +27,15 @@ body.contact {
         margin: .3em 0;
         padding: 10px 15px;
         background-color: $white;
-        transition: all $speed-medium $ease-out 0s;
         border: 1px solid #ccc;
+        $inner-shadow-color: #ccc;
+        box-shadow: inset 0 0 7px rgba($inner-shadow-color, 0);
+        transition: border-color $speed-medium $ease-out 0s,
+                    box-shadow $speed-medium $ease-out 0s;
+
+        &:focus {
+          box-shadow: inset 0 0 10px rgba($inner-shadow-color, .8);
+        }
       }
 
       button {
@@ -99,6 +106,73 @@ body.contact {
 
     .contact-info {
       @include isolation-span(4, 9, 'right');
+      $icons-margin-right: 10px;
+
+      .sidebar-title {
+        margin-bottom: 1em;
+        
+        & + p {
+          margin-top: 0;
+        }
+      }
+
+      .contact-email,
+      .contact-phone {
+        display: block;
+        color: $dark-blue;
+
+        &:hover {
+          color: $light-blue;
+        }
+
+        &:before {
+          display: inline-block;
+          margin: 0 $icons-margin-right 0 0;
+          font-size: 28px !important;
+          vertical-align: text-top;
+          color: $dark-blue !important;
+        }
+      }
+
+      .contact-email {
+        @include flaticon($flaticon-email, 'before');
+      }
+
+      .contact-phone {
+        @include flaticon($flaticon-telephone, 'before');
+        margin: 1em 0;
+      }
+
+      .contact-pin,
+      .contact-address {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .contact-address {
+        color: $dark-blue;
+        margin: 0;
+      }
+
+      .contact-pin {
+        @include flaticon($flaticon-pin, 'before');
+        margin: 0 $icons-margin-right 0 0;
+
+        &:before {
+          font-size: 40px;
+          color: $dark-blue;
+          display: block;
+        }
+      }
+
+      .contact-pin,
+      .contact-email,
+      .contact-phone {
+        &:before {
+          width: 40px;
+          text-align: center;
+        }
+      }
     }
   }
 }
