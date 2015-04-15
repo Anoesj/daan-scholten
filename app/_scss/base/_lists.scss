@@ -1,4 +1,4 @@
-.sidebar {
+.sidebar:not(.projects) {
   ul {
     $list-item-padding: 1em;
     list-style: none;

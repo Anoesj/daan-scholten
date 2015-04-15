@@ -42,7 +42,7 @@ body.contact {
         float: right;
         padding: 6px 15px;
         // border: 1px solid lighten($dark-blue, 20%);
-        border: 1px solid #7483C2;
+        border: 1px solid $default-border-color;
         background-color: $light-blue;
         color: $white;
         transition: all $speed-fast $ease-out 0s; // opacity $speed-medium $ease-out 0s
