@@ -1,6 +1,6 @@
-var validation
+var validation,
+    formSending = false
 $(function() {
-
   $form = $('.contact-form')
   validation = $form.validate({
     rules: {
@@ -40,16 +40,22 @@ $(function() {
       this.element(element)
     },
     submitHandler: function(form) {
-      sendContactForm()
+      if (formSending == false) {
+        sendContactForm()
+        formSending = true
+        $form.addClass('form-sending')
+      }
     }
   })
 
   function sendContactForm() {
+
     var $name = $('[name="name"]', $form),
         $email = $('[name="email"]', $form),
         $tel = $('[name="tel"]', $form),
         $message = $('[name="message"]', $form),
-        to = 'info@daanscholten.nl'
+        // to = 'info@daanscholten.nl'
+        to = 'anoesjsadraee@gmail.com'
 
     // Submit the e-mail to the website owner
     $.ajax({
@@ -77,6 +83,8 @@ $(function() {
     })
     
     .done(function(response) {
+      formSending = false
+
       // Send a thank you e-mail
       $.ajax({
         type: 'POST',
@@ -103,13 +111,10 @@ $(function() {
       })
 
       ds.contactFormPrintResult($form, 'Bedankt voor uw bericht!', 'success')
-      // $name.val('')
-      // $email.val('')
-      // $tel.val('')
-      // $message.val('')
     })
 
     .fail(function(response) {
+      formSending = false
       ds.contactFormPrintResult($form, 'Er heeft zich een fout voorgedaan.', 'fail')
     })
 

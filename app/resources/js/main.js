@@ -15,6 +15,7 @@ if (!$.cookie('daanscholtennlaccess')) {
     window.close()
   }
 }
+
 else {  
   $('body').css('display', 'block')
 }

@@ -1,8 +1,10 @@
 .home {
   .projects {
     @include isolation-span(3, 1, 'left');
+    padding: 0;
 
     .sidebar-title {
+      padding: 20px 20px .6em 20px;
       margin-bottom: 0;
     }
 
@@ -14,11 +16,20 @@
 
     li {
       border-bottom: 2px solid rgba(57, 65, 101, 0.2);
-      padding: 1em 0;
+      
+      a {
+        display: block;
+        padding: .5em 20px;
+        background-color: rgba($white, 0);
+        transition: all $speed-fast $ease-out 0s;
+
+        &:hover {
+          background-color: rgba($white, .3);
+        }
+      }
 
       &:last-child {
         border-bottom: none;
-        padding-bottom: 0;
       }
     }
   }
