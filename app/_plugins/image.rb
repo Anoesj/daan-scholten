@@ -8,11 +8,21 @@ module Jekyll
       @type = @params[1]
       @description = @params[2]
       @alt = @params[3]
+      @prefix = ''
+      @suffix = ''
+      @html = "<figure class='image image-#{@type}'><img src='/resources/img/#{@url}' alt='#{@alt}' title='#{@alt}'><figcaption class='image-caption'>#{@description}</figcaption></figure>"
 
+      if @type == 'left' or @type == 'center'
+        @prefix = "<div class='image-wrapper'>"
+      end
+      
+      if @type == 'right' or @type == 'center'
+        @suffix = "</div>"
+      end
     end
 
     def render(context)
-      "<div class='image-wrapper image-#{@type}'><figure class='image'><img src='/resources/img/#{@url}' alt='#{@alt}' title='#{@alt}'><figcaption class='image-caption'>#{@description}</figcaption></figure></div>"
+      "#{@prefix}#{@html}#{@suffix}"
     end
   end
 end
