@@ -8,7 +8,7 @@ $('body').css('display', 'none')
 if (!$.cookie('daanscholtennlaccess')) {
   var getAccess = prompt("Deze site is onder constructie en is afgesloten voor publiek.", "")
   if (getAccess == 'abracadabra') {
-    $.cookie('daanscholtennlaccess', 'granted')
+    $.cookie('daanscholtennlaccess', 'granted', { expires: 7, path: '/' })
     $('body').css('display', 'block')
   }
   else {
