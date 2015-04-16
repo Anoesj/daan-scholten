@@ -54,7 +54,8 @@ prose:
     - app/_bower_components
     - app/_scss
     - app/blog
-    - app/resources/img
+    - app/contact
+    - app/resources/data
     - app/resources/js
     - app/resources/css
     - app/fonts
