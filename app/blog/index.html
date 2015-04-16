@@ -9,7 +9,7 @@ title: Blog - Daan Scholten
         <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
         <div class="tags">
           {% assign ymd = post.date | date: "%Y-%m-%d" %}
-          <time datetime="{{ ymd }}" class="tag tag-grey">
+          <!--googleoff: index--><time datetime="{{ ymd }}" class="tag tag-grey">
             {% assign m = post.date | date: "%-m" %}
             {{ post.date | date: "%-d" }}
             {% case m %}
@@ -27,7 +27,7 @@ title: Blog - Daan Scholten
               {% when '12' %}december
             {% endcase %}
             {{ post.date | date: "%Y" }}
-          </time>
+          </time><!--googleon: index-->
 
           {% for tag in post.categories %}
             <span class="tag">{{ tag }}</span>
@@ -51,7 +51,7 @@ title: Blog - Daan Scholten
           <footer>
             <div class="tags">
               {% assign ymd = post.date | date: "%Y-%m-%d" %}
-              <time datetime="{{ ymd }}" class="tag tag-grey">
+              <!--googleoff: index--><time datetime="{{ ymd }}" class="tag tag-grey">
                 {% assign m = post.date | date: "%-m" %}
                 {{ post.date | date: "%-d" }}
                 {% case m %}
@@ -69,7 +69,7 @@ title: Blog - Daan Scholten
                   {% when '12' %}december
                 {% endcase %}
                 {{ post.date | date: "%Y" }}
-              </time>
+              </time><!--googleon: index-->
 
               {% for tag in post.categories %}
                 <span class="tag">{{ tag }}</span>

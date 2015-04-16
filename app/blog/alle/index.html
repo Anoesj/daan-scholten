@@ -7,7 +7,7 @@ title: Alle blogs - Daan Scholten
     <article class="post">
       <header>
         {% assign ymd = post.date | date: "%Y-%m-%d" %}
-        <time datetime="{{ ymd }}" class="tag tag-grey">
+        <!--googleoff: index--><time datetime="{{ ymd }}" class="tag tag-grey">
           {% assign m = post.date | date: "%-m" %}
           {{ post.date | date: "%-d" }}
           {% case m %}
@@ -25,7 +25,7 @@ title: Alle blogs - Daan Scholten
             {% when '12' %}december
           {% endcase %}
           {{ post.date | date: "%Y" }}
-        </time>
+        </time><!--googleon: index-->
         <a href="{{ post.url }}"><h4>{{ post.title }}</h4></a>
       </header>
     </article>
