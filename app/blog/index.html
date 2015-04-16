@@ -4,83 +4,39 @@ title: Blog - Daan Scholten
 ---
 <section class="latest-posts">
   {% for post in site.posts limit:3 %}
-    <article class="post sidebar">
-      <header>
-        <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
-        <div class="tags">
-          {% assign ymd = post.date | date: "%Y-%m-%d" %}
-          <!--googleoff: index--><time datetime="{{ ymd }}" class="tag tag-grey">
-            {% assign m = post.date | date: "%-m" %}
-            {{ post.date | date: "%-d" }}
-            {% case m %}
-              {% when '1' %}januari
-              {% when '2' %}februari
-              {% when '3' %}maart
-              {% when '4' %}april
-              {% when '5' %}mei
-              {% when '6' %}juni
-              {% when '7' %}juli
-              {% when '8' %}augustus
-              {% when '9' %}september
-              {% when '10' %}oktober
-              {% when '11' %}november
-              {% when '12' %}december
-            {% endcase %}
-            {{ post.date | date: "%Y" }}
-          </time><!--googleon: index-->
-
-          {% for tag in post.categories %}
-            <span class="tag">{{ tag }}</span>
-          {% endfor %}
-        </div>
-      </header>
-      
-      <section>{{ post.content }}</section>
-    </article>
+  <article class="post sidebar">
+    <header>
+      <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
+      <div class="tags">
+        {% include postdate.html %}
+        {% include posttags.html %}
+      </div>
+    </header>
+    
+    <section>{{ post.content }}</section>
+  </article>
   {% endfor %}
 </section>
 
 {% if site.posts.size > 3 %}
-  <section class="older-posts sidebar">
-    <a href="/blog/alle"><h3 class="sidebar-title">Oudere blogs</h3></a>
-    {% for post in site.posts offset:3 limit:5 %}
-      <a href="{{ post.url }}">
-        <article class="post">
-          <header>{{ post.title }}</header>
+<section class="older-posts sidebar">
+  <a href="/blog/alle"><h3 class="sidebar-title">Oudere blogs</h3></a>
+  {% for post in site.posts offset:3 limit:5 %}
+  <a href="{{ post.url }}">
+    <article class="post">
+      <header>{{ post.title }}</header>
 
-          <footer>
-            <div class="tags">
-              {% assign ymd = post.date | date: "%Y-%m-%d" %}
-              <!--googleoff: index--><time datetime="{{ ymd }}" class="tag tag-grey">
-                {% assign m = post.date | date: "%-m" %}
-                {{ post.date | date: "%-d" }}
-                {% case m %}
-                  {% when '1' %}januari
-                  {% when '2' %}februari
-                  {% when '3' %}maart
-                  {% when '4' %}april
-                  {% when '5' %}mei
-                  {% when '6' %}juni
-                  {% when '7' %}juli
-                  {% when '8' %}augustus
-                  {% when '9' %}september
-                  {% when '10' %}oktober
-                  {% when '11' %}november
-                  {% when '12' %}december
-                {% endcase %}
-                {{ post.date | date: "%Y" }}
-              </time><!--googleon: index-->
+      <footer>
+        <div class="tags">
+          {% include postdate.html %}
+          {% include posttags.html %}
+        </div>
+      </footer>
 
-              {% for tag in post.categories %}
-                <span class="tag">{{ tag }}</span>
-              {% endfor %}
-            </div>
-          </footer>
-
-          <section>{{ post.content | strip_html | truncatewords: 20 }}</section>
-        </article>
-      </a>
-    {% endfor %}
-    <a href="/blog/alle" class="view-all"><h3>Bekijk alle blogs</h3></a>
-  </section>
+      <section>{{ post.content | strip_html | truncate: 130 }}</section>
+    </article>
+  </a>
+  {% endfor %}
+  <a href="/blog/alle" class="view-all"><h3>Bekijk alle blogs</h3></a>
+</section>
 {% endif %}
