@@ -35,7 +35,8 @@
         font-size: 16px;
         text-align: center;
         transition: all $speed-fast $ease-out 0s;
-        @include linear-gradient($dark-blue, #4B5486);
+        @include linear-gradient($dark-blue, #404973);
+        // @include linear-gradient($dark-blue, #4B5486);
 
         &:before {
           content: "";
