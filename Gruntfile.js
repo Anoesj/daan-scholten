@@ -278,8 +278,8 @@ module.exports = function (grunt) {
             // Explicitly add any files your site needs for distribution here.
             '_bower_components/jquery/jquery.min.js',
             'favicon*.*',
-            'apple-touch*.png'
-            'android-chrome*.png'
+            'apple-touch*.png',
+            'android-chrome*.png',
             'mstile*.png'
           ],
           dest: '<%= yeoman.dist %>'
