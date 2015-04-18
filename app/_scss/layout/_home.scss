@@ -38,19 +38,6 @@
 
   .center-column {
     @include isolation-span(5, 4, 'none');
-    
-    .soundcloud-player {
-      height: 430px;
-      width: 100%;
-      border-radius: $base-border-radius;
-      overflow: auto;
-
-      iframe {
-        height: 100%;
-        width: 100%;
-        transition: height $speed-fast $ease-out 0s;
-      }
-    }
   }
 
   .latest-posts {

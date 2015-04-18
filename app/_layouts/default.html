@@ -1,10 +1,11 @@
+{% include whichpage.html %}
 <!DOCTYPE html>
 <html class="no-js" lang="nl">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-language" content="nl">
-    <title>{{ page.title }}</title>
+    <title>{{ generatedPageTitle }}</title>
     <meta name="language" content="nl" >
     <meta name="description" lang="nl" content="Daan Scholten is een Producer en Sound Engineer voor live audio en in de studio">
     <meta name="robots" content="index, follow">
@@ -41,7 +42,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <!-- <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194"> -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -50,23 +51,6 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#698cdd">
   </head>
-
-  {% assign current = page.url | downcase | split: '/' %}
-  {% if current[1] == 'index.html' %}
-    {% assign cleanCurrent = 'home' %}
-  {% else %}
-    {% assign cleanCurrent = current[1] %}
-  {% endif %}
-
-  {% if cleanCurrent == 'blog' and current[2] != null and current[2] != 'index.html' %}
-    {% if current[2] == 'alle' %}
-      {% capture cleanCurrent %}{{ cleanCurrent }} blog-all{% endcapture %}
-    {% else %}
-      {% capture cleanCurrent %}{{ cleanCurrent }} blog-item{% endcapture %}
-    {% endif %}
-  {% endif %}
-
-  {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
 
   <body class="{{ cleanCurrent }} fade-out-content {{ layout }}">
     <!--[if lt IE 8]>

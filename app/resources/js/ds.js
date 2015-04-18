@@ -75,13 +75,14 @@ var ds = window.ds;
   }
 
   ds.loadSCWidgetAPI = function() {
-    $.ajax({
-      url: 'https://w.soundcloud.com/player/api.js',
-      dataType: 'script',
-      cache: true,
-      success: function() {
-        ds.player = SC.Widget('sc-player')
-      }
-    })
+    // This doesn't help solving the problem
+    // $.ajax({
+    //   url: 'https://w.soundcloud.com/player/api.js',
+    //   dataType: 'script',
+    //   cache: true,
+    //   success: function() {
+    //     ds.player = SC.Widget('sc-player')
+    //   }
+    // })
   }
 }(window.jQuery, window, document))

@@ -102,7 +102,11 @@ body.contact {
         @include flaticon($flaticon-error, 'before');
         
         &:before {
+          margin-left: 2px;
           margin-right: 10px;
+          font-size: 24px !important;
+          line-height: 42px;
+          vertical-align: top;
         }
       }
 
@@ -195,13 +199,17 @@ body.contact {
 
       .contact-phone {
         @include flaticon($flaticon-telephone, 'before', 20px);
+
+        &:before {
+          transform: translateX(1px);
+        }
       }
 
       .contact-address-wrapper {
         @include flaticon($flaticon-pin, 'before', 28px);
 
         &:before {
-          transform: translateX(-5px);
+          transform: translateX(-3px);
         }
 
         &:after {
@@ -210,7 +218,7 @@ body.contact {
       }
 
       .contact-kvk {
-        @include flaticon($flaticon-kvk, 'before', 22px);
+        @include flaticon($flaticon-kvk, 'before', 23px);
 
         &:before {
           transform: translateX(2px);

@@ -1,0 +1,20 @@
+{% assign current = page.url | downcase | split: '/' %}
+{% if current[1] == 'index.html' %}
+  {% assign cleanCurrent = 'home' %}
+  {% assign generatedPageTitle = page.title %}
+{% else %}
+  {% assign cleanCurrent = current[1] %}
+  {% capture generatedPageTitle %}{{ page.title }} | Daan Scholten{% endcapture %} {% comment %}- Producer & Sound Engineer{% endcomment %}
+{% endif %}
+
+{% if cleanCurrent == 'blog' and current[2] != null and current[2] != 'index.html' %}
+  {% if current[2] == 'alle' %}
+    {% capture cleanCurrent %}{{ cleanCurrent }} blog-all{% endcapture %}
+  {% else %}
+    {% capture cleanCurrent %}{{ cleanCurrent }} blog-item{% endcapture %}
+  {% endif %}
+{% elsif cleanCurrent == 'blog' and current[2] == 'index.html' %}
+  {% capture cleanCurrent %}{{ cleanCurrent }} blog-overview{% endcapture %}
+{% endif %}
+
+{% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}

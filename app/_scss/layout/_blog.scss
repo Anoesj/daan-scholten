@@ -11,22 +11,26 @@
       }
 
       header a {
+        display: block;
+
         h2 {
-          $arrow-width: 22px;
+          $arrow-width: 26px;
           padding-right: $arrow-width;
           transform: translateX(-$arrow-width);
-          transition: transform $speed-fast $ease-in 0s;
+          transition: transform $speed-fast $ease-in-out 0s;
+          @include flaticon($flaticon-goto, 'before');
 
           &:before {
-            @include customicon("e");
-            display: inline;
-            opacity: 0;
-            transition: opacity $speed-fast $ease-in 0s;
-            font-size: 50%;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
             top: -1px;
             padding-left: 0;
             padding-right: 6px;
             width: $arrow-width;
+            font-size: 45%;
+            opacity: 0;
+            transition: opacity $speed-fast $ease-in-out 0s;
           }
 
           &:hover {

@@ -1,7 +1,9 @@
 ---
 layout: default
 ---
-{% if page.hide_title != true %}<h1>{{ page.title }}</h1>{% endif %}
 <article class="page-body">
-  <section class="sidebar">{{ content }}</section>
+  <section class="sidebar">
+    {% if page.hide_title != true %}<h1>{{ page.title }}</h1>{% endif %}
+    {{ content }}
+  </section>
 </article>

@@ -10,7 +10,10 @@ h1 {
   font-size: 48px;
   line-height: 50px;
   color: $dark-blue;
-  @include line;
+  
+  &:not(.sidebar-title) {
+    @include line;
+  }
 }
 
 h2 {
@@ -64,53 +67,8 @@ p {
   }
 }
 
-@font-face {
-  font-family: "customicons";
-  src: url(../fonts/customicons.eot);
-  src: url(../fonts/customicons.eot?#iefix) format("embedded-opentype"),
-       url(../fonts/customicons.woff) format("woff"),
-       url(../fonts/customicons.ttf) format("truetype"),
-       url(../fonts/customicons.svg#customicons) format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  @font-face {
-    font-family: "customicons";
-    src: url(../fonts/customicons.svg#customicons) format("svg");
-    font-weight: normal;
-    font-style: normal;
-  }
-}
-
-a {
-  text-decoration: none;
-
-  &, &[target=_blank]:after {
-    transition: color $speed-fast $ease-out;
-  }
-
-  &:link,
-  &:visited,
-  &[target=_blank]:after {
-    color: $light-blue;
-  }
-
-  &:hover,
-  &:focus {
-    &, &[target=_blank]:after {
-      color: $dark-blue;
-    }
-  }
-
-  &[target=_blank]:after {
-    @include customicon("f");
-  }
-}
-
 // flaticon
-$flaticon-prefix: '../fonts/flaticon/';
+$flaticon-prefix: '../fonts/icons/';
 @font-face {
   font-family: "Flaticon";
   src: url("#{$flaticon-prefix}flaticon.eot");
@@ -143,5 +101,40 @@ $flaticon-prefix: '../fonts/flaticon/';
     font-family: 'Flaticon';
     font-size: #{$font-size};
     font-style: normal;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &, &[target=_blank]:after {
+    transition: color $speed-fast $ease-out;
+  }
+
+  &:link,
+  &:visited,
+  &[target=_blank]:after {
+    color: $light-blue;
+  }
+
+  &:hover,
+  &:focus {
+    &, &[target=_blank]:after {
+      color: $dark-blue;
+    }
+  }
+
+  &[target=_blank]:after {
+    content: " #{$flaticon-external}";
+    display: inline;
+    font-family: 'Flaticon';
+    // font-size: 14px;
+    // margin-left: .2em;
+    font-size: 65%;
+    font-style: normal;
+    position: relative;
+    top: -.5em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }

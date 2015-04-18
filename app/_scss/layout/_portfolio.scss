@@ -1,0 +1,28 @@
+.portfolio {
+  .soundcloud-player-wrapper {
+    @include isolation-span(6, 1, 'left');
+    @include default-font-settings;
+    padding: 40px;
+  }
+
+  .clients {
+    @include isolation-span(6, 7, 'right');
+    @include default-font-settings;
+    padding: 40px;
+    $space-between: 10px;
+    word-spacing: $space-between;
+
+    a {
+      display: inline-block;
+      word-spacing: normal;
+    }
+
+    .tag {
+      margin-bottom: $space-between;
+
+      .no-word-spacing {
+        word-spacing: normal;
+      }
+    }
+  }
+}

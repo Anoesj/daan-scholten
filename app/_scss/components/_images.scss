@@ -1,0 +1,54 @@
+.image-wrapper {
+  @include add-gutter-style('opposite');
+  margin: 2em -40px;
+  @include clearfix;
+
+  .image {
+    display: block;
+    margin: 0;
+    border-radius: $base-border-radius;
+    background-color: lighten($light-blue, 30%);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid lighten($light-blue, 14%);
+    
+    &.image-left {
+      @include grid-span(5, 0, $grid: 8);
+    }
+
+    &.image-right {
+      @include grid-span(5, 5, $grid: 8);
+    }
+
+    &.image-center {
+      @include grid-span(6, 2, $grid: 8);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid lighten($light-blue, 22%);
+    }
+
+    figcaption {
+      padding: 20px;
+      font-style: italic;
+    }
+  }
+
+  @include add-gutter-style('split');
+}
+
+body.blog-overview {
+  .image-wrapper {
+    .image {
+      &.image-left {
+        @include isolation-span(3, 1, 'left', $grid: 8);
+      }
+
+      &.image-right {
+        @include isolation-span(3, 5, 'right', $grid: 8);
+      } 
+    }
+  }
+}

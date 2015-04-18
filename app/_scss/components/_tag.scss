@@ -14,8 +14,20 @@
   border: 1px solid $default-border-color;
   margin-bottom: 5px;
 
-  &.tag-date {
+  &.tag-hover {
+    transition: background-color $speed-fast $ease-out 0s,
+                border-color $speed-fast $ease-out 0s;
+  }
+
+  &.tag-date,
+  &.tag-hover:hover {
     background: $dark-blue;
     border: 1px solid $default-border-color-dark;
+  }
+
+  &.tag-big {
+    padding: 10px 14px;
+    font-size: 18px;
+    line-height: 1em;
   }
 }

@@ -21,25 +21,26 @@ $selection-bg: lighten($light-blue, 30%);
 //   TYPOGRAPHY      //
 //-------------------//
 
+$default-font-stack: "Iowan Old Style", serif;
 $fw-light: 100;
 $fw-normal: 300;
 $fw-bold: bold;
 
-$secondary-fw-light: 100;
-$secondary-fw-normal: 300;
-$secondary-fw-bold: 600;
-
-$default-font-stack: "Iowan Old Style", serif;
-$secondary-font-stack: "Kies een font man", sans-serif;
+// $secondary-fw-light: 100;
+// $secondary-fw-normal: 300;
+// $secondary-fw-bold: 600;
+// $secondary-font-stack: "Kies een font man", sans-serif;
 
 $default-font-size: 16px;
 $default-line-height: 1.5em;
 
 $flaticon-alert: "\e000";
-$flaticon-mark: "\e001";
-$flaticon-error: "\e002";
-$flaticon-email: "\e004";
-$flaticon-pin: "\e005";
+$flaticon-external: "\e001";
+$flaticon-email: "\e002";
+$flaticon-mark: "\e003";
+$flaticon-error: $flaticon-alert;
+$flaticon-pin: "\e004";
+$flaticon-goto: "\e005";
 $flaticon-kvk: "\e006";
 $flaticon-telephone: "\e007";
 
