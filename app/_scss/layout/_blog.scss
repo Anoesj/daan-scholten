@@ -61,7 +61,7 @@
     background-color: rgba($white, 0);
     transition: all $speed-fast $ease-out 0s;
     padding: 20px !important;
-    margin: 1px;
+    margin: 0;
 
     &:hover {
       background-color: rgba($white, .3);

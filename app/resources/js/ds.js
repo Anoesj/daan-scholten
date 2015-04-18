@@ -67,9 +67,20 @@ var ds = window.ds;
     $.ajax({
       url: '//s7.addthis.com/js/300/addthis_widget.js#pubid=daanscholtennl',
       dataType: 'script',
-      cache: true, // otherwise will get fresh copy every page load
+      cache: true,
       success: function() {
         $('body').addClass('addthis-ready')
+      }
+    })
+  }
+
+  ds.loadSCWidgetAPI = function() {
+    $.ajax({
+      url: 'https://w.soundcloud.com/player/api.js',
+      dataType: 'script',
+      cache: true,
+      success: function() {
+        ds.player = SC.Widget('sc-player')
       }
     })
   }

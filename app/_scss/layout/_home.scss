@@ -5,22 +5,18 @@
 
     .sidebar-title {
       padding: 20px 20px .6em 20px;
-      margin: 0 1px 0 1px;
+      margin: 0;
     }
 
     ul {
       list-style: none;
       margin-top: 0;
       padding: 0;
-      margin: 0 1px 1px 1px;
+      margin: 0;
     }
 
     li {
       border-bottom: 1px solid rgba($dark-blue, .2);
-      
-      &:last-child {
-        margin-bottom: 1px;
-      }
 
       a {
         display: block;
@@ -42,7 +38,19 @@
 
   .center-column {
     @include isolation-span(5, 4, 'none');
-    height: 20px;
+    
+    .soundcloud-player {
+      height: 430px;
+      width: 100%;
+      border-radius: $base-border-radius;
+      overflow: auto;
+
+      iframe {
+        height: 100%;
+        width: 100%;
+        transition: height $speed-fast $ease-out 0s;
+      }
+    }
   }
 
   .latest-posts {

@@ -37,6 +37,7 @@ if (isSafari) {
     }, 40)
 
     ds.loadAddThis()
+    ds.loadSCWidgetAPI()
 
     /* SVG to PNG if browser does not support it */
     if (!Modernizr.svg) {
