@@ -263,6 +263,7 @@ module.exports = function (grunt) {
             'resources/img/**/*',
             // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}',
+            '!.DS_Store',
             // Explicitly add any files your site needs for distribution here.
             'favicon*.*',
             'apple-touch*.png',
