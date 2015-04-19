@@ -39,16 +39,24 @@
   @include add-gutter-style('split');
 }
 
+// FIX DEZE SHIT EN GA DOOR MET DIE FONTS
 body.blog-overview {
+  @include add-gutter-style('opposite');
+  
   .image-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+
     .image {
       &.image-left {
-        @include isolation-span(3, 1, 'left', $grid: 8);
+        @include isolation-span(4, 1, 'left', $grid: 8);
       }
 
       &.image-right {
-        @include isolation-span(3, 5, 'right', $grid: 8);
+        @include isolation-span(4, 5, 'right', $grid: 8);
       } 
     }
   }
+
+  @include add-gutter-style('split');
 }

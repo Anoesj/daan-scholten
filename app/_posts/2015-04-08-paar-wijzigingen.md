@@ -8,3 +8,4 @@ permalink: /blog/klaar/
 
 {% image "lol2.jpg" "left" "Test." %}
 {% image "lol1.jpg" "right" "Test" %}
+{% image "lol3.jpg" "center" "Test" %}

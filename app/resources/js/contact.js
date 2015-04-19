@@ -54,8 +54,8 @@ $(function() {
         $email = $('[name="email"]', $form),
         $tel = $('[name="tel"]', $form),
         $message = $('[name="message"]', $form),
-        to = 'anoesjsadraee@gmail.com'
-        // to = 'info@daanscholten.nl'
+        // to = 'anoesjsadraee@gmail.com'
+        to = 'info@daanscholten.nl'
 
     $form.removeClass('form-error')
 
@@ -100,7 +100,7 @@ $(function() {
                 'Reply-To': to
               },
               'subject': 'Bedankt voor uw bericht',
-              'text': 'Beste ' + $name.val() + ',\n\nBedankt voor uw reactie via het contactformulier op http://www.daanscholten.nl/.\nUw bericht is in goede orde ontvangen. U krijgt van mij zo snel mogelijk een reactie.\n\nMet vriendelijke groet,\nDaan Scholten' ,
+              'text': 'Beste ' + $name.val() + ',\n\nBedankt voor uw bericht via het contactformulier op http://www.daanscholten.nl/.\nUw bericht is in goede orde ontvangen. U krijgt van mij zo snel mogelijk een reactie.\n\nMet vriendelijke groet,\nDaan Scholten' ,
               'to': [
                 {
                   'email': $email.val(),

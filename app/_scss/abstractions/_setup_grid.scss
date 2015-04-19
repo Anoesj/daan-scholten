@@ -70,7 +70,7 @@ $show-breakpoint-names: false !default;
     }
 
     @include breakpoint($break-at) {
-      @if $show-breakpoint-names == true {
+      @if $show-breakpoint-names == true and $debug == true {
         body {
           position: relative;
 
