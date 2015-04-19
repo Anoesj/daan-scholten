@@ -272,7 +272,6 @@ module.exports = function (grunt) {
             // Copy moves asset files and directories.
             'img/**/*',
             'resources/img/**/*',
-            'fonts/**/*',
             // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}',
             // Explicitly add any files your site needs for distribution here.
@@ -280,7 +279,8 @@ module.exports = function (grunt) {
             'favicon*.*',
             'apple-touch*.png',
             'android-chrome*.png',
-            'mstile*.png'
+            'mstile*.png',
+            'fonts/**/*'
           ],
           dest: '<%= yeoman.dist %>'
         }]
