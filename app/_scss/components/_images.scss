@@ -2,36 +2,52 @@
   @include add-gutter-style('opposite');
   margin: 2em -40px;
   @include clearfix;
+  display: flex;
+  justify-content: center;
+  // align-items: flex-start;
 
   .image {
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin: 0;
     border-radius: $base-border-radius;
     background-color: lighten($light-blue, 30%);
     position: relative;
     overflow: hidden;
     border: 1px solid lighten($light-blue, 14%);
+    $two-images-width: grid-span(5, 1, $grid: 8);
     
     &.image-left {
-      @include grid-span(5, 0, $grid: 8);
+      width: $two-images-width;
+      margin-left: grid-span(1, 0, $grid: 8) * -1;
+      margin-right: gutter-span(1, $grid: 8) / 4;
     }
 
     &.image-right {
-      @include grid-span(5, 5, $grid: 8);
+      width: $two-images-width;
+      margin-left: gutter-span(1, $grid: 8) / 4;
+      margin-right: grid-span(1, 0, $grid: 8) * -1;
     }
 
     &.image-center {
-      @include grid-span(6, 2, $grid: 8);
+      width: grid-span(6, 2, $grid: 8);
+      // align-self: center;
     }
 
     img {
       width: 100%;
       height: auto;
-      border-bottom: 1px solid lighten($light-blue, 22%);
+      border-bottom: 1px solid lighten($light-blue, 14%);
     }
 
     figcaption {
-      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      // text-align: center;
+      flex: 1;
+      padding: 40px;
       font-style: italic;
     }
   }
@@ -48,12 +64,16 @@ body.blog-overview {
     margin-right: 0;
 
     .image {
+      $two-images-width: grid-span(4, 1, $grid: 8);
+
       &.image-left {
-        @include isolation-span(4, 1, 'left', $grid: 8);
+        width: $two-images-width;
+        margin-left: 0;
       }
 
       &.image-right {
-        @include isolation-span(4, 5, 'right', $grid: 8);
+        width: $two-images-width;
+        margin-right: 0;
       } 
     }
   }
