@@ -260,17 +260,17 @@ module.exports = function (grunt) {
             // Jekyll processes and moves HTML and text files.
             // Usemin moves CSS and javascript inside of Usemin blocks.
             // Copy moves asset files and directories.
-            'img/**/*',
             'resources/img/**/*',
             // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}',
             // Explicitly add any files your site needs for distribution here.
-            '_bower_components/jquery/jquery.min.js',
             'favicon*.*',
             'apple-touch*.png',
             'android-chrome*.png',
             'mstile*.png',
             'fonts/**/*',
+            'fonts/icons',
+            'fonts/icons/*',
             'fonts/icons/**/*',
             '!fonts/webfonts/source/**/*',
             '!fonts/webfonts/specimen_files/**/*',
