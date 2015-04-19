@@ -250,16 +250,6 @@ module.exports = function (grunt) {
         }]
       }
     },
-    // svgmin: {
-    //   dist: {
-    //     files: [{
-    //       expand: true,
-    //       cwd: '<%= yeoman.dist %>',
-    //       src: '**/*.svg',
-    //       dest: '<%= yeoman.dist %>'
-    //     }]
-    //   }
-    // },
     copy: {
       dist: {
         files: [{
@@ -280,7 +270,12 @@ module.exports = function (grunt) {
             'apple-touch*.png',
             'android-chrome*.png',
             'mstile*.png',
-            'fonts/**/*'
+            'fonts/**/*',
+            'fonts/icons/**/*',
+            '!fonts/webfonts/source/**/*',
+            '!fonts/webfonts/specimen_files/**/*',
+            '!fonts/webfonts/generator_config.txt',
+            '!fonts/webfonts/*.html'
           ],
           dest: '<%= yeoman.dist %>'
         }]
@@ -306,7 +301,7 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/js/**/*.js',
             '<%= yeoman.dist %>/css/**/*.css',
             '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
-            '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
+            // '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
           ]
         }]
       }
