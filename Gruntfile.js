@@ -268,14 +268,7 @@ module.exports = function (grunt) {
             'apple-touch*.png',
             'android-chrome*.png',
             'mstile*.png',
-            'fonts/**/*',
-            'fonts/icons',
-            'fonts/icons/*',
-            'fonts/icons/**/*',
-            '!fonts/webfonts/source/**/*',
-            '!fonts/webfonts/specimen_files/**/*',
-            '!fonts/webfonts/generator_config.txt',
-            '!fonts/webfonts/*.html'
+            'fonts/{icons,webfonts}/*.{eot,otf,svg,ttf,woff,woff2}'
           ],
           dest: '<%= yeoman.dist %>'
         }]
@@ -327,13 +320,6 @@ module.exports = function (grunt) {
         ]
       }
     },
-    // https://github.com/robwierzbowski/generator-jekyllrb/issues/106
-    // scsslint: {
-    //   // See https://www.npmjs.org/package/grunt-scss-lint for options.
-    //   allFiles: [
-    //     '<%= yeoman.app %>/_scss/**/*.scss'
-    //   ]
-    // },
     concurrent: {
       server: [
         'sass:server',
@@ -400,9 +386,7 @@ module.exports = function (grunt) {
     'clean:server',
     'jekyll:check',
     'sass:server',
-    // 'jshint:all',
     'csslint:check'
-    // 'scsslint'
   ]);
 
   grunt.registerTask('build', [
@@ -416,7 +400,6 @@ module.exports = function (grunt) {
     'autoprefixer:dist',
     'uglify',
     'imagemin',
-    // 'svgmin',
     'filerev',
     'usemin',
     'htmlmin',
