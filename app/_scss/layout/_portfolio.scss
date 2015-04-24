@@ -15,6 +15,10 @@
     a {
       display: inline-block;
       word-spacing: normal;
+
+      &:after {
+        content: none;
+      }
     }
 
     .tag {

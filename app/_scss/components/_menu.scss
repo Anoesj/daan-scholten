@@ -82,3 +82,9 @@ body.menu-fixed {
     z-index: 1000;
   }
 }
+
+@include breakpoint(bpmin("laptop") bpmax("hi-res")) {
+  .menu-wrapper ul li a {
+    font-size: 14px;
+  }
+}

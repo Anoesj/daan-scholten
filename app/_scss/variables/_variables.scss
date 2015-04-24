@@ -23,7 +23,7 @@ $selection-bg: lighten($light-blue, 30%);
 //   TYPOGRAPHY      //
 //-------------------//
 
-$default-font-stack: "Iowan Old Style", serif;
+$default-font-stack: "Iowan Old Style", "IowanOldStyle", serif;
 $fw-light: 100;
 $fw-normal: 300;
 $fw-bold: bold;
@@ -39,12 +39,13 @@ $default-line-height: 1.5em;
 $flaticon-alert: "\e000";
 $flaticon-external: "\e001";
 $flaticon-email: "\e002";
-$flaticon-mark: "\e003";
+$flaticon-menu: "\e003";
+$flaticon-mark: "\e004";
 $flaticon-error: $flaticon-alert;
-$flaticon-pin: "\e004";
-$flaticon-goto: "\e005";
-$flaticon-kvk: "\e006";
-$flaticon-telephone: "\e007";
+$flaticon-pin: "\e005";
+$flaticon-goto: "\e006";
+$flaticon-kvk: "\e007";
+$flaticon-telephone: "\e008";
 
 
 //-------------------//
@@ -90,10 +91,3 @@ $form-border-radius: $base-border-radius;
 $checkbox-border-radius: 20%;
 
 $show-shortcut-tips: true;
-
-
-//-------------------//
-//   FONT AWESOME    //
-//-------------------//
-
-// $fa-font-path: "../font-awesome";

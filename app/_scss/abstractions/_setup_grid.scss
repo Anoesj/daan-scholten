@@ -116,31 +116,36 @@ $show-breakpoint-names: false !default;
   }
 }
 
-// BP Helper function
-// to add CSS for certain breakpoints, use one of these syntaxex:
+// BP Helper function:
 // 
-// USING bp({number}):
-// @include breakpoint(bp(3)) {
+// @include breakpoint(min("tablet")) {
+//  body {
+//    background-color: black;
+//  }
+// }
+// @include breakpoint(bpmin("tablet") bpmax("laptop")) {
 //  body {
 //    background-color: black;
 //  }
 // }
 
-// OR USING bp($breakpoint-name):
-// @include breakpoint(bp($tablet)) {
-//  body {
-//    background-color: black;
-//  }
-// }
+@function bp($key, $max: false) {
+  @if $max == false {
+    @return bpmin($key);
+  }
 
-@function bp($key) {
+  @else {
+    @return bpmax($key);
+  }
+}
+
+@function bpmin($key) {
   $breakpoint: map_get($breakpoints, $key);
   @return break-width($breakpoint);
-  // @if (type-of($slice) == 'number') {
-  //   @return nth($breakpoints, $slice);
-  // }
-
-  // @else if (type-of($slice) == 'list') {
-  //   @return nth($slice, 1);
-  // }
 }
+
+@function bpmax($key) {
+  $breakpoint: map_get($breakpoints, $key);
+  @return break-width($breakpoint) - 1px;
+}
+

@@ -262,3 +262,16 @@ body.contact {
   animation: rotate 0.75s 0s linear infinite;
   transition: opacity $speed-medium $ease-out 0s;
 }
+
+@include breakpoint(bpmin("laptop") bpmax("hi-res")) {
+  body.contact .main-wrapper .contact-info {
+    .contact-email,
+    .contact-phone,
+    .contact-address-wrapper,
+    .contact-kvk {
+      font-size: 14px;
+      line-height: 26px;
+      margin-bottom: 1em;
+    }
+  }
+}

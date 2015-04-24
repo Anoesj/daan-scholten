@@ -1,4 +1,4 @@
-.home {
+body.home {
   .projects {
     @include isolation-span(3, 1, 'left');
     padding: 0;
@@ -42,5 +42,31 @@
 
   .latest-posts {
     @include isolation-span(4, 9, 'right');
+  }
+}
+
+@include breakpoint(bpmin("tablet-portrait") bpmax("hi-res")) {
+  body.home {
+    .projects {
+      @include isolation-span(7, 6, 'right');
+      margin-bottom: 1em;
+    }
+
+    .center-column {
+      @include isolation-span(5, 1, 'left');
+    }
+
+    .latest-posts {
+      @include isolation-span(7, 6, 'right');
+    }
+  }
+}
+
+@include breakpoint(max-width bpmax("tablet-landscape")) {
+  body.home {
+    .main-wrapper > * {
+      @include isolation-span(12, 1, 'both');
+      margin-bottom: 1em;
+    }
   }
 }

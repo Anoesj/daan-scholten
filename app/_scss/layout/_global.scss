@@ -1,15 +1,16 @@
-@include sgs-change('debug', true);
-@include add-breakpoint('mobile', (320px, 100%, 3, 3));
-@include add-breakpoint('tablet', (641px, 100%, 6, 6));
-@include add-breakpoint('laptop', (1000px, $default-page-width, 12, 12));
-@include add-breakpoint('hi-res', (1320px, 1280px, 12, 12));
+@include sgs-change("debug", true);
+@include add-breakpoint("mobile", (320px, 100%, 3, 3));
+@include add-breakpoint("tablet-portrait", (641px, 620px, 12, 12));
+@include add-breakpoint("tablet-landscape", (840px, 800px, 12, 12));
+@include add-breakpoint("laptop", (1000px, $default-page-width, 12, 12));
+@include add-breakpoint("hi-res", (1320px, 1280px, 12, 12));
 @include show-breakpoint-names(true);
 
 @include setup-grid($transitions: true);
 @include add-background-grid;
 
 body {
-  @include background-image-retina('/resources/img/white_wall_hash', png, 500px, 500px);
+  @include background-image-retina("/resources/img/white_wall_hash", png, 500px, 500px);
 
   .main-wrapper {
     transition: opacity .3s $ease-out 0s;
@@ -29,7 +30,8 @@ $logo-height: 148px;
 .header-wrapper {
   position: relative;
   background: $white;
-  @include breakpoint(bp('tablet')) {
+
+  @include breakpoint(bp("tablet-portrait")) {
     &:before {
       content: '';
       position: absolute;
@@ -38,7 +40,7 @@ $logo-height: 148px;
       left: 0;
       right: 0;
       z-index: 1;
-      background: url('../resources/img/mixing-console2.jpg') center center no-repeat;
+      background: url("../resources/img/mixing-console2.jpg") center center no-repeat;
       background-size: cover;
       opacity: .3;
     }
