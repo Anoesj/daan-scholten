@@ -23,18 +23,24 @@ margin-left: 20px;
 .flaticon-email5:before {
 	content: "\e002";
 }
-.flaticon-ok2:before {
+.flaticon-menu51:before {
 	content: "\e003";
 }
-.flaticon-pin56:before {
+.flaticon-ok2:before {
 	content: "\e004";
 }
-.flaticon-play87:before {
+.flaticon-pause:before {
 	content: "\e005";
 }
-.flaticon-sign20:before {
+.flaticon-pin56:before {
 	content: "\e006";
 }
-.flaticon-telephone5:before {
+.flaticon-play87:before {
 	content: "\e007";
+}
+.flaticon-sign20:before {
+	content: "\e008";
+}
+.flaticon-telephone5:before {
+	content: "\e009";
 }

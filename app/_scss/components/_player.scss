@@ -1,3 +1,17 @@
+$track-height: 40px;
+
+@keyframes track {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: $track-height;
+  }
+}
+
 .soundcloud-player {
   height: 430px;
   width: 100%;
@@ -9,5 +23,202 @@
     height: 100%;
     width: 100%;
     transition: height $speed-fast $ease-out 0s;
+  }
+}
+
+.soundcloud-player-wrapper {
+  .tracks {
+    .track {
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      display: flex;
+      flex-flow: row;
+
+      &.fade-in {
+        animation-name: track;
+        animation-duration: $speed-medium;
+        animation-timing-function: $ease-in-out;
+        animation-delay: $speed-medium;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+      }
+
+      .track-info {
+        height: $track-height;
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+
+        &:before {
+          width: auto;
+          height: 100%;
+          margin-right: 10px;
+          transform: translateY(1px);
+          font-size: 12px;
+        }
+        
+        h3 {
+          display: inline-block;
+          margin: 0;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          line-height: $track-height;
+          font-size: 16px;
+          flex: 1;
+        }
+      }
+    }
+  }
+}
+
+.play-pause,
+.next,
+.previous {
+  width: auto;
+  cursor: pointer;
+  position: relative;
+
+  &:before {
+    color: $dark-blue;
+    line-height: $track-height;
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
+
+.previous {
+  @include flaticon($flaticon-prev, 'before', 26px);
+}
+
+.next {
+  @include flaticon($flaticon-next, 'before', 26px);
+}
+
+.play-pause {
+  @include flaticon($flaticon-play, 'before', 22px);
+  
+  &.playing {
+    &:before {
+      content: $flaticon-pause;
+    }
+  }
+
+  &:hover {
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+.now-playing {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  border-radius: $base-border-radius;
+  padding: 20px;
+  margin-bottom: 2em;
+
+  &:before {
+    content: "";
+    background: rgba($white, .5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    opacity: .3;
+    transform: translateY(-50%);
+    z-index: -2;
+  }
+
+  .controls {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+  }
+
+  // .previous,
+  // .play-pause,
+  // .next {
+  // }
+
+  progress {
+    flex: 1;
+  }
+
+  .play-pause {
+    margin: 0 10px;
+    display: inline-block;
+    
+    &.paused {
+      transform: translateX(2px);
+    }
+  }
+
+  .next {
+    margin: 0 20px 0 0;
+  }
+
+  a {
+    display: block;
+
+    h3 {
+      display: inline-block;
+      width: 100%;
+      margin: 0;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      line-height: 32px;
+
+      &:empty {
+        &:before {
+          content: "...";
+          color: $dark-blue;
+        }
+      }
+    }
+
+    &:after {
+      content: none;
+    }
+  }
+}
+
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  color: $light-blue;
+  height: 10px;
+  cursor: pointer;
+
+  &::-webkit-progress-bar {
+    border-radius: $base-border-radius;
+    background-color: $light-blue;
+  }
+
+  &::-webkit-progress-value {
+    border-radius: $base-border-radius;
+    background-color: $dark-blue;
+  }
+
+  &::-moz-progress-bar {
+    border-radius: $base-border-radius;
+    background-color: $light-blue;
   }
 }

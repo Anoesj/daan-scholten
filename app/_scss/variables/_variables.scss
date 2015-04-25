@@ -39,13 +39,17 @@ $default-line-height: 1.5em;
 $flaticon-alert: "\e000";
 $flaticon-external: "\e001";
 $flaticon-email: "\e002";
-$flaticon-menu: "\e003";
-$flaticon-mark: "\e004";
+$flaticon-next: "\e003";
+$flaticon-menu: "\e004";
+$flaticon-mark: "\e005";
 $flaticon-error: $flaticon-alert;
-$flaticon-pin: "\e005";
-$flaticon-goto: "\e006";
-$flaticon-kvk: "\e007";
-$flaticon-telephone: "\e008";
+$flaticon-pause: "\e006";
+$flaticon-pin: "\e007";
+$flaticon-goto: "\e008";
+$flaticon-prev: "\e009";
+$flaticon-kvk: "\e010";
+$flaticon-telephone: "\e011";
+$flaticon-play: $flaticon-goto;
 
 
 //-------------------//
