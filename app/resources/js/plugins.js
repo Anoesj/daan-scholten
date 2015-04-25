@@ -22,26 +22,28 @@
 }());
 
 // Register the Angular module
-var app = angular.module('app', ['plangular'])
-.config(function(plangularConfigProvider){
-  plangularConfigProvider.clientId = 'b4a382f16b1d7f1438296d68f66b04ed';
-})
-.directive('onLastRepeat', function() {
-  return function(scope, element, attrs) {
-    if (scope.$last) {
-      setTimeout(function() {
-        scope.$emit('onRepeatLast', element, attrs)
-      }, 1)
-    }
-  }
-})
-.controller('fadeInWhenDone', function($scope) {
-  $scope.$on('onRepeatLast', function(scope, element, attrs) {
-    ds.fadeInTracks()
+(function(){
+  var app = angular.module('app', ['plangular'])
+  .config(function(plangularConfigProvider){
+    plangularConfigProvider.clientId = 'b4a382f16b1d7f1438296d68f66b04ed';
   })
-})
-.controller('trackArtwork', function($scope) {
-  $scope.artwork = function(originalURL) {
-    return originalURL.replace('large','t500x500')
-  }
-})
+  .directive('onLastRepeat', function() {
+    return function(scope, element, attrs) {
+      if (scope.$last) {
+        setTimeout(function() {
+          scope.$emit('onRepeatLast', element, attrs)
+        }, 1)
+      }
+    }
+  })
+  .controller('fadeInWhenDone', function($scope) {
+    $scope.$on('onRepeatLast', function(scope, element, attrs) {
+      ds.fadeInTracks()
+    })
+  })
+  .controller('trackArtwork', function($scope) {
+    $scope.artwork = function(originalURL) {
+      return originalURL.replace('large','t500x500')
+    }
+  })
+})();
