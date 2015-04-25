@@ -124,7 +124,7 @@ $track-height: 40px;
   overflow: hidden;
   border-radius: $base-border-radius;
   padding: 20px;
-  border: 1px solid lighten($dark-blue, 40%);
+  border: 1px solid rgba($dark-blue, .2);
 
   &:before {
     content: "";
@@ -177,7 +177,6 @@ $track-height: 40px;
 
   a {
     display: block;
-    // height: 24px;
     margin-bottom: 2px;
 
     h3 {
