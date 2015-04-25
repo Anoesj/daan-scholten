@@ -1,0 +1,13 @@
+@mixin narrow-paragraphs {
+  $padding-paragraphs: 80px;
+  p, h2, h3, h4, h5, ul, ol {
+    padding-left: $padding-paragraphs;
+    padding-right: $padding-paragraphs;
+  }
+
+  h1 {
+    margin-left: $padding-paragraphs;
+    margin-right: $padding-paragraphs;
+    margin-bottom: 0;
+  }
+}

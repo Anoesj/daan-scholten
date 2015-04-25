@@ -4,6 +4,7 @@
     > .sidebar {
       @include isolation-span(8, 3, 'both');
       padding: 40px;
+      @include narrow-paragraphs;
       
       > h1 {
         margin-top: 0;

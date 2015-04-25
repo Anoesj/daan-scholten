@@ -83,7 +83,7 @@ body.menu-fixed {
   }
 }
 
-@include breakpoint(bpmin("laptop") bpmax("hi-res")) {
+@include breakpoint(bpmin("tablet-landscape") bpmax("hi-res")) {
   .menu-wrapper ul li a {
     font-size: 14px;
   }

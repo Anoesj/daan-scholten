@@ -12,6 +12,7 @@ body.layout-page {
       
       .sidebar {
         padding: 40px;
+        @include narrow-paragraphs;
       }
     }
   }

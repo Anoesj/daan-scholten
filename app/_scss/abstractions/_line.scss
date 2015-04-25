@@ -1,28 +1,9 @@
-@mixin line($height: 4px, $one-line-only: false) {
+@mixin line($height: 4px, $one-line-only: false, $inline-block: false) {
+  @if $inline-block != false {
+    display: inline-block;
+    margin-top: $header-with-line-margin-top !important;
+  }
   position: relative;
   padding-bottom: .3em;
   border-bottom: $height solid rgba($dark-blue, .2);
-
-  @if $one-line-only != true {
-    &:before,
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      height: 0;
-      border-top: $height solid $dark-blue;
-    }
-
-    &:before {
-      width: 75%;
-      opacity: .3;
-    }
-
-    &:after {
-      width: 50%;
-      opacity: .8;
-    }
-  }
 }

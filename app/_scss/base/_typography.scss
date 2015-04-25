@@ -43,7 +43,7 @@ h1 {
   color: $dark-blue;
   
   &:not(.sidebar-title) {
-    @include line;
+    @include line($inline-block: true);
   }
 }
 
@@ -75,9 +75,9 @@ blockquote {
     font-style: italic;
     color: $dark-blue;
     font-size: 24px;
-    line-height: 32px;
+    line-height: 36px;
     margin: 0;
-    text-align: justify;
+    padding: 0 !important;
 
     &:before {
       content: "“";
