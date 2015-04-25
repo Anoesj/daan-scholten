@@ -37,9 +37,9 @@ $track-height: 40px;
 
       &.fade-in {
         animation-name: track;
-        animation-duration: $speed-medium;
+        animation-duration: $speed-fast;
         animation-timing-function: $ease-in-out;
-        animation-delay: $speed-medium;
+        animation-delay: 0s;
         animation-iteration-count: 1;
         animation-direction: normal;
         animation-fill-mode: forwards;
@@ -57,6 +57,7 @@ $track-height: 40px;
           margin-right: 10px;
           transform: translateY(1px);
           font-size: 12px;
+          line-height: $track-height;
         }
         
         h3 {
@@ -83,22 +84,26 @@ $track-height: 40px;
 
   &:before {
     color: $dark-blue;
-    line-height: $track-height;
     vertical-align: middle;
     display: inline-block;
+    transition: color $speed-fast $ease-out 0s;
+  }
+
+  &:hover:before {
+    color: $light-blue;
   }
 }
 
 .previous {
-  @include flaticon($flaticon-prev, 'before', 26px);
+  @include flaticon($flaticon-prev, 'before', 22px);
 }
 
 .next {
-  @include flaticon($flaticon-next, 'before', 26px);
+  @include flaticon($flaticon-next, 'before', 22px);
 }
 
 .play-pause {
-  @include flaticon($flaticon-play, 'before', 22px);
+  @include flaticon($flaticon-play, 'before', 18px);
   
   &.playing {
     &:before {
@@ -119,17 +124,18 @@ $track-height: 40px;
   overflow: hidden;
   border-radius: $base-border-radius;
   padding: 20px;
-  margin-bottom: 2em;
+  border: 1px solid lighten($dark-blue, 40%);
 
   &:before {
     content: "";
-    background: rgba($white, .5);
+    background: $white;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: -1;
+    opacity: .8;
   }
 
   img {
@@ -142,18 +148,15 @@ $track-height: 40px;
     opacity: .3;
     transform: translateY(-50%);
     z-index: -2;
+    filter: contrast(1.5);
   }
 
   .controls {
     display: flex;
     flex-flow: row;
     align-items: center;
+    margin-bottom: -2px;
   }
-
-  // .previous,
-  // .play-pause,
-  // .next {
-  // }
 
   progress {
     flex: 1;
@@ -174,6 +177,8 @@ $track-height: 40px;
 
   a {
     display: block;
+    // height: 24px;
+    margin-bottom: 10px;
 
     h3 {
       display: inline-block;
@@ -182,7 +187,8 @@ $track-height: 40px;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
-      line-height: 32px;
+      font-size: 20px;
+      line-height: 24px;
 
       &:empty {
         &:before {
@@ -195,6 +201,10 @@ $track-height: 40px;
     &:after {
       content: none;
     }
+  }
+
+  & + * {
+    margin-top: 20px;
   }
 }
 

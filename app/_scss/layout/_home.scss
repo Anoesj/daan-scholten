@@ -38,6 +38,24 @@ body.home {
 
   .center-column {
     @include isolation-span(5, 4, 'none');
+    padding: 0;
+
+    .sidebar-title {
+      padding: 20px 20px .6em 20px;
+      margin: 0;
+      background-color: rgba($white, 0);
+      transition: all $speed-fast $ease-out 0s;
+      color: $dark-blue !important;
+
+      &:hover {
+        background-color: rgba($white, .3);
+      }
+    }
+
+    .soundcloud-player-wrapper {
+      margin-top: 1em;
+      padding: 20px;
+    }
   }
 
   .latest-posts {

@@ -54,7 +54,7 @@ var ds = window.ds;
   }
 
   ds.fadeInTracks = function() {
-    var timeout = 100,
+    var timeout = 80,
         $tracks = $('.track', '.tracks')
 
     $tracks.each(function(index) {

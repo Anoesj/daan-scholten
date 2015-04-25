@@ -14,8 +14,22 @@ title: Daan Scholten | Producer & Sound Engineer
 </section>
 
 <main class="center-column sidebar">
-  <div class="soundcloud-player">
-    <iframe id="sc-player" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/6767895&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=false&amp;show_reposts=true&amp;visual=false"></iframe>
+  <a href="/portfolio"><h3 class="sidebar-title">Portfolio</h3></a>
+  <div class="soundcloud-player-wrapper">
+    {% raw %}
+    <div plangular="http://soundcloud.com/studioscholten/tracks" ng-controller="fadeInWhenDone" class="tracks">
+      <div class="now-playing">
+        <img ng-controller="trackArtwork" ng-src="{{artwork(track.artwork_url || track.user.avatar_url || tracks[0].artwork_url || tracks[0].user.avatar_url)}}" alt="{{track.title || tracks[0].title}}">
+        <a ng-href="{{track.permalink_url || track[0].permalink_url}}" target="_blank"><h3>{{track.title || tracks[0].title }}</h3></a>
+        <div class="controls">
+          <span ng-click="previous()" class="previous"></span>
+          <span ng-click="playPause(index)" ng-class="{'playing': player.playing, 'paused': !player.playing}" title="Play/pauze" class="play-pause"></span>
+          <span ng-click="next()" class="next"></span>
+          <progress class="progress" ng-click="seek($event)" ng-value="currentTime/duration || 0">{{ currentTime / duration || 0 }}</progress>
+        </div>
+      </div>
+    </div>
+    {% endraw %}
   </div>
   <div class="share addthis">
     <div class="addthis_horizontal_follow_toolbox"></div>
