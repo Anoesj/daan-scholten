@@ -22,8 +22,9 @@
 }());
 
 // Register the Angular module
+var app;
 (function(){
-  var app = angular.module('app', ['plangular'])
+  app = angular.module('app', ['plangular'])
   .config(function(plangularConfigProvider){
     plangularConfigProvider.clientId = 'b4a382f16b1d7f1438296d68f66b04ed';
   })
