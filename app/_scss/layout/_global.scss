@@ -26,7 +26,7 @@ body {
   }
 }
 
-$logo-height: 148px;
+$logo-height: 123px;
 .header-wrapper {
   position: relative;
   background: $white;
@@ -71,6 +71,15 @@ $logo-height: 148px;
       width: auto;
       height: $logo-height;
       display: inline-block;
+      transform: translateX(-16px);
+    }
+
+    .logo-text {
+      display: block;
+      margin: 8px 0 0;
+      font-size: 18px;
+      font-weight: bold;
+      color: $dark-blue !important;
     }
   }
 }

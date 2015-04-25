@@ -10,7 +10,7 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    version="1.1"
    width="184.08594"
-   height="123.21806"
+   height="102.21806"
    id="svg2"
    style="enable-background:new">
   <defs
@@ -102,16 +102,6 @@
        width="288.03021"
        height="216.02264"
        id="image3051" />
-    <text
-       x="242.49614"
-       y="493.98007"
-       id="text2985"
-       xml:space="preserve"
-       style="font-size:36.60391235px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:IowanOldSt BT;-inkscape-font-specification:IowanOldSt BT Bold"><tspan
-         x="242.49614"
-         y="493.98007"
-         id="tspan2987"
-         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:IowanOldSt BT;-inkscape-font-specification:IowanOldSt BT" /></text>
   </g>
   <g
      transform="translate(-241.33504,-399.34255)"
@@ -150,21 +140,6 @@
        y="396.85849"
        id="rect3898"
        style="fill:#1a1a1a;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
-  </g>
-  <g
-     transform="translate(-241.33504,-399.34255)"
-     id="layer2"
-     style="display:inline">
-    <text
-       x="242.87019"
-       y="516.99225"
-       id="text3020"
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Iowan Old Style;-inkscape-font-specification:Iowan Old Style"><tspan
-         x="242.87019"
-         y="516.99225"
-         id="tspan3022"
-         style="font-size:14px;font-weight:bold;fill:#394165;fill-opacity:1;-inkscape-font-specification:Iowan Old Style Bold">Producer - Sound Engineer</tspan></text>
   </g>
   <g
      transform="translate(-241.33504,-399.34255)"
