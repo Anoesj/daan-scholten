@@ -7,8 +7,11 @@
 # Ignore OS generated files #
 .DS_Store*
 ehthumbs.db
-Icon?
 Thumbs.db
+# What the fuck, icons folder being gitignored because this is not case sensitive??
+# -> solved: git config core.ignorecase false
+Icon?
+
 
 # Always-ignore files and folders #
 *.diff
