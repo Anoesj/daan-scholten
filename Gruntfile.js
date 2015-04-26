@@ -269,7 +269,7 @@ module.exports = function (grunt) {
             'apple-touch*.png',
             'android-chrome*.png',
             'mstile*.png',
-            'fonts/{icons,webfonts}/*.{eot,otf,svg,ttf,woff,woff2}'
+            'fonts/**/*'
           ],
           dest: '<%= yeoman.dist %>'
         }]
