@@ -229,7 +229,9 @@ module.exports = function (grunt) {
     concat: {},
     // Usemin adds files to uglify
     uglify: {
-      mangle: false
+      mangle: {
+        except: ['jquery', 'angular', 'plangular']
+      }
     },
     // Usemin adds files to cssmin
     cssmin: {
@@ -412,6 +414,7 @@ module.exports = function (grunt) {
     'concat',
     'cssmin',
     'autoprefixer:dist',
+    'ngAnnotate',
     'uglify',
     'imagemin',
     'filerev',
@@ -421,8 +424,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('deploy', [
-    // 'check',
-    // 'test',
     'build',
     'buildcontrol'
   ]);
