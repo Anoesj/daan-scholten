@@ -98,7 +98,5 @@ var ds = window.ds;
     // })
   }
 
-}(window.jQuery, window, document))
-
-
+}(window.jQuery, window, document));
 

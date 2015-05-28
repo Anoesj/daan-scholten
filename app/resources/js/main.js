@@ -99,5 +99,5 @@ if (isSafari) {
     })   
   })
 
-}(window.jQuery, window, document))
+}(window.jQuery, window, document));
 
