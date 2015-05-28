@@ -37,7 +37,7 @@ $track-height: 40px;
 
       &.fade-in {
         animation-name: track;
-        animation-duration: $speed-fast;
+        animation-duration: .4s;
         animation-timing-function: $ease-in-out;
         animation-delay: 0s;
         animation-iteration-count: 1;
@@ -145,7 +145,7 @@ $track-height: 40px;
     top: 50%;
     left: 0;
     right: 0;
-    opacity: .3;
+    opacity: .5;
     transform: translateY(-50%);
     z-index: -2;
     filter: contrast(1.5);

@@ -1,0 +1,12 @@
+{% raw %}
+<div class="now-playing">
+  <img ng-controller="trackArtwork" ng-src="{{artwork(track.artwork_url || track.user.avatar_url || tracks[0].artwork_url || tracks[0].user.avatar_url)}}" alt="{{track.title || tracks[0].title}}">
+  <a ng-href="{{track.permalink_url || track[0].permalink_url}}" target="_blank"><h3>{{track.title || tracks[0].title }}</h3></a>
+  <div class="controls">
+    <span ng-click="previous()" class="previous"></span>
+    <span ng-click="playPause(index)" ng-class="{'playing': player.playing, 'paused': !player.playing}" title="Play/pauze" class="play-pause"></span>
+    <span ng-click="next()" class="next"></span>
+    <progress class="progress" ng-click="seek($event)" ng-value="currentTime/duration || 0">{{ currentTime / duration || 0 }}</progress>
+  </div>
+</div>
+{% endraw %}

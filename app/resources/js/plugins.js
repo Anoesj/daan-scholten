@@ -44,7 +44,9 @@ var app;
   })
   .controller('trackArtwork', function($scope) {
     $scope.artwork = function(originalURL) {
-      return originalURL.replace('large','t500x500')
+      if (originalURL) {
+        return originalURL.replace('large','t500x500')
+      }
     }
   })
 })();

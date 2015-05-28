@@ -8,6 +8,7 @@ description: "Daan Scholten | Producer & Sound Engineer"
 author:
   name: Anoesj Sadraee
   email: anoesjsadraee@gmail.com
+soundcloudurl: http://soundcloud.com/daanscholten/tracks
 
 # Grunt handles images and assets.
 exclude: ['img', 'css', 'js', 'fonts',
