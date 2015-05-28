@@ -24,6 +24,7 @@
     "grunt-filerev": "~0.2.1",
     "grunt-gh-pages": "^0.10.0",
     "grunt-jekyll": "~0.4.2",
+    "grunt-ng-annotate": "^1.0.1",
     "grunt-svgmin": "~0.4.0",
     "grunt-usemin": "~2.4.0",
     "jshint-stylish": "~0.4.0",

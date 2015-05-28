@@ -228,7 +228,11 @@ module.exports = function (grunt) {
     // Usemin adds files to concat
     concat: {},
     // Usemin adds files to uglify
-    uglify: {},
+    uglify: {
+      mangle: {
+        except: ['jQuery', 'angular']
+      }
+    },
     // Usemin adds files to cssmin
     cssmin: {
       dist: {
@@ -355,6 +359,7 @@ module.exports = function (grunt) {
 
   // grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-build-control');
+  grunt.loadNpmTasks('grunt-ng-annotate');
 
   // Define Tasks
   grunt.registerTask('serve', function (target) {
