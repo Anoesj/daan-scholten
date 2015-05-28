@@ -229,9 +229,7 @@ module.exports = function (grunt) {
     concat: {},
     // Usemin adds files to uglify
     uglify: {
-      mangle: {
-        except: ['jQuery', 'angular']
-      }
+      mangle: false
     },
     // Usemin adds files to cssmin
     cssmin: {
@@ -354,6 +352,16 @@ module.exports = function (grunt) {
           remote: 'git@github.com:DaanScholten/DaanScholten.github.io.git'
         }
       }
+    },
+    ngAnnotate: {
+      options: {
+        singleQuotes: true
+      },
+      app: {
+        files: {
+          'resources/js/plugins.js': ['resources/js/plugins.js']
+        }
+      },
     }
   });
 
