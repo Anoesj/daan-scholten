@@ -230,15 +230,16 @@ module.exports = function (grunt) {
     // Usemin adds files to uglify
     uglify: {
       options: {
-        mangle: {
-          except: [
-            'jquery',
-            'angular',
-            'plangular',
-            'head-scripts',
-            '/js/head-scripts'
-          ]
-        }
+        mangle: false
+        // {
+        //   except: [
+        //     'jquery',
+        //     'angular',
+        //     'plangular',
+        //     'head-scripts',
+        //     '/js/head-scripts'
+        //   ]
+        // }
       }
     },
     // Usemin adds files to cssmin
