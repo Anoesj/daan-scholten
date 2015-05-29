@@ -98,6 +98,7 @@ var ds = window.ds;
   }
 
   ds.loadPhotoslider = function() {
+    // TODO: CONFIGURATION
     $('.owl-carousel').owlCarousel({
       loop: true,
       margin: 0,
