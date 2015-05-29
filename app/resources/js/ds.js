@@ -53,6 +53,50 @@ var ds = window.ds;
     })
   }
 
+  ds.loadLightbox = function() {
+    $.extend(true, $.magnificPopup.defaults, {
+      tClose: 'Sluiten',
+      tLoading: 'Laden...',
+      gallery: {
+        tPrev: 'Vorige',
+        tNext: 'Volgende',
+        tCounter: '%curr% van %total%'
+      },
+      image: {
+        tError: 'De afbeelding kon niet worden geladen.'
+      },
+      ajax: {
+        tError: 'De inhoud kon niet worden geladen.'
+      }
+    })
+
+    $('.lightbox').magnificPopup({
+      delegate: 'figure',
+      type: 'image',
+      closeOnContentClick: false,
+      closeBtnInside: false,
+      showCloseBtn: false,
+      mainClass: 'mfp-with-zoom mfp-img-mobile',
+      gallery: {
+        enabled: true
+      },
+      image: {
+        verticalFit: true,
+        titleSrc: function(item) {
+          return ""
+        }
+      },
+      zoom: {
+        enabled: true,
+        duration: 300,
+        easing: 'ease-in-out',
+        opener: function(element) {
+          return element.find('img')
+        }
+      }
+    })
+  }
+
   ds.fadeInTracks = function() {
     var timeout = 80,
         $tracks = $('.track', '.tracks')

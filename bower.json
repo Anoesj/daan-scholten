@@ -15,5 +15,7 @@
   "resolutions": {
     "jquery": "~1.11.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "magnific-popup": "~1.0.0"
+  }
 }

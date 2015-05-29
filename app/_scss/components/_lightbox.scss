@@ -1,0 +1,93 @@
+.mfp-bg {
+  background: $white;
+}
+
+// .mfp-close {
+//   color: $dark-blue;
+//   opacity: 1;
+//   font-size: 60px;
+//   width: 80px;
+//   height: 80px;
+
+//   &:hover {
+//     color: $light-blue;
+//   }
+
+//   &:active {
+//     top: 0;
+//   }
+// }
+
+.mfp-arrow {
+  @include flaticon($flaticon-goto, 'before');
+  opacity: 1;
+
+  &:before {
+    color: $dark-blue;
+    width: 20px;
+  }
+
+  &:before, &:after {
+    border: none !important;
+    opacity: 1;
+  }
+
+  &:hover {
+    &, &:before {
+      color: $light-blue;
+    }
+  }
+
+  &:active {
+    margin-top: -55px;
+  }
+
+  &.mfp-arrow-left:before {
+    transform: scale(-1, 1) translateX(-50%);
+  }
+}
+
+img.mfp-img {
+  padding: 60px 0;
+}
+
+.mfp-figure {
+  &:after {
+    top: 60px;
+    bottom: 60px;
+    box-shadow: none;
+  }
+}
+
+.mfp-counter {
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: -5px;
+  color: $dark-blue;
+  font-weight: bold;
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: all .3s $ease-in-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+  opacity: 1;
+}
+
+.mfp-with-zoom.mfp-ready.mfp-bg {
+  opacity: 0.9;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container, 
+.mfp-with-zoom.mfp-removing.mfp-bg,
+.mfp-with-zoom.mfp-removing .mfp-close {
+  opacity: 0;
+}

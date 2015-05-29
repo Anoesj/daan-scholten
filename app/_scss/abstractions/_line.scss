@@ -1,7 +1,7 @@
 @mixin line($height: 4px, $one-line-only: false, $inline-block: false) {
   @if $inline-block != false {
     display: inline-block;
-    margin-top: $header-with-line-margin-top !important;
+    // margin-top: $header-with-line-margin-top !important;
   }
   position: relative;
   padding-bottom: .3em;

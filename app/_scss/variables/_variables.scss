@@ -63,7 +63,6 @@ $limited-width-elements: '.grid';
 // $e-reader:          481px, 100%;                           // portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide.
 
 
-
 //-------------------//
 //   MISCELLANEOUS   //
 //-------------------//
@@ -82,4 +81,6 @@ $form-border-radius: $base-border-radius;
 $checkbox-border-radius: 20%;
 
 $show-shortcut-tips: true;
-$header-with-line-margin-top: 20px;
+$header-with-line-margin-top: 30px;
+$footer-height: 50px;
+

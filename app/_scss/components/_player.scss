@@ -212,22 +212,22 @@ progress {
   -moz-appearance: none;
   appearance: none;
   border: none;
-  color: $light-blue;
+  color: $dark-blue;
   height: 10px;
   cursor: pointer;
 
   &::-webkit-progress-bar {
     border-radius: $base-border-radius;
-    background-color: $light-blue;
+    background-color: $dark-blue;
   }
 
   &::-webkit-progress-value {
     border-radius: $base-border-radius;
-    background-color: $dark-blue;
+    background-color: $light-blue;
   }
 
   &::-moz-progress-bar {
     border-radius: $base-border-radius;
-    background-color: $light-blue;
+    background-color: $dark-blue;
   }
 }

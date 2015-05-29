@@ -38,6 +38,7 @@ if (isSafari) {
 
     ds.loadAddThis()
     ds.loadSCWidgetAPI()
+    ds.loadLightbox()
 
     /* SVG to PNG if browser does not support it */
     if (!Modernizr.svg) {

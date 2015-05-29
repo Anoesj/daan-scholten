@@ -4,6 +4,9 @@
   @include clearfix;
   display: flex;
   justify-content: center;
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
 
   .image {
     display: flex;

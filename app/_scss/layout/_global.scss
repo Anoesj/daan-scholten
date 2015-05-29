@@ -9,18 +9,27 @@
 @include setup-grid($transitions: true);
 @include add-background-grid;
 
+html {
+  position: relative;
+}
+
 body {
   @include background-image-retina("/resources/img/white_wall_hash", png, 500px, 500px);
 
   .main-wrapper {
-    transition: opacity .3s $ease-out 0s;
     opacity: 1;
     padding-top: 40px;
     padding-bottom: 60px;
   }
 
+  .main-wrapper,
+  .page-footer {
+    transition: opacity .3s $ease-out 0s;
+  }
+  
   &.fade-out-content {
-    .main-wrapper {
+    .main-wrapper,
+    .page-footer {
       opacity: 0;
     }
   }
@@ -119,6 +128,35 @@ body.is-safari {
   h2 {
     &.sidebar-title {
       font-size: 24px;
+    }
+  }
+}
+
+// Sticky footer
+.wrapper {
+  min-height: 100%;
+  margin: 0 auto ($footer-height*-1);
+}
+
+.page-footer, .push {
+  height: $footer-height;
+}
+
+.page-footer {
+  text-align: right;
+
+  small {
+    color: $light-grey;
+    display: block;
+    @include isolation-span(8, 3, 'both');
+
+    a {
+      color: $grey !important;
+
+      &:hover,
+      &:focus {
+        color: $dark-blue !important;
+      }
     }
   }
 }

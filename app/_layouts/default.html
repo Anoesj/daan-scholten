@@ -15,6 +15,7 @@
 
     <!-- build:css({app,.tmp}) /css/main.css -->
     <link rel="stylesheet" href="/_bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="/_bower_components/magnific-popup/dist/magnific-popup.css">
     <link rel="stylesheet" href="/resources/css/main.css">
     <link rel="stylesheet" href="/css/styles.css">
     <!-- endbuild -->
@@ -59,72 +60,80 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header class="header-wrapper">
-      <div class="grid">
-        <div class="full-width">
-          <a href="/" title="Home" class="logo">
-            <img src="/resources/img/logo.svg" alt="Daan Scholten" title="Home">
-            <span class="logo-text">Producer - Sound Engineer</span>
-          </a>
-        </div>
-      </div>
-    </header>
-
-    <div class="menu-wrapper-wrapper">
-      <nav class="menu-wrapper">
+    <div class="wrapper">
+      <header class="header-wrapper">
         <div class="grid">
           <div class="full-width">
-            <ul>
-              <li>
-                <a href="/" {% if cleanCurrent == 'home' %}class="active"{% endif %}>
-                  <span class="text">Home</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="/over-mij" {% if cleanCurrent == 'over-mij' %}class="active"{% endif %}>
-                  <span class="text">Over mij</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="/blog" {% if cleanCurrent contains 'blog' %}class="active"{% endif %}>
-                  <span class="text">Blog</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="/portfolio" {% if cleanCurrent == 'portfolio' %}class="active"{% endif %}>
-                  <span class="text">Portfolio</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="/studio" {% if cleanCurrent == 'studio' %}class="active"{% endif %}>
-                  <span class="text">Studio</span>
-                </a>
-              </li>
-              
-              <li>
-                <a href="/live" {% if cleanCurrent == 'live' %}class="active"{% endif %}>
-                  <span class="text">Live</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="/contact" {% if cleanCurrent == 'contact' %}class="active"{% endif %}>
-                  <span class="text">Contact</span>
-                </a>
-              </li>
-            </ul>
+            <a href="/" title="Home" class="logo">
+              <img src="/resources/img/logo.svg" alt="Daan Scholten" title="Home">
+              <span class="logo-text">Producer - Sound Engineer</span>
+            </a>
           </div>
         </div>
-      </nav>
+      </header>
+
+      <div class="menu-wrapper-wrapper">
+        <nav class="menu-wrapper">
+          <div class="grid">
+            <div class="full-width">
+              <ul>
+                <li>
+                  <a href="/" {% if cleanCurrent == 'home' %}class="active"{% endif %}>
+                    <span class="text">Home</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/over-mij" {% if cleanCurrent == 'over-mij' %}class="active"{% endif %}>
+                    <span class="text">Over mij</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/blog" {% if cleanCurrent contains 'blog' %}class="active"{% endif %}>
+                    <span class="text">Blog</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/portfolio" {% if cleanCurrent == 'portfolio' %}class="active"{% endif %}>
+                    <span class="text">Portfolio</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/studio" {% if cleanCurrent == 'studio' %}class="active"{% endif %}>
+                    <span class="text">Studio</span>
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="/live" {% if cleanCurrent == 'live' %}class="active"{% endif %}>
+                    <span class="text">Live</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/contact" {% if cleanCurrent == 'contact' %}class="active"{% endif %}>
+                    <span class="text">Contact</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="main-wrapper grid">
+        {{ content }}
+      </div>
+
+      <div class="push"></div>
     </div>
 
-    <div class="main-wrapper grid">
-      {{ content }}
-    </div>
+    <footer class="page-footer grid">
+      <small>&copy; 2015, Daan Scholten. Website door <a href="mailto:anoesjsadraee@gmail.com" target="_self" class="no-fade">Anoesj Sadraee</a></small>
+    </footer>
 
     {% include scripts.html %}
     {% include googleanalytics.html %}
