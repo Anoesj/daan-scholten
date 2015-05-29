@@ -8,7 +8,7 @@ Bij mij heeft u de mogelijkheid om in een daarvoor ingerichte ruimte rustig en o
 Als producer en technicus heb ik veel ervaring met verschillende ruimtes, stijlen en bezettingen. Voor elk budget bied ik een oplossing! Neemt u voor prijzen contact op met mij! 
 
 ### GEAR
-In alle gevallen wordt er opgenomen met een MacBook Pro (Retina, eind 2013) met de volgende specs:
+In alle gevallen wordt er opgenomen in ProTools 12 of Logic Pro X met een MacBook Pro (Retina, eind 2013) met de volgende specs:
 
 **Processor** 	2,6GHz Intel Core i7
 **Geheugen**	16GB 1600MHz DDR3
