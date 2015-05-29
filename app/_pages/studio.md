@@ -17,7 +17,7 @@ In alle gevallen wordt er opgenomen in ProTools 12 of Logic Pro X met een MacBoo
 **Opslag**		1TB (flash-opslag)
 
 
-**Home Studio (32 in/32 out)**  
+**Home Studio (32 in/32 out)**..  
 Tascam DM3200 met Firewire- en ADAT-kaart  
 Focusrite OctoPre  
 Behringer HA4700 Powerplay  
