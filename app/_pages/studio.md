@@ -4,6 +4,7 @@ title: Studio
 published: true
 ---
 
+
 Bij mij heeft u de mogelijkheid om in een daarvoor ingerichte ruimte rustig en op uw gemak op te nemen. Daarnaast kunt u er ook voor kiezen om ergens op locatie een opname te laten maken. Voor alle situaties is er voldoende kennis en apparatuur aanwezig om u te helpen tot een goed eindresultaat te komen. 
 Als producer en technicus heb ik veel ervaring met verschillende ruimtes, stijlen en bezettingen. Voor elk budget bied ik een oplossing! Neemt u voor prijzen contact op met mij! 
 
@@ -16,10 +17,10 @@ In alle gevallen wordt er opgenomen in ProTools 12 of Logic Pro X met een MacBoo
 **Opslag**		1TB (flash-opslag)
 
 
-**Home Studio (32 in/32 out)**
-Tascam DM3200 met Firewire- en ADAT-kaart
-Focusrite OctoPre
-Behringer HA4700 Powerplay
+**Home Studio (32 in/32 out)**  
+Tascam DM3200 met Firewire- en ADAT-kaart  
+Focusrite OctoPre  
+Behringer HA4700 Powerplay  
 
 _Afluistering_
 Yamaha HS8
