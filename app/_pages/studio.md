@@ -11,12 +11,10 @@ Als producer en technicus heb ik veel ervaring met verschillende ruimtes, stijle
 In alle gevallen wordt er opgenomen met een MacBook Pro (Retina, eind 2013) met de volgende specs:
 
 **Processor** 	2,6GHz Intel Core i7
-
 **Geheugen**	16GB 1600MHz DDR3
-
 **Videokaart** 	Intel Iris Pro 1536 MB
-
 **Opslag**		1TB (flash-opslag)
+
 
 
 **Home Studio (32 in/32 out)**
