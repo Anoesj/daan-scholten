@@ -13,15 +13,28 @@ title: Daan Scholten | Producer & Sound Engineer
   </ul>
 </section>
 
-<main class="center-column sidebar">
-  <a href="/portfolio"><h3 class="sidebar-title">Portfolio</h3></a>
-  <div class="soundcloud-player-wrapper">
-    <div plangular="{{ site.soundcloudurl }}" ng-controller="fadeInWhenDone" class="tracks">
-      {% include nowplaying.html %}
+<main class="center-column">
+  <div class="sidebar">
+    <a href="/portfolio"><h3 class="sidebar-title">Portfolio</h3></a>
+    <div class="soundcloud-player-wrapper">
+      <div plangular="{{ site.soundcloudurl }}" ng-controller="fadeInWhenDone" class="tracks">
+        {% include nowplaying.html %}
+      </div>
     </div>
   </div>
-  <div class="share addthis">
-    <div class="addthis_horizontal_follow_toolbox"></div>
+
+  <div class="sidebar">
+    <div class="owl-carousel">
+      {% for i in (0..9) %}
+        <div class="item">
+          <img src="resources/img/slider_photos/thumbnails/{{ i }}.jpg">
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="share addthis">
+      <div class="addthis_horizontal_follow_toolbox"></div>
+    </div>
   </div>
 </main>
 

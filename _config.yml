@@ -41,6 +41,18 @@ collections:
     output: true
     permalink: /:path/
 
+mini_magick:
+  thumbnail:
+    source: 'resources/img/slider_photos'
+    destination: 'resources/img/slider_photos/thumbnails'
+    resize: '504x300'
+
+retinamagick:
+  thumbnail:
+    source: 'resources/img/slider_photos'
+    destination: 'resources/img/slider_photos/thumbnails'
+    resize: '504x300'
+
 prose:
   rooturl: 'app'
   relativeLinks: 'http://anoesjsadraee.com/Prose-relative-links/daan-scholten.jsonp'

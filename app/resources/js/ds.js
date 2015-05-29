@@ -97,6 +97,15 @@ var ds = window.ds;
     })
   }
 
+  ds.loadPhotoslider = function() {
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      items: 1
+    })
+  }
+
   ds.fadeInTracks = function() {
     var timeout = 80,
         $tracks = $('.track', '.tracks')
