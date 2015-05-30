@@ -92,20 +92,20 @@ var ds = window.ds;
 
     if ($('body').hasClass('slider-loaded')) {
       $.magnificPopup.instance.next = function() {
-        ds.carousel.trigger('next.owl.carousel')
+        ds.slider.trigger('next.owl.carousel')
         $.magnificPopup.proto.next.call(this)
       }
 
       $.magnificPopup.instance.prev = function() {
-        ds.carousel.trigger('prev.owl.carousel')
+        ds.slider.trigger('prev.owl.carousel')
         $.magnificPopup.proto.prev.call(this)
       }
     }
   }
 
   ds.loadPhotoslider = function() {
-    ds.carousel = $('.owl-carousel')
-    ds.carousel.owlCarousel({
+    ds.slider = $('.owl-carousel')
+    ds.slider.owlCarousel({
       loop: false,
       margin: 0,
       nav: false,
@@ -113,16 +113,21 @@ var ds = window.ds;
       items: 1,
       lazyLoad: true,
       lazyFollow: false,
-      mouseDrag: false,
-      animateIn: 'zoomIn',
-      animateOut: 'fadeOutDown',
+      mouseDrag: true,
+      // animateIn: 'zoomIn',
+      // animateOut: 'fadeOutDown',
       smartSpeed: 300,
-      onInitialized: ds.sliderLoaded
+      onInitialized: ds.sliderLoaded,
+      onLoadedLazy: ds.sliderSetSliderHeight
     })
   }
 
   ds.sliderLoaded = function() {
     $('body').addClass('slider-loaded')
+  }
+
+  ds.sliderSetSliderHeight = function() {
+    ds.slider.find('.owl-item').matchHeight()
   }
 
   ds.fadeInTracks = function() {

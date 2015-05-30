@@ -6,6 +6,9 @@
     cursor: -moz-zoom-in;
     cursor: -webkit-zoom-in;
     cursor: zoom-in;
+    background: transparent url('../resources/img/loading.gif') no-repeat center center;
+    background-size: 48px 48px;
+    height: 100%;
 
     &.animated {
       animation-duration: $speed-slow;
