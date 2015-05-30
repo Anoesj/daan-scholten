@@ -1,0 +1,44 @@
+.owl-carousel {
+  border-radius: $base-border-radius;
+  overflow: hidden;
+
+  .owl-item {
+    cursor: -moz-zoom-in;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+
+    &.animated {
+      animation-duration: $speed-slow;
+    }
+  }
+
+  figure {
+    margin: 0;
+  }
+}
+
+.owl-theme {
+  .owl-controls {
+    position: absolute;
+    margin-top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .owl-dots {
+    .owl-dot {
+      span {
+        transition: background $speed-fast $ease-out 0s;
+        background: $white;
+      }
+    }
+
+    .owl-dot.active,
+    .owl-dot:hover {
+      span {
+        background: $light-blue;
+      }
+    }
+  }
+}

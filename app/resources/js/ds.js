@@ -95,16 +95,40 @@ var ds = window.ds;
         }
       }
     })
+
+    if ($('body').hasClass('slider-loaded')) {
+      $.magnificPopup.instance.next = function() {
+        ds.carousel.trigger('next.owl.carousel')
+        $.magnificPopup.proto.next.call(this)
+      }
+
+      $.magnificPopup.instance.prev = function() {
+        ds.carousel.trigger('prev.owl.carousel')
+        $.magnificPopup.proto.prev.call(this)
+      }
+    }
   }
 
   ds.loadPhotoslider = function() {
-    // TODO: CONFIGURATION
-    $('.owl-carousel').owlCarousel({
-      loop: true,
+    ds.carousel = $('.owl-carousel')
+    ds.carousel.owlCarousel({
+      loop: false,
       margin: 0,
-      nav: true,
-      items: 1
+      nav: false,
+      singleItem : true,
+      items: 1,
+      lazyLoad: true,
+      lazyFollow: false,
+      mouseDrag: false,
+      animateIn: 'zoomIn',
+      animateOut: 'fadeOutDown',
+      smartSpeed: 300,
+      onInitialized: ds.sliderLoaded
     })
+  }
+
+  ds.sliderLoaded = function() {
+    $('body').addClass('slider-loaded')
   }
 
   ds.fadeInTracks = function() {
