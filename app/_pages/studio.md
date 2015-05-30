@@ -5,13 +5,13 @@ published: true
 ---
 
 
+
 Bij mij heeft u de mogelijkheid om in een daarvoor ingerichte ruimte rustig en op uw gemak op te nemen. Daarnaast kunt u er ook voor kiezen om ergens op locatie een opname te laten maken. Voor alle situaties is er voldoende kennis en apparatuur aanwezig om u te helpen tot een goed eindresultaat te komen. 
 Als producer en technicus heb ik veel ervaring met verschillende ruimtes, stijlen en bezettingen. Voor elk budget bied ik een oplossing! Neemt u voor prijzen contact op met mij! 
 
 ### GEAR
 In alle gevallen wordt er opgenomen in ProTools 12 of Logic Pro X met een MacBook Pro (Retina, eind 2013) met de volgende specs:
-
-**Processor** 	2,6GHz Intel Core i7
+**Processor** 	2,6GHz Intel Core i7  ..
 **Geheugen**	16GB 1600MHz DDR3
 **Videokaart** 	Intel Iris Pro 1536 MB
 **Opslag**		1TB (flash-opslag)
