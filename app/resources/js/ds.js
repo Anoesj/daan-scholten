@@ -118,16 +118,23 @@ var ds = window.ds;
       // animateOut: 'fadeOutDown',
       smartSpeed: 300,
       onInitialized: ds.sliderLoaded,
-      onLoadedLazy: ds.sliderSetSliderHeight
+      onLoadedLazy: ds.sliderSetSliderHeight,
+      onChanged: ds.sliderSetSliderHeight
     })
   }
 
   ds.sliderLoaded = function() {
     $('body').addClass('slider-loaded')
+    ds.slider.find('.owl-item').matchHeight()
+    $.fn.matchHeight._throttle = 0
   }
 
   ds.sliderSetSliderHeight = function() {
-    ds.slider.find('.owl-item').matchHeight()
+    $.fn.matchHeight._update()
+  }
+
+  ds.delayUpdate = function() {
+    setTimeout(ds.sliderSetSliderHeight, 1000)
   }
 
   ds.fadeInTracks = function() {

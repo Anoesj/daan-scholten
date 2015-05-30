@@ -114,3 +114,15 @@
     }
   }
 }
+
+@include breakpoint(max-width bpmax("laptop")) {
+  .home .latest-posts,
+  .blog .older-posts {
+    .post {
+      header {
+        font-size: 18px;
+        line-height: 30px;
+      }
+    }
+  }
+}

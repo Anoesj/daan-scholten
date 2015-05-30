@@ -84,3 +84,21 @@ body.blog-overview {
 
   @include add-gutter-style('split');
 }
+
+// Mobile - tablet portrait
+@include breakpoint(max-width bpmax("laptop")) {
+  .image-wrapper {
+    display: block;
+  }
+
+  .image {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+
+    &.image-left {
+      margin-bottom: 2em !important;
+    }
+  }
+}
+

@@ -34,12 +34,15 @@ title: Daan Scholten | Producer & Sound Engineer
   </div>
 
   <div class="sidebar">
-    <div class="owl-carousel lightbox">
-      {% for i in (0..9) %}
-        <figure data-mfp-src="/resources/img/slider_photos/{{ i }}.jpg">
-          <img class="owl-lazy" data-src="/resources/img/slider_photos/thumbnails/{{ i }}.jpg" data-src-retina="/resources/img/slider_photos/thumbnails/{{ i }}@2x.jpg" alt="">
-        </figure>
-      {% endfor %}
+    <h3 class="sidebar-title">Foto&rsquo;s</h3>
+    <div class="owl-carousel-wrapper">
+      <div class="owl-carousel lightbox">
+        {% for i in (0..9) %}
+          <figure data-mfp-src="/resources/img/slider_photos/{{ i }}.jpg">
+            <img class="owl-lazy" data-src="/resources/img/slider_photos/thumbnails/{{ i }}.jpg" data-src-retina="/resources/img/slider_photos/thumbnails/{{ i }}@2x.jpg" alt="">
+          </figure>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </main>

@@ -41,7 +41,7 @@ $logo-translate: translateX(-5px);
   position: relative;
   background: $white;
 
-  @include breakpoint(bp("tablet-portrait")) {
+  // @include breakpoint(bp("tablet-portrait")) {
     &:before {
       content: '';
       position: absolute;
@@ -54,7 +54,7 @@ $logo-translate: translateX(-5px);
       background-size: cover;
       opacity: .3;
     }
-  }
+  // }
 
   &:after {
     content: '';
@@ -148,7 +148,6 @@ body.is-safari {
   small {
     color: $light-grey;
     display: block;
-    @include isolation-span(8, 3, 'both');
 
     a {
       color: $grey !important;
@@ -158,5 +157,61 @@ body.is-safari {
         color: $dark-blue !important;
       }
     }
+  }
+}
+
+// Tablet and mobile
+@include breakpoint(max-width bpmax("laptop")) {
+  // Typography, because it triggers an error when I do it in _typography.scss
+  h1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  blockquote {
+    p {
+      font-size: 18px;
+      line-height: 30px;   
+    }
+  }
+
+  $logo-height-multiplier: .75;
+  .header-wrapper {
+    .logo {
+      img {
+        height: ceil($logo-height-multiplier * $logo-height);
+      }
+    }
+  }
+
+  body.is-safari {
+    .header-wrapper {
+      .logo {
+        img {
+          transform: scale(0.5) translate(-50%) $logo-translate;
+          height: ceil($logo-height * 2 * $logo-height-multiplier);
+          margin-top: $logo-height/-2 * $logo-height-multiplier;
+          margin-bottom: $logo-height/-2 * $logo-height-multiplier;
+        }
+      }
+    }
+  }
+}
+
+// Mobile only
+@include breakpoint(max-width bpmax("tablet-portrait")) {
+  .main-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

@@ -1,5 +1,4 @@
-@mixin narrow-paragraphs {
-  $padding-paragraphs: 80px;
+@mixin narrow-paragraphs($padding-paragraphs: 80px) {
   p, h2, h3, h4, h5, .share, .tags {
     padding-left: $padding-paragraphs;
     padding-right: $padding-paragraphs;

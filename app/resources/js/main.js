@@ -65,7 +65,11 @@ if (isSafari) {
     var menuPosition
     callRefreshMenuPosition()
     
-    $(window).on('resize', callRefreshMenuPosition)
+    $(window).on('resize', function () {
+      callRefreshMenuPosition()
+      ds.delayUpdate()
+    })
+    
     $(window).on('scroll', stickyMenuState)
     stickyMenuState()
 
