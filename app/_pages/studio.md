@@ -15,25 +15,30 @@ In alle gevallen wordt er opgenomen in ProTools 12 of Logic Pro X met een MacBoo
 **Videokaart:** Intel Iris Pro 1536 MB  
 **Opslag:** 1TB (flash-opslag)  
 
-**Home Studio (32 in/32 out)**  
+**Home Studio (32 in/32 out)**
+
 - Tascam DM3200 met Firewire- en ADAT-kaart    
 - Focusrite OctoPre  
 - Behringer HA4700 Powerplay  
 
-_Afluistering_  
+_Afluistering_
+
 - Yamaha HS8  
 - Samson Resolv 50A  
 - Sennheiser HD25 C-II  
 - een heleboel andere hoofdtelefoons  
 
-**Mobiele studio (klein - 16 in/16 out)**  
+**Mobiele studio (klein - 16 in/16 out)**
+
 - Digidesign DIGI003 Rack  
 - Focusrite OctoPre  
 
-**Mobiele studio (groot - 56 in/16 out)**  
+**Mobiele studio (groot - 56 in/16 out)**
+
 - DiGiCo D1 met 56 in en 16 out MADI-rack  
 
-**Microfoons**  
+**Microfoons**
+
 - 1x Avantone CV-12
 - 1x Røde NT1-A
 - 6x Røde NT5
