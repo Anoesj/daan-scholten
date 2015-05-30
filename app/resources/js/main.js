@@ -36,10 +36,10 @@ if (isSafari) {
       $('body').removeClass('fade-out-content')
     }, 40)
 
-    ds.loadAddThis()
     ds.loadSCWidgetAPI()
     ds.loadPhotoslider()
     ds.loadLightbox()
+    // ds.loadAddThis()
 
     /* SVG to PNG if browser does not support it */
     if (!Modernizr.svg) {

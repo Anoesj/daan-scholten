@@ -2,15 +2,25 @@
 layout: default
 title: Daan Scholten | Producer & Sound Engineer
 ---
-<section class="projects sidebar">
-  <h3 class="sidebar-title">Projecten</h3>
-  <ul class="running-projects">
-    {% for project in site.projects %}
-    <li class="project">
-      <a href="{% if project.target != null %}{{ project.target }}{% else %}/blog{% endif %}">{{ project.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
+<section class="projects">
+  <div class="sidebar">
+    <h3 class="sidebar-title">Projecten</h3>
+    <ul class="running-projects">
+      {% for project in site.projects %}
+      <li class="project">
+        <a href="{% if project.target != null %}{{ project.target }}{% else %}/blog{% endif %}">{{ project.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="sidebar">
+    <div class="share addthis">
+      <!-- <strong>Vind mij op:</strong> -->
+      <h3 class="sidebar-title">Vind mij op...</h3>
+      <div class="addthis_horizontal_follow_toolbox"></div>
+    </div>
+  </div>
 </section>
 
 <main class="center-column">
@@ -30,10 +40,6 @@ title: Daan Scholten | Producer & Sound Engineer
           <img class="owl-lazy" data-src="/resources/img/slider_photos/thumbnails/{{ i }}.jpg" data-src-retina="/resources/img/slider_photos/thumbnails/{{ i }}@2x.jpg" alt="">
         </figure>
       {% endfor %}
-    </div>
-
-    <div class="share addthis">
-      <div class="addthis_horizontal_follow_toolbox"></div>
     </div>
   </div>
 </main>

@@ -8,10 +8,12 @@
   ul {
     $padding-ul: $list-item-padding + $list-item-padding-correction;
     padding-left: calc(#{$padding-paragraphs} + #{$padding-ul});
+    padding-right: $padding-paragraphs;
   }
 
   ol {
     padding-left: calc(#{$padding-paragraphs} + #{$list-item-padding-correction});
+    padding-right: $padding-paragraphs;
   }
 
   h1 {
