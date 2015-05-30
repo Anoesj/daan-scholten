@@ -54,5 +54,6 @@ DiGiCo D1 met 56 in en 16 out MADI-rack
 6x 	Sennheiser e904  
 6x 	Sennheiser e906  
 2x 	AKG C414-XLS (op aanvraag)  
+2x 	Neumann KM184 (op aanvraag) 
 3x 	Sennheiser MD-421-II (op aanvraag)  
 1x 	Sennheiser MD-421 (vintage) (op aanvraag)
