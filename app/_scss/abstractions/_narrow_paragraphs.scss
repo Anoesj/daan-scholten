@@ -1,8 +1,17 @@
 @mixin narrow-paragraphs {
   $padding-paragraphs: 80px;
-  p, h2, h3, h4, h5, ul, ol {
+  p, h2, h3, h4, h5, .share, .tags {
     padding-left: $padding-paragraphs;
     padding-right: $padding-paragraphs;
+  }
+
+  ul {
+    $padding-ul: $list-item-padding + $list-item-padding-correction;
+    padding-left: calc(#{$padding-paragraphs} + #{$padding-ul});
+  }
+
+  ol {
+    padding-left: calc(#{$padding-paragraphs} + #{$list-item-padding-correction});
   }
 
   h1 {

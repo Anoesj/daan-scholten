@@ -1,8 +1,7 @@
 .sidebar:not(.projects) {
   ul {
-    $list-item-padding: 1em;
     list-style: none;
-    padding-left: $list-item-padding + 1.5em;
+    padding-left: $list-item-padding + $list-item-padding-correction;
     margin-left: -$list-item-padding;
 
     & > li {
@@ -17,6 +16,7 @@
         background-clip: content-box;
         padding: ($list-item-padding * 0.75/2) ($list-item-padding * 0.75) ($list-item-padding * 0.75/2) 0;
         vertical-align: middle;
+        transform: translateY(-2px);
       }
     }
 
@@ -29,13 +29,13 @@
   ol {
     list-style: none;
     counter-reset: olli;
-    padding-left: 1.5em;
+    padding-left: $list-item-padding-correction;
 
     & > li {
       &:before {
         content: counter(olli) '.';
         counter-increment: olli;
-        margin-left: -1.5em;
+        margin-left: -$list-item-padding-correction;
         line-height: 0;
         width: 1.5em;
         display: inline-block;

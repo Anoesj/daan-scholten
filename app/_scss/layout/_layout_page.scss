@@ -11,7 +11,7 @@ body.layout-page {
       @include isolation-span(8, 3, 'both');
       
       .sidebar {
-        padding: 70px 40px;
+        padding: (40px + $header-with-line-margin-top) 40px;
         @include narrow-paragraphs;
       }
     }
