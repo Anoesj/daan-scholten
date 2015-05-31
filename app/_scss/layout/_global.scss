@@ -40,21 +40,6 @@ $logo-translate: translateX(-5px);
   position: relative;
   background: $white;
 
-  // @include breakpoint(bp("tablet-portrait")) {
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 1;
-      background: url("../resources/img/mixing-console2.jpg") center center no-repeat;
-      background-size: cover;
-      opacity: .3;
-    }
-  // }
-
   &:after {
     content: '';
     position: absolute;
@@ -159,6 +144,24 @@ body.is-safari {
   }
 }
 
+@include breakpoint(bpmin("tablet-portrait")) {
+  .header-wrapper {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background: url("../resources/img/mixing-console2.jpg") center center no-repeat;
+      background-size: cover;
+      opacity: .3;
+    }
+  }
+}
+
+// Everything under hi-resolution screens
 @include breakpoint(max-width bpmax("hi-res")) {
   .header-wrapper {
     .logo {
@@ -280,3 +283,11 @@ body.is-safari {
     }
   }
 }
+
+@include breakpoint(max-width 340px) {
+  .logo-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
