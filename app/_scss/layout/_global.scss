@@ -285,9 +285,13 @@ body.is-safari {
 }
 
 @include breakpoint(max-width 340px) {
-  .logo-text {
-    font-size: 14px;
-    line-height: 20px;
+  .header-wrapper {
+    .logo {
+      .logo-text {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
   }
 }
 
