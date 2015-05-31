@@ -233,6 +233,16 @@ body.is-safari {
       }
     }
   }
+
+  body.is-safari {
+    .header-wrapper {
+      .logo {
+        img {
+          margin-right: -30%; // I dunno why, but it works fine
+        }
+      }
+    }
+  }
 }
 
 // Mobile only
