@@ -50,7 +50,10 @@ if (isSafari) {
 
     /* Sticky menu */
     function refreshMenuPosition() {
-      $('.menu-wrapper-wrapper').css('height', $('.menu-wrapper').height())
+      $('.menu-wrapper-wrapper').css({
+        'height': $('.menu-wrapper').height(),
+        'max-height': $('.menu-wrapper').height()
+      })
       menuPosition = $('.header-wrapper').height()
     }
 
@@ -69,8 +72,8 @@ if (isSafari) {
       callRefreshMenuPosition()
       ds.delayUpdate()
     })
-    
-    $(window).on('scroll', stickyMenuState)
+
+    $(window).on('scroll touchmove', stickyMenuState)
     stickyMenuState()
 
     /* Open external links in new tabs */
@@ -102,7 +105,11 @@ if (isSafari) {
       if (!menuItemHasBeenClicked && currentPage != targetLink && !isAddThisLink) {
         ($(window).scrollTop() != 0) ? ds.goTo(e, targetLinkCategory, $that.attr('href'), 300) : ds.goTo(e, targetLinkCategory, $that.attr('href'), 0)
       }
-    })   
+    })  
+
+    $(document).on('click touch', '.mobile-menu-icon', function(e) {
+      $('body').toggleClass('mobile-menu-hidden mobile-menu-visible')
+    }) 
   })
 
 }(window.jQuery, window, document));

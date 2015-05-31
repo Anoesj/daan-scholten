@@ -4,7 +4,7 @@
 @include add-breakpoint("tablet-landscape", (840px, 800px, 12, 12));
 @include add-breakpoint("laptop", (1000px, $default-page-width, 12, 12));
 @include add-breakpoint("hi-res", (1320px, 1280px, 12, 12));
-@include show-breakpoint-names(true);
+@include show-breakpoint-names(false);
 
 @include setup-grid($transitions: true);
 @include add-background-grid;
@@ -35,7 +35,6 @@ body {
   }
 }
 
-$logo-height: 123px;
 $logo-translate: translateX(-5px);
 .header-wrapper {
   position: relative;
@@ -75,7 +74,7 @@ $logo-translate: translateX(-5px);
 
   .logo {
     display: inline-block;
-    margin: 20px 0;
+    margin: $logo-margin 0;
     
     img {
       width: auto;
@@ -185,11 +184,10 @@ body.is-safari {
     }
   }
 
-  $logo-height-multiplier: .75;
   .header-wrapper {
     .logo {
       img {
-        height: ceil($logo-height-multiplier * $logo-height);
+        height: ceil($logo-height-multiplier-tablet-landscape * $logo-height);
       }
     }
   }
@@ -199,9 +197,38 @@ body.is-safari {
       .logo {
         img {
           transform: scale(0.5) translate(-50%) $logo-translate;
-          height: ceil($logo-height * 2 * $logo-height-multiplier);
-          margin-top: $logo-height/-2 * $logo-height-multiplier;
-          margin-bottom: $logo-height/-2 * $logo-height-multiplier;
+          height: ceil($logo-height * 2 * $logo-height-multiplier-tablet-landscape);
+          margin-top: $logo-height/-2 * $logo-height-multiplier-tablet-landscape;
+          margin-bottom: $logo-height/-2 * $logo-height-multiplier-tablet-landscape;
+        }
+      }
+    }
+  }
+}
+
+// Mobile - tablet portrait
+@include breakpoint(max-width bpmax("tablet-landscape")) {
+  .header-wrapper {
+    .logo {
+      img {
+        transform: none;
+        margin-right: 10px;
+      }
+
+      .logo-text {
+        display: inline-block;
+        margin: 0;
+        vertical-align: middle;
+        font-size: 22px;
+        line-height: 28px;
+      }
+
+      .hide-mobile {
+        visibility: hidden;
+
+        &:after {
+          content: '\A';
+          white-space: pre;
         }
       }
     }
@@ -213,5 +240,31 @@ body.is-safari {
   .main-wrapper {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .header-wrapper {
+    .logo {
+      img {
+        height: ceil($logo-height-multiplier-up-to-tablet-portrait * $logo-height);
+      }
+
+      .logo-text {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  body.is-safari {
+    .header-wrapper {
+      .logo {
+        img {
+          transform: scale(0.5) translate(-50%) $logo-translate;
+          height: ceil($logo-height * 2 * $logo-height-multiplier-up-to-tablet-portrait);
+          margin-top: $logo-height/-2 * $logo-height-multiplier-up-to-tablet-portrait;
+          margin-bottom: $logo-height/-2 * $logo-height-multiplier-up-to-tablet-portrait;
+        }
+      }
+    }
   }
 }

@@ -85,4 +85,8 @@ $header-with-line-margin-top: 30px;
 $footer-height: 50px;
 $list-item-padding: 1em;
 $list-item-padding-correction: 1.1em;
-
+$logo-height: 123px;
+$logo-margin: 20px;
+$logo-height-multiplier-tablet-landscape: .75;
+$logo-height-multiplier-up-to-tablet-portrait: .5;
+$mobile-menu-touchable-area-sides: $logo-margin * 3;

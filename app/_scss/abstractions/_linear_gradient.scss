@@ -8,3 +8,15 @@
   background: linear-gradient(to #{$targetX},  $start 0%,$end 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=1 );
 }
+
+@mixin linear-gradient-ugh-version($start, $end, $originX: 'left', $targetX: 'right', $originY: 'top', $targetY: 'top') {
+  background: $start;
+  background: -moz-linear-gradient(#{$targetY},  $start 0%, $end 100%);
+  background: -webkit-gradient(linear, #{$originX} #{$originY}, #{$targetX} #{$targetY}, color-stop(0%,$start), color-stop(100%,$end));
+  background: -webkit-linear-gradient(#{$targetY},  $start 0%,$end 100%);
+  background: -o-linear-gradient(#{$targetY},  $start 0%,$end 100%);
+  background: -ms-linear-gradient(#{$targetY},  $start 0%,$end 100%);
+  background: linear-gradient(to #{$targetY},  $start 0%,$end 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=1 );
+}
+

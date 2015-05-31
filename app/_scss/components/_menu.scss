@@ -1,9 +1,4 @@
 .menu-wrapper {
-  background-color: $dark-blue;
-  box-shadow: 0px 0px 35px 15px rgba($white, .5);
-  position: relative;
-  -webkit-font-smoothing: subpixel-antialiased;
-
   &:after {
     content: "";
     display: block;
@@ -13,84 +8,192 @@
     height: 2px;
     background-color: $light-blue;
   }
+}
 
-  ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
+@include breakpoint(bpmin("tablet-landscape")) {
+  .menu-wrapper {
+    background-color: $dark-blue;
+    box-shadow: 0px 0px 35px 15px rgba($white, .5);
+    position: relative;
+    -webkit-font-smoothing: subpixel-antialiased;
 
-    li {
-      list-style: none;
-      flex-grow: 1;
-      width: auto;
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
 
-      a {
-        display: block;
-        position: relative;
-        padding: 3px 0;
-        color: $white !important;
-        font-size: 16px;
-        text-align: center;
-        transition: all $speed-fast $ease-out 0s;
-        @include linear-gradient($dark-blue, #404973);
+      li {
+        list-style: none;
+        flex-grow: 1;
+        width: auto;
 
-        &:before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          z-index: 1;
-          background-color: rgba($light-blue, 0);
-          transition: background-color $speed-fast $ease-out 0s;
-        }
-
-        &:hover,
-        &:focus {
-          outline: none;
-
-          &:before {
-            background-color: rgba($light-blue, .7);
-          }
-        }
-
-        &.active {
-          &:before {
-            background-color: rgba($light-blue, 1);
-          }
-        }
-
-        > .text {
+        a {
+          display: block;
           position: relative;
-          z-index: 2;
+          padding: 3px 0;
+          color: $white !important;
+          font-size: 16px;
+          text-align: center;
+          transition: all $speed-fast $ease-out 0s;
+          @include linear-gradient($dark-blue, #404973);
+
+          &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            background-color: rgba($light-blue, 0);
+            transition: background-color $speed-fast $ease-out 0s;
+          }
+
+          &:hover,
+          &:focus {
+            outline: none;
+
+            &:before {
+              background-color: rgba($light-blue, .7);
+            }
+          }
+
+          &.active {
+            &:before {
+              background-color: rgba($light-blue, 1);
+            }
+          }
+
+          > .text {
+            position: relative;
+            z-index: 2;
+          }
         }
       }
     }
   }
-}
 
-body.menu-fixed {
-  .menu-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+  body.menu-fixed {
+    .menu-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+  }
+
+  .mobile-menu-icon {
+    display: none;
   }
 }
 
+// Tablet landscape - laptop
 @include breakpoint(bpmin("tablet-landscape") bpmax("hi-res")) {
   .menu-wrapper ul li a {
     font-size: 14px;
   }
 }
 
+// Mobile - tablet portrait
 @include breakpoint(max-width bpmax("tablet-landscape")) {
+  $mobile-menu-icon-size: 30px;
   .menu-wrapper-wrapper {
-    display: none;
+    position: relative;
+    z-index: 3;
+    transition: max-height $speed-medium $ease-out 0s;
+    background-color: $dark-blue;
+    @include linear-gradient-ugh-version($dark-blue, #444F83, 'left', 'left', 'top', 'bottom'); // #404973
+
+    .full-width {
+      width: 100%;
+      margin: 0;
+    }
+
+    ul {
+      transition: opacity $speed-medium $ease-out $speed-medium;
+      padding: 0;
+      margin: 1em 0;
+      list-style: none;
+
+      li {
+        padding: 0 40px; // 20px for padding main-wrapper, 20px for padding inside the "sidebars"
+
+        a {
+          display: block;
+          padding: 3px 0;
+          color: $white !important;
+          font-size: 18px;
+          text-align: center;
+          background-color: rgba($white, 0);
+          transition: background-color $speed-fast $ease-out 0s;
+
+          &:hover,
+          &:focus {
+            background-color: rgba($white, 0.2);
+          }
+        }
+      }
+    }
+  }
+
+  .menu-wrapper {
+    .grid {
+      position: relative;
+    }
+  }
+
+  .mobile-menu-icon {
+    display: block;
+    cursor: pointer;
+    @include flaticon($flaticon-menu, 'before');
+    position: absolute;
+    top: -1 * ceil(($logo-height * $logo-height-multiplier-tablet-landscape) + (2 * $logo-margin));
+    right: 0;
+    padding: $logo-margin $mobile-menu-touchable-area-sides $logo-margin $mobile-menu-touchable-area-sides;
+    box-sizing: content-box;
+    height: ceil($logo-height * $logo-height-multiplier-tablet-landscape);
+    margin-right: -$mobile-menu-touchable-area-sides;
+    
+    &:before {
+      transition: color $speed-fast $ease-out 0s;
+      font-size: $mobile-menu-icon-size;
+      line-height: ceil($logo-height * $logo-height-multiplier-tablet-landscape);
+      display: block;
+    }
+
+    &:hover:before {
+      color: $light-blue;
+    }
+  }
+
+  body.mobile-menu-hidden {
+    .menu-wrapper-wrapper {
+      max-height: 0 !important;
+      transition: max-height $speed-medium $ease-out $speed-medium;
+
+      ul {
+        opacity: 0;
+        transition: opacity $speed-medium $ease-out 0s;
+      }
+    }
+  }
+}
+
+// Mobile only
+@include breakpoint(max-width bpmax("tablet-portrait")) {
+  $mobile-menu-icon-size: 24px;
+  .mobile-menu-icon {
+    right: 20px;
+    top: -1 * ceil(($logo-height * $logo-height-multiplier-up-to-tablet-portrait) + (2 * $logo-margin));
+    height: ceil($logo-height * $logo-height-multiplier-up-to-tablet-portrait);
+
+    &:before {
+      font-size: $mobile-menu-icon-size;
+      line-height: ceil($logo-height * $logo-height-multiplier-up-to-tablet-portrait);
+    }
   }
 }

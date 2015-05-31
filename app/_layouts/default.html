@@ -58,7 +58,7 @@
     <meta name="theme-color" content="#698cdd">
   </head>
 
-  <body class="{{ cleanCurrent }} fade-out-content {{ layout }}"  ng-app="app">
+  <body class="{{ cleanCurrent }} fade-out-content {{ layout }} mobile-menu-hidden"  ng-app="app">
     <!--[if lt IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -69,7 +69,7 @@
           <div class="full-width">
             <a href="/" title="Home" class="logo">
               <img src="/resources/img/logo.svg" alt="Daan Scholten" title="Home">
-              <span class="logo-text">Producer - Sound Engineer</span>
+              <span class="logo-text">Producer<span class="hide-mobile"> - </span>Sound Engineer</span>
             </a>
           </div>
         </div>
@@ -79,6 +79,7 @@
         <nav class="menu-wrapper">
           <div class="grid">
             <div class="full-width">
+              <span class="mobile-menu-icon"></span>
               <ul>
                 <li>
                   <a href="/" {% if cleanCurrent == 'home' %}class="active"{% endif %}>
