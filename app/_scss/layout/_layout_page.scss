@@ -2,11 +2,6 @@ body.layout-page {
   .main-wrapper {
     overflow: visible;
 
-    > h1 {
-      margin-top: 0;
-      @include isolation-span(8, 3, 'both');
-    }
-
     > .page-body {
       @include isolation-span(8, 3, 'both');
       
@@ -17,3 +12,41 @@ body.layout-page {
     }
   }
 }
+
+// Mobile - laptop
+@include breakpoint(max-width bpmax("hi-res")) {
+  body.layout-page {
+    .main-wrapper {
+      > .page-body {
+        @include isolation-span(10, 2, 'both');
+      }
+    }
+  }
+}
+
+// Mobile - tablet landscape
+@include breakpoint(max-width bpmax("laptop")) {
+  body.layout-page {
+    .main-wrapper {
+      > .page-body {
+        .sidebar {
+          padding-top: 40px;
+          padding-bottom: 40px;
+          @include narrow-paragraphs(0px);
+        }
+      }
+    }
+  }
+}
+
+// Mobile - tablet portrait
+@include breakpoint(max-width bpmax("tablet-landscape")) {
+  body.layout-page {
+    .main-wrapper {
+      > .page-body {
+        @include isolation-span(12, 1, 'both');
+      }
+    }
+  }
+}
+

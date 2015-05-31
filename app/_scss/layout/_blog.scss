@@ -1,7 +1,11 @@
-.blog {
+body.blog-overview {
   .latest-posts {
     @include isolation-span(8, 1, 'left');
     padding: 0;
+
+    header a {
+      display: block;
+    }
 
     .post {
       padding: 40px;
@@ -10,52 +14,81 @@
         margin-top: 1em;
       }
 
-      header a {
-        display: block;
-
-        h2 {
-          $arrow-width: 26px;
-          padding-right: $arrow-width;
-          transform: translateX(-$arrow-width);
-          transition: transform $speed-fast $ease-in-out 0s;
-          @include flaticon($flaticon-goto, 'before');
-
-          &:before {
-            display: inline-block;
-            vertical-align: middle;
-            position: relative;
-            top: -1px;
-            padding-left: 0;
-            padding-right: 6px;
-            width: $arrow-width;
-            font-size: 45%;
-            opacity: 0;
-            transition: opacity $speed-fast $ease-in-out 0s;
-          }
-
-          &:hover {
-            transform: translateX(0);
-          }
-        }
-
-        &:hover h2:before {
-          opacity: 1;
-        }
-
-        h2 {
-          margin: 0;
-        }
-      }
-
       section > *:last-child {
         margin-bottom: 0;
       }
     }
   }
+
+  &:not(.blog-minimal) {
+    header a {
+      h2 {
+        $arrow-width: 26px;
+        margin: 0;
+        padding-right: $arrow-width;
+        transform: translateX(-$arrow-width);
+        transition: transform $speed-fast $ease-in-out 0s;
+        @include flaticon($flaticon-goto, 'before');
+
+        &:before {
+          display: inline-block;
+          vertical-align: middle;
+          position: relative;
+          top: -1px;
+          padding-left: 0;
+          padding-right: 6px;
+          width: $arrow-width;
+          font-size: 45%;
+          opacity: 0;
+          transition: opacity $speed-fast $ease-in-out 0s;
+        }
+
+        &:hover {
+          transform: translateX(0);
+        }
+      }
+
+      &:hover h2:before {
+        opacity: 1;
+      }
+    }
+  }
 }
 
-.home .latest-posts,
-.blog .older-posts {
+body.blog-minimal {
+  .latest-posts {
+    @include isolation-span(8, 3, 'both');
+
+    .sidebar {
+      @include narrow-paragraphs;
+      padding: (40px + $header-with-line-margin-top) 40px;
+
+      header a {
+        h2 {
+          font-size: 48px;
+          line-height: 50px;
+          color: $dark-blue;
+          @include line($inline-block: true);
+          padding-left: 0;
+          padding-right: 0;
+          margin: 0 80px .3em 80px;
+          transition: border-color $speed-fast $ease-out 0s;
+        }
+
+        &:hover h2 {
+          border-color: $dark-blue;
+        }
+      }
+
+      section {
+        margin-top: 2em;
+      }
+    }
+  }
+}
+
+body.home .latest-posts,
+body.blog-overview .older-posts {
   @include isolation-span(4, 9, 'right');
   @include default-font-settings;
   padding: 0;
@@ -115,14 +148,63 @@
   }
 }
 
+// Mobile - laptop
+@include breakpoint(max-width bpmax("hi-res")) {
+  body.blog-minimal {
+    .latest-posts {
+      @include isolation-span(10, 2, 'both');
+    }
+  }
+}
+
+// Mobile - tablet landscape
 @include breakpoint(max-width bpmax("laptop")) {
-  .home .latest-posts,
-  .blog .older-posts {
+  body.home .latest-posts,
+  body.blog-overview .older-posts {
     .post {
       header {
         font-size: 18px;
         line-height: 30px;
       }
+    }
+  }
+
+  body.blog-overview:not(.blog-minimal) {
+    .latest-posts,
+    .older-posts {
+      @include isolation-span(12, 1, 'both');
+    }
+
+    .latest-posts {
+      margin-bottom: 1em;
+    }
+  }
+
+  body.blog-minimal {
+    .latest-posts {
+      .sidebar {
+        @include narrow-paragraphs(0px);
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        header a {
+          h2 {
+            margin-left: 0;
+            margin-right: 0;
+            font-size: 32px;
+            line-height: 36px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile - tablet portrait
+@include breakpoint(max-width bpmax("tablet-landscape")) {
+  body.blog-minimal {
+    .latest-posts {
+      @include isolation-span(12, 1, 'both');
     }
   }
 }

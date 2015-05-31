@@ -15,6 +15,9 @@
   {% endif %}
 {% elsif cleanCurrent == 'blog' and current[2] == 'index.html' %}
   {% capture cleanCurrent %}{{ cleanCurrent }} blog-overview{% endcapture %}
+  {% if site.posts.size < 4 %}
+    {% capture cleanCurrent %}{{ cleanCurrent }} blog-minimal{% endcapture %}
+  {% endif %}
 {% endif %}
 
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}

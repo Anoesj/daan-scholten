@@ -191,6 +191,7 @@
   }
 }
 
+// Tablet portrait only
 @include breakpoint(bpmin("tablet-portrait") bpmax("tablet-landscape")) {
   .mobile-menu-icon {
     right: 1.08025%; // for some reason, gutter-span(1) doesn't return something remotely logical
@@ -202,6 +203,7 @@
   $mobile-menu-icon-size: 24px;
   .mobile-menu-icon {
     right: 20px;
+    right: calc(20px + 1.08025%);
     top: -1 * ceil(($logo-height * $logo-height-multiplier-up-to-tablet-portrait) + (2 * $logo-margin));
     height: ceil($logo-height * $logo-height-multiplier-up-to-tablet-portrait);
     padding-right: 20px;

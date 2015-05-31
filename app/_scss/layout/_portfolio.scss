@@ -1,4 +1,4 @@
-.portfolio {
+body.portfolio {
   .soundcloud-player-wrapper {
     @include isolation-span(6, 1, 'left');
     @include default-font-settings;
@@ -42,6 +42,20 @@
   .clients {
     h1, h2 {
       margin-bottom: 28px;
+    }
+  }
+}
+
+// Mobile - tablet portrait
+@include breakpoint(max-width bpmax("tablet-landscape")) {
+  body.portfolio {
+    .soundcloud-player-wrapper,
+    .clients {
+      @include isolation-span(12, 1, 'both');
+    }
+
+    .soundcloud-player-wrapper {
+      margin-bottom: 1em;
     }
   }
 }

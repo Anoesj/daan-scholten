@@ -1,5 +1,5 @@
-.blog-item,
-.blog-all {
+body.blog-item,
+body.blog-all {
   .main-wrapper {
     > .sidebar {
       @include isolation-span(8, 3, 'both');
@@ -13,7 +13,7 @@
   }
 }
 
-.blog-all {
+body.blog-all {
   .main-wrapper {
     > .sidebar {
       padding: 40px;
@@ -21,7 +21,7 @@
   }
 }
 
-.blog-item {
+body.blog-item {
   .main-wrapper {
     > .sidebar {
       padding: (40px + $header-with-line-margin-top) 40px;
@@ -43,7 +43,7 @@
   }
 }
 
-.blog-all {
+body.blog-all {
   .tag + a {
     display: inline-block;
     margin: 0 8px;
@@ -60,8 +60,8 @@
 
 // Mobile - laptop
 @include breakpoint(max-width bpmax("hi-res")) {
-  .blog-item,
-  .blog-all {
+  body.blog-item,
+  body.blog-all {
     .main-wrapper {
       > .sidebar {
         @include isolation-span(10, 2, 'both');
@@ -72,8 +72,8 @@
 
 // Mobile - tablet landscape
 @include breakpoint(max-width bpmax("laptop")) {
-  .blog-item,
-  .blog-all {
+  body.blog-item,
+  body.blog-all {
     .main-wrapper {
       > .sidebar {
         @include narrow-paragraphs(0px);
@@ -81,11 +81,7 @@
     }
   }
 
-  .image-wrapper {
-    padding: 0 40px;
-  }
-
-  .blog-item {
+  body.blog-item {
     .main-wrapper {
       > .sidebar {
         padding-top: 40px;
@@ -97,8 +93,8 @@
 
 // Mobile - tablet portrait
 @include breakpoint(max-width bpmax("tablet-landscape")) {
-  .blog-item,
-  .blog-all {
+  body.blog-item,
+  body.blog-all {
     .main-wrapper {
       > .sidebar {
         @include isolation-span(12, 1, 'both');

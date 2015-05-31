@@ -46,29 +46,6 @@ body.home {
       .addthis_horizontal_follow_toolbox {
         padding: 20px;
       }
-
-      .addthis_32x32_style a,
-      .addthis_horizontal_follow_toolbox .soundcloud-button {
-        display: block;
-        width: 100%;
-        opacity: 1;
-
-        span:first-child {
-          opacity: .6;
-          transition: opacity $speed-fast $ease-out 0s;
-        }
-
-        &:hover,
-        &:focus {
-          span:first-child {
-            opacity: 1;
-          }
-        }
-
-        &:not(:last-child) {
-          margin-bottom: 8px;
-        }
-      }
     }
   }
 
