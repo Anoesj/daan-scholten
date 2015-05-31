@@ -191,6 +191,12 @@
   }
 }
 
+@include breakpoint(bpmin("tablet-portrait") bpmax("tablet-landscape")) {
+  .mobile-menu-icon {
+    right: 1.08025%; // for some reason, gutter-span(1) doesn't return something remotely logical
+  }
+}
+
 // Mobile only
 @include breakpoint(max-width bpmax("tablet-portrait")) {
   $mobile-menu-icon-size: 24px;

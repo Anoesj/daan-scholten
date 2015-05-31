@@ -153,8 +153,18 @@ body.contact {
       @include isolation-span(4, 9, 'right');
       $icons-margin-right: 0px;
 
-      > *:last-child {
-        margin-bottom: 0 !important;
+      .sidebar {
+        & > *:last-child {
+          margin-bottom: 0 !important;
+        }
+
+        & + .sidebar {
+          margin-top: 1em;
+
+          .contact-email {
+            margin-bottom: 0;
+          }
+        }
       }
 
       .sidebar-title {
@@ -234,14 +244,6 @@ body.contact {
       h4 {
         color: $dark-blue;
       }
-
-      & + .contact-info {
-        margin-top: 1em;
-
-        .contact-email {
-          margin-bottom: 0;
-        }
-      }
     }
   }
 }
@@ -263,7 +265,8 @@ body.contact {
   transition: opacity $speed-medium $ease-out 0s;
 }
 
-@include breakpoint(bpmin("laptop") bpmax("hi-res")) {
+// Tablet landscape - laptop
+@include breakpoint(bpmin("tablet-landscape") bpmax("hi-res")) {
   body.contact .main-wrapper .contact-info {
     .contact-email,
     .contact-phone,
@@ -272,6 +275,22 @@ body.contact {
       font-size: 14px;
       line-height: 26px;
       margin-bottom: 1em;
+    }
+  }
+}
+
+// Mobile - tablet portrait
+@include breakpoint(max-width bpmax("tablet-landscape")) {
+  body.contact {
+    .main-wrapper {
+      .contact-form,
+      .contact-info {
+        @include isolation-span(12, 1, 'both');
+      }
+
+      .contact-info .sidebar + .sidebar {
+        margin-bottom: 1em;
+      }
     }
   }
 }
