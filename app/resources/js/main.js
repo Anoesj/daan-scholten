@@ -51,8 +51,7 @@ if (isSafari) {
     /* Sticky menu */
     function refreshMenuPosition() {
       $('.menu-wrapper-wrapper').css({
-        'height': $('.menu-wrapper').height(),
-        'max-height': $('.menu-wrapper').height()
+        'height': $('.menu-wrapper').height()
       })
       menuPosition = $('.header-wrapper').height()
     }
@@ -65,6 +64,7 @@ if (isSafari) {
       window.requestAnimationFrame(refreshMenuPosition)
     }
 
+    // Fix some css shit
     var menuPosition
     callRefreshMenuPosition()
     
@@ -105,11 +105,12 @@ if (isSafari) {
       if (!menuItemHasBeenClicked && currentPage != targetLink && !isAddThisLink) {
         ($(window).scrollTop() != 0) ? ds.goTo(e, targetLinkCategory, $that.attr('href'), 300) : ds.goTo(e, targetLinkCategory, $that.attr('href'), 0)
       }
-    })  
+    })
 
+    // Show/hide mobile menu
     $(document).on('click touch', '.mobile-menu-icon', function(e) {
       $('body').toggleClass('mobile-menu-hidden mobile-menu-visible')
-    }) 
+    })
   })
 
 }(window.jQuery, window, document));

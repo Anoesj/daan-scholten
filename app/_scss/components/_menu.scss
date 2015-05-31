@@ -104,9 +104,9 @@
   .menu-wrapper-wrapper {
     position: relative;
     z-index: 3;
-    transition: max-height $speed-medium $ease-out 0s;
     background-color: $dark-blue;
     @include linear-gradient-ugh-version($dark-blue, #444F83, 'left', 'left', 'top', 'bottom'); // #404973
+    height: auto !important;
 
     .full-width {
       width: 100%;
@@ -114,10 +114,13 @@
     }
 
     ul {
-      transition: opacity $speed-medium $ease-out $speed-medium;
+      transition: opacity $speed-medium $ease-out $speed-medium,
+                  max-height $speed-medium $ease-out 0s,
+                  margin $speed-medium $ease-out 0s;
       padding: 0;
       margin: 1em 0;
       list-style: none;
+      max-height: 300px !important; // TEST THIS THROUGH!!
 
       li {
         padding: 0 40px; // 20px for padding main-wrapper, 20px for padding inside the "sidebars"
@@ -153,10 +156,9 @@
     position: absolute;
     top: -1 * ceil(($logo-height * $logo-height-multiplier-tablet-landscape) + (2 * $logo-margin));
     right: 0;
-    padding: $logo-margin $mobile-menu-touchable-area-sides $logo-margin $mobile-menu-touchable-area-sides;
+    padding: $logo-margin 0 $logo-margin $mobile-menu-touchable-area-sides;
     box-sizing: content-box;
     height: ceil($logo-height * $logo-height-multiplier-tablet-landscape);
-    margin-right: -$mobile-menu-touchable-area-sides;
     
     &:before {
       transition: color $speed-fast $ease-out 0s;
@@ -172,12 +174,18 @@
 
   body.mobile-menu-hidden {
     .menu-wrapper-wrapper {
-      max-height: 0 !important;
-      transition: max-height $speed-medium $ease-out $speed-medium;
-
       ul {
         opacity: 0;
-        transition: opacity $speed-medium $ease-out 0s;
+        transition: opacity $speed-medium $ease-out 0s,
+                    max-height $speed-medium $ease-out $speed-medium,
+                    margin $speed-medium $ease-out $speed-medium;
+        overflow: hidden;
+        max-height: 0 !important;
+        margin: 0;
+
+        @include moz-hack {
+          display: none;
+        }
       }
     }
   }
@@ -190,6 +198,8 @@
     right: 20px;
     top: -1 * ceil(($logo-height * $logo-height-multiplier-up-to-tablet-portrait) + (2 * $logo-margin));
     height: ceil($logo-height * $logo-height-multiplier-up-to-tablet-portrait);
+    padding-right: 20px;
+    margin-right: -20px;
 
     &:before {
       font-size: $mobile-menu-icon-size;

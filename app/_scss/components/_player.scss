@@ -215,6 +215,8 @@ progress {
   color: $dark-blue;
   height: 10px;
   cursor: pointer;
+  background-color: $dark-blue;
+  border-radius: $base-border-radius;
 
   &::-webkit-progress-bar {
     border-radius: $base-border-radius;
@@ -228,6 +230,6 @@ progress {
 
   &::-moz-progress-bar {
     border-radius: $base-border-radius;
-    background-color: $dark-blue;
+    background-color: $light-blue;
   }
 }
