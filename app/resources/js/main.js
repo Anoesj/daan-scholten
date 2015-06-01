@@ -3,24 +3,6 @@
 var ds = window.ds
 var twigTemplates = {}
 
-// TEMPORARY ACCESS BULLSHIT
-$('body').css('display', 'none')
-if (!$.cookie('daanscholtennlaccess')) {
-  var getAccess = prompt("Deze site is onder constructie en is afgesloten voor publiek.", "")
-  if (getAccess == 'abracadabra') {
-    $.cookie('daanscholtennlaccess', 'granted', { expires: 7, path: '/' })
-    $('body').css('display', 'block')
-  }
-  else {
-    window.close()
-  }
-}
-
-else {  
-  $('body').css('display', 'block')
-}
-// END OF TEMPORARY ACCESS BULLSHIT
-
 /* Safari only JavaScript hack */
 var isSafari = /constructor/i.test(window.HTMLElement)
 if (isSafari) {
