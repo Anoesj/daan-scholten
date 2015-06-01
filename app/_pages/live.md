@@ -15,4 +15,6 @@ Ik ben in te huren als live-technicus voor zowel monitor mixer als FOH-engineer.
 
 Neemt u ook voor vragen en tarieven alstublieft contact met mij op.
 
-Naast mijn freelanceklussen ben ik ook hoofd techniek bij Cultuurpodium Houtmaat te Hengelo. Via deze stichting hebben we in 2014 een nieuwe geluidsset aangeschaft. Deze geluidsset bestaat in grote lijnen uit een DiGiCo D1 met MADI-stageblock en een dB Technologies line array. De set is te huur voor €350,- per dag. Neemt u ook voor voorwaarden en mogelijkheden contact met mij op.
+Naast mijn freelanceklussen ben ik ook hoofd techniek bij Cultuurpodium Houtmaat te Hengelo. Via deze stichting hebben we in 2014 een nieuwe geluidsset aangeschaft. Deze geluidsset bestaat in grote lijnen uit een DiGiCo D1 met MADI-stageblock en een dB Technologies line array. De set is te huur voor €350,- per dag. Ook is het mogelijk om met de set een live-opname (40-kanaals multitrack) te maken van uw optreden. Deze kan dan achteraf in de studio gemixt worden.
+
+Neemt u ook voor voorwaarden en mogelijkheden contact met mij op.
