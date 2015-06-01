@@ -5,6 +5,9 @@ published: true
 ---
 
 
+
+
+
 Bij mij heeft u de mogelijkheid om in een daarvoor ingerichte ruimte rustig en op uw gemak op te nemen. Daarnaast kunt u er ook voor kiezen om ergens op locatie een opname te laten maken. Voor alle situaties is er voldoende kennis en apparatuur aanwezig om u te helpen tot een goed eindresultaat te komen. 
 Als producer en technicus heb ik veel ervaring met verschillende ruimtes, stijlen en bezettingen. Voor elk budget bied ik een oplossing! Neemt u voor tarieven contact op met mij! 
 
@@ -37,7 +40,7 @@ _Afluistering_
 
 - DiGiCo D1 met 56 in en 16 out MADI-rack  
 
-**Microfoons**
+**Microfoons & DI's**
 
 - 1x Avantone CV-12
 - 1x Røde NT1-A
@@ -54,4 +57,6 @@ _Afluistering_
 - 2x AKG C414-XLS (op aanvraag)
 - 2x Neumann KM184 (op aanvraag)
 - 3x Sennheiser MD-421-II (op aanvraag)
-- 1x Sennheiser MD-421 (vintage) (op aanvraag)
+- 1x Sennheiser MD-421 (vintage) (op aanvraag)  
+- 1x Behringer DI100  
+- 8x Klark Teknik DN100
