@@ -161,6 +161,20 @@ body.is-safari {
   }
 }
 
+@include breakpoint(bpmin("tablet-landscape")) {
+  .header-wrapper {
+    .logo {
+      .hide-mobile {
+        &:before,
+        &:after {
+          content: '\0020';
+          white-space: pre;
+        }
+      }
+    }
+  }
+}
+
 // Everything under hi-resolution screens
 @include breakpoint(max-width bpmax("hi-res")) {
   .header-wrapper {
