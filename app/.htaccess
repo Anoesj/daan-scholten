@@ -226,11 +226,11 @@ AddDefaultCharset utf-8
 
 # Option 1: rewrite www.example.com → example.com
 
-<IfModule mod_rewrite.c>
-    RewriteCond %{HTTPS} !=on
-    RewriteCond %{HTTP_HOST} ^www\.daanscholten\.nl [NC]
-    RewriteRule ^(.*)$ http://daanscholten.nl/$1 [L,R=301]
-</IfModule>
+# <IfModule mod_rewrite.c>
+#     RewriteCond %{HTTPS} !=on
+#     RewriteCond %{HTTP_HOST} ^www\.daanscholten\.nl [NC]
+#     RewriteRule ^(.*)$ http://daanscholten.nl/$1 [L,R=301]
+# </IfModule>
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -248,6 +248,10 @@ AddDefaultCharset utf-8
 #    RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 # </IfModule>
 
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_HOST} !^www\.
+    RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
 
 # ##############################################################################
 # # SECURITY                                                                   #
