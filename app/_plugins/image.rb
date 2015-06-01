@@ -10,10 +10,16 @@ module Jekyll
       @alt = @params[3]
       @prefix = ''
       @suffix = ''
-      @html = "<figure class=\"image image-#{@type}\" data-mfp-src=\"/resources/img/#{@url}\"><img src=\"/resources/img/#{@url}\" alt=\"#{@alt}\" title=\"#{@alt}\"><figcaption class=\"image-caption\">#{@description}</figcaption></figure>"
+      @html = "<figure class=\"image image-#{@type}\" data-mfp-src=\"/resources/img/#{@url}\"><img src=\"/resources/img/#{@url}\" alt=\"#{@alt}\" title=\"#{@alt}\">"
+
+      unless @description.to_s.strip.length == 0
+        @html << "<figcaption class=\"image-caption\">#{@description}</figcaption>"
+      end
+
+      @html << "</figure>"
 
       if @type == 'left' or @type == 'center'
-        @prefix = '<div class="image-wrapper lightbox">'
+        @prefix = "<div class=\"image-wrapper lightbox\">"
       end
       
       if @type == 'right' or @type == 'center'
