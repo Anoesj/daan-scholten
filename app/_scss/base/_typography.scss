@@ -1,6 +1,6 @@
 @mixin font-squirrel-font($family, $prefix, $filename, $svg-target, $weight, $style, $woff2: false) {
   @font-face {
-    font-family: $family;
+    font-family: "#{$family}";
     src: url("#{$prefix}#{$filename}.eot");
     src: url("#{$prefix}#{$filename}.eot?#iefix") format("embedded-opentype"),
          url("#{$prefix}#{$filename}.woff2") format("woff2"),
