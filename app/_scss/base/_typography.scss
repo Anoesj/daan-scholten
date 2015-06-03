@@ -1,21 +1,23 @@
-@mixin font-squirrel-font($family, $prefix, $filename, $svg-target, $weight, $style, $woff2: false) {
+@mixin font-squirrel-font($family, $prefix, $filename, $svg-target, $weight, $style) {
   @font-face {
     font-family: "#{$family}";
     src: url("#{$prefix}#{$filename}.eot");
     src: url("#{$prefix}#{$filename}.eot?#iefix") format("embedded-opentype"),
-         url("#{$prefix}#{$filename}.woff2") format("woff2"),
          url("#{$prefix}#{$filename}.woff") format("woff"),
          url("#{$prefix}#{$filename}.ttf") format("truetype"),
+         url("#{$prefix}#{$filename}.otf") format("opentype"),
          url("#{$prefix}#{$filename}.svg##{$svg-target}") format("svg");
     font-weight: #{$weight};
     font-style: #{$style};
+    font-stretch: normal;
+    unicode-range: U+0020-25CA;
   }
 }
 
-@include font-squirrel-font("IowanOldStyle", "../fonts/webfonts/", "iowaosrm", "iowanoldst_btroman", "normal", "normal", true);
-@include font-squirrel-font("IowanOldStyle", "../fonts/webfonts/", "iowaosbd", "iowanoldst_btbold", "bold", "normal", true);
-@include font-squirrel-font("IowanOldStyle", "../fonts/webfonts/", "iowaosbi", "iowanoldst_btbold_italic", "bold", "italic", true);
-@include font-squirrel-font("IowanOldStyle", "../fonts/webfonts/", "iowaosit", "iowanoldst_btitalic", "normal", "italic", true);
+@include font-squirrel-font("IOSBT", "../fonts/webfonts/", "IowanOldStyleBT-Roman_gdi", "IowanOldStyleBT-Roman", "400", "normal");
+@include font-squirrel-font("IOSBT", "../fonts/webfonts/", "IowanOldStyleBT-Bold_gdi", "IowanOldStyleBT-Bold", "700", "normal");
+@include font-squirrel-font("IOSBT", "../fonts/webfonts/", "IowanOldStyleBT-BoldItalic_gdi", "IowanOldStyleBT-BoldItalic", "700", "italic");
+@include font-squirrel-font("IOSBT", "../fonts/webfonts/", "IowanOldStyleBT-Italic_gdi", "IowanOldStyleBT-Italic", "400", "italic");
 
 $flaticon-prefix: "../fonts/icons/";
 @font-face {
@@ -31,7 +33,7 @@ $flaticon-prefix: "../fonts/icons/";
 
 body {
   font-family: $default-font-stack;
-  font-weight: 300;
+  font-weight: $fw-normal;
   font-size: 18px;
   line-height: 30px;
   color: $black;
