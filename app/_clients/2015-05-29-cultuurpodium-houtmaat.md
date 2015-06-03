@@ -2,7 +2,9 @@
 layout: client
 published: true
 title: Cultuurpodium Houtmaat
+target: "http://www.cultuurpodiumhoutmaat.nl/"
 ---
+
 
 ## A New Post
 
