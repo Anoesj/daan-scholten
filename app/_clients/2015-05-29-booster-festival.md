@@ -2,7 +2,9 @@
 layout: client
 published: true
 title: Booster Festival
+target: "http://www.boost-festival.nl"
 ---
+
 
 ## A New Post
 
