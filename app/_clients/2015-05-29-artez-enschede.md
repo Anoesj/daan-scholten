@@ -2,7 +2,9 @@
 layout: client
 published: true
 title: ArtEZ Enschede
+target: "http://www.artez.nl/conservatorium"
 ---
+
 
 ## A New Post
 
