@@ -2,7 +2,9 @@
 layout: client
 published: true
 title: "Kids@ThePark"
+target: "http://www.kidsatthepark.nl"
 ---
+
 
 ## A New Post
 
