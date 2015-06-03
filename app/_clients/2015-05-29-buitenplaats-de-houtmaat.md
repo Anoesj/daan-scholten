@@ -2,7 +2,9 @@
 layout: client
 published: true
 title: Buitenplaats de Houtmaat
+target: "http://www.houtmaat.nl/"
 ---
+
 
 ## A New Post
 
