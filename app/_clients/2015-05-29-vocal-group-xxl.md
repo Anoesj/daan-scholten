@@ -2,7 +2,9 @@
 layout: client
 published: true
 title: Vocal Group XXL
+target: "http://www.vocalgroupxxl.nl"
 ---
+
 
 ## A New Post
 
