@@ -2,7 +2,9 @@
 layout: client
 published: true
 title: Lyceum de Grundel
+target: "http://www.lyceumdegrundel.nl/"
 ---
+
 
 ## A New Post
 
