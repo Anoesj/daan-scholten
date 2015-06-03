@@ -2,7 +2,9 @@
 layout: client
 published: true
 title: Muziekschool Hengelo
+target: "http://www.muziekschoolhengelo.nl/"
 ---
+
 
 ## A New Post
 
