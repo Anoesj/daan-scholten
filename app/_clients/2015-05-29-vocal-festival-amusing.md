@@ -2,7 +2,9 @@
 layout: client
 published: true
 title: Vocal Festival Amusing
+target: "http://www.amusing-hengelo.nl"
 ---
+
 
 ## A New Post
 
