@@ -2,7 +2,9 @@
 layout: client
 published: true
 title: Ibiza Sensation
+target: "http://www.ibiza-sensation.nl/"
 ---
+
 
 ## A New Post
 
