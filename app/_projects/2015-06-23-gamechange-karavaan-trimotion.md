@@ -2,8 +2,10 @@
 layout: project
 published: true
 title: GameChange Karavaan (TriMotion)
-date: "2015-01-01 13:00"
+date: "2015-06-28 12:00"
+target: "http://www.trimotion.nl"
 ---
+
 
 ## A New Post
 
