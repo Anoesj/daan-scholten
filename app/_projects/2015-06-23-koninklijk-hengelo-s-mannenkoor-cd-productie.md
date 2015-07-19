@@ -2,8 +2,10 @@
 layout: project
 published: true
 title: "Koninklijk Hengelo's Mannenkoor - CD productie"
-date: "2015-01-01 13:00"
+date: ""
+target: "http://www.khmk.nl/"
 ---
+
 
 ## A New Post
 
