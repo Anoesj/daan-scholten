@@ -1,10 +1,11 @@
 ---
 layout: project
 published: true
-title: GameChange Karavaan (TriMotion)
+title: PopupPodium Hengelo/Twente i.s.m. TriMotion
 date: "2015-06-28 12:00"
 target: "http://www.trimotion.nl"
 ---
+
 
 
 ## A New Post
