@@ -3,8 +3,9 @@ layout: project
 date: "2015-01-01 13:00"
 target: ""
 published: true
-title: "Eindconcert @Hof88 i.s.m. Jannemiek Mulders"
+title: "Eindconcert @Hof88 i.s.m. Jannemiek Musters"
 ---
+
 
 ## A New Post
 
