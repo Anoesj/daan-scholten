@@ -2,7 +2,7 @@
 layout: client
 target: ""
 published: true
-title: "AMP Sessions - Enschede"
+title: "GUSTO! Eten en drinken (Gusto Grooves)"
 ---
 
 ## A New Post
