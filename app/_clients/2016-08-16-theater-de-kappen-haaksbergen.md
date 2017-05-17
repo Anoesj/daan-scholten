@@ -2,6 +2,7 @@
 layout: client
 published: true
 title: Theater de Kappen - Haaksbergen
+target: 'http://www.dekappen.nl'
 ---
 ## A New Post
 
