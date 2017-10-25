@@ -1,7 +1,7 @@
 ---
 layout: client
 published: true
-title: Ooostblok!
+title: 'Ooostblok! '
 ---
 ## A New Post
 
